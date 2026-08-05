@@ -6,14 +6,13 @@
 <title>Kazuio — em breve</title>
 <meta name="description" content="Kazuio: perguntas que guiam, reflexões que conectam. Em breve.">
 <style>
-  :root{ --color-bg: #FEFEFE; }
   *{ box-sizing: border-box; }
   html, body{
     margin:0;
     height:100%;
     width:100%;
     overflow:hidden;
-    background: var(--color-bg);
+    background: #FEFEFE; /* fundo da versão paisagem (desktop) */
   }
   body{
     display:flex;
@@ -27,9 +26,15 @@
     height:auto;
     object-fit: contain;
   }
+  @media (max-width: 700px){
+    html, body{ background: #F7EAE0; } /* fundo da versão retrato (mobile) */
+  }
 </style>
 </head>
 <body>
-  <img class="landing" src="images/kazuio-landing.png" alt="Kazuio — perguntas que guiam, reflexões que conectam. Em breve.">
+  <picture>
+    <source media="(max-width: 700px)" srcset="images/kazuio-landing-mobile.png">
+    <img class="landing" src="images/kazuio-landing.png" alt="Kazuio — perguntas que guiam, reflexões que conectam. Em breve.">
+  </picture>
 </body>
 </html>
