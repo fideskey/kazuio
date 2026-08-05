@@ -5,72 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kazuio — em breve</title>
 <meta name="description" content="Kazuio: perguntas que guiam, reflexões que conectam. Em breve.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --color-bg: #F8F5EF;
-    --color-navy: #1F355E;
-    --color-gold: #D4AF37;
-    --color-text-muted: #6E6E6E;
-  }
+  :root{ --color-bg: #F8F5EF; }
   *{ box-sizing: border-box; }
-  html, body{ margin:0; height:100%; }
-  body{
+  html, body{
+    margin:0;
+    height:100%;
+    width:100%;
+    overflow:hidden;
     background: var(--color-bg);
-    color: var(--color-navy);
-    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  body{
     display:flex;
-    flex-direction:column;
     align-items:center;
     justify-content:center;
-    min-height:100%;
-    padding: 32px 20px;
-    text-align:center;
   }
-  .flyer{
-    max-width: 780px;
-    width: 90%;
+  .landing{
+    max-width: 100vw;
+    max-height: 100vh;
+    width:auto;
     height:auto;
-    margin-bottom: 28px;
-  }
-  .em-breve{
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-navy);
-    margin: 0 0 8px 0;
-  }
-  .em-breve::before{
-    content: '';
-    display:inline-block;
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background: var(--color-gold);
-    margin-right: 10px;
-    vertical-align: middle;
-  }
-  .sub{
-    font-size: 0.92rem;
-    color: var(--color-text-muted);
-    max-width: 420px;
-    line-height: 1.6;
-    margin: 0;
-  }
-  footer{
-    margin-top: 40px;
-    font-size: 0.78rem;
-    color: var(--color-text-muted);
+    object-fit: contain;
   }
 </style>
 </head>
 <body>
-  <img class="flyer" src="images/kazuio-flyer.png" alt="Kazuio — perguntas que guiam, reflexões que conectam">
-  <p class="em-breve">Em breve</p>
-  <p class="sub">Estamos preparando um espaço para você refletir com mais calma e clareza. Volte em breve.</p>
-  <footer>&copy; 2026 Kazuio</footer>
+  <img class="landing" src="images/kazuio-landing.png" alt="Kazuio — perguntas que guiam, reflexões que conectam. Em breve.">
 </body>
 </html>
