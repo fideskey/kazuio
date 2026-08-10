@@ -73,19 +73,19 @@
 
       <div class="diff-strip reveal">
         <div class="diff-item">
-          <span class="diff-mark"></span>
+          <svg class="diff-icon" width="24" height="24" viewBox="0 0 26 26" fill="none"><path d="M4 7h18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H12l-5 4v-4h-3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.5"/></svg>
           <div><h4>Converse livremente</h4><p>Fale sobre o que está vivendo, sem julgamentos.</p></div>
         </div>
         <div class="diff-item">
-          <span class="diff-mark"></span>
+          <svg class="diff-icon" width="24" height="24" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M10 10a3 3 0 1 1 4.5 2.6c-.9.6-1.5 1.2-1.5 2.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="13" cy="18.3" r=".9" fill="currentColor"/></svg>
           <div><h4>Seja guiado por perguntas</h4><p>Kazuio faz perguntas que ajudam você a pensar melhor.</p></div>
         </div>
         <div class="diff-item">
-          <span class="diff-mark"></span>
+          <svg class="diff-icon" width="24" height="24" viewBox="0 0 26 26" fill="none"><path d="M13 4c-2-1.8-5.2-2.3-8-1.6v16c2.8-.7 6 -.2 8 1.6 2-1.8 5.2-2.3 8-1.6v-16c-2.8-.7-6-.2-8 1.6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M13 4v16" stroke="currentColor" stroke-width="1.5"/></svg>
           <div><h4>Reflexões que conectam</h4><p>Quando fizer sentido, Kazuio traz citações reais e verificadas.</p></div>
         </div>
         <div class="diff-item">
-          <span class="diff-mark"></span>
+          <svg class="diff-icon" width="24" height="24" viewBox="0 0 26 26" fill="none"><path d="M13 21c-6-4-10-7.6-10-12.2C3 5.7 5.6 3 8.8 3c1.8 0 3.4.9 4.2 2.4C13.8 3.9 15.4 3 17.2 3 20.4 3 23 5.7 23 8.8 23 13.4 19 17 13 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
           <div><h4>Feito para você</h4><p>Cada conversa é única. Kazuio caminha ao seu lado.</p></div>
         </div>
       </div>
@@ -104,48 +104,35 @@
             <div class="msg user"><span class="who">Você</span>Acho que do que eu disse.</div>
             <div class="msg kazuio"><span class="who">Kazuio</span>E se você pudesse voltar àquela conversa, o que gostaria que sua mãe tivesse entendido sobre você?</div>
           </div>
+          <div class="mini-statement">
+            <strong>Não damos respostas prontas.<br>Perguntamos.</strong>
+            <p>Porque muitas vezes a primeira resposta que damos a nós mesmos não é a mais profunda.</p>
+          </div>
         </div>
 
         <!-- Screenshot real do app.kazuio.com -->
         <div class="phone-shot">
           <img src="images/app-mobile.png" alt="Tela do aplicativo Kazuio mostrando uma conversa de reflexão" loading="lazy">
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="statement">
-    <div class="wrap">
-      <div class="statement-inner reveal">
-        <h2>Não damos respostas prontas.<br><em>Perguntamos.</em></h2>
-        <p>Porque muitas vezes a primeira resposta que damos a nós mesmos não é a mais profunda.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="pilares">
-    <div class="wrap">
-      <div class="section-head reveal" style="margin: 0 auto 48px; text-align:center; max-width:560px;">
-        <h2 class="section-title">Um espaço para pensar com profundidade sobre o que você está vivendo.</h2>
-      </div>
-      <div class="pillars-row reveal">
-        <div class="pillar-col">
-          <svg width="30" height="30" viewBox="0 0 22 22" fill="none"><path d="M11 3c-4 0-7 3-7 6.5 0 2 1 3.5 2.3 4.6L6 17h10l-.3-2.9C17 13 18 11.5 18 9.5 18 6 15 3 11 3Z" stroke="currentColor" stroke-width="1.3"/><path d="M9 19h4M9.5 21h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-          <span class="pillar-label">Psicologia</span>
-          <p>Compreenda emoções, comportamentos e padrões.</p>
-        </div>
-        <div class="pillar-col">
-          <svg width="30" height="30" viewBox="0 0 22 22" fill="none"><path d="M11 2v18M6 6h10M4 6l3 8h-6l3-8ZM18 6l3 8h-6l3-8Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-          <span class="pillar-label">Fé</span>
-          <p>Encontre sentido, esperança e direção na espiritualidade.</p>
-        </div>
-        <div class="pillar-col">
-          <svg width="30" height="30" viewBox="0 0 22 22" fill="none"><path d="M6 19V7l5-4 5 4v12M3 19h16M8 19v-5h6v5" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
-          <span class="pillar-label">Filosofia</span>
-          <p>Questione ideias e amplie sua visão de mundo.</p>
+        <div class="convo-col convo-copy" id="pilares">
+          <h2 class="section-title">Um espaço para pensar com profundidade sobre o que você está vivendo.</h2>
+          <div class="pillars">
+            <div class="pillar">
+              <svg width="24" height="24" viewBox="0 0 22 22" fill="none"><path d="M11 3c-4 0-7 3-7 6.5 0 2 1 3.5 2.3 4.6L6 17h10l-.3-2.9C17 13 18 11.5 18 9.5 18 6 15 3 11 3Z" stroke="currentColor" stroke-width="1.4"/><path d="M9 19h4M9.5 21h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <div><p>Compreenda emoções, comportamentos e padrões.</p><span>PSICOLOGIA</span></div>
+            </div>
+            <div class="pillar">
+              <svg width="24" height="24" viewBox="0 0 22 22" fill="none"><path d="M11 2v18M6 6h10M4 6l3 8h-6l3-8ZM18 6l3 8h-6l3-8Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              <div><p>Encontre sentido, esperança e direção na espiritualidade.</p><span>FÉ</span></div>
+            </div>
+            <div class="pillar">
+              <svg width="24" height="24" viewBox="0 0 22 22" fill="none"><path d="M6 19V7l5-4 5 4v12M3 19h16M8 19v-5h6v5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              <div><p>Questione ideias e amplie sua visão de mundo.</p><span>FILOSOFIA</span></div>
+            </div>
+          </div>
         </div>
       </div>
-      <p class="pillars-close reveal">Kazuio não escolhe uma visão de mundo por você. Ele busca o que faz sentido para a sua reflexão.</p>
     </div>
   </section>
 
@@ -220,7 +207,7 @@
       <div class="sobre-inner reveal">
         <p class="sobre-lede">Kazuio é um espaço de reflexão com inteligência artificial — não terapia, não aconselhamento, não um buscador. Um lugar para você colocar em palavras o que está vivendo e enxergar com mais clareza.</p>
       </div>
-      <div class="compare-grid compare-grid-2 reveal">
+      <div class="compare-grid reveal" id="faq">
         <div class="compare-card">
           <h3>O Kazuio não é…</h3>
           <div class="not-list">
@@ -244,28 +231,13 @@
           <h3>Então o que ele é?</h3>
           <p>Um espaço para pensar. Um lugar seguro para você colocar o que está vivendo em palavras e enxergar com mais clareza.</p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section>
-    <div class="wrap">
-      <div class="photo-card photo-card-wide reveal">
-        <img src="https://source.unsplash.com/1400x700/?coffee,journal,desk,morning" alt="Xícara de café ao lado de um caderno sobre uma mesa de madeira, luz natural" loading="lazy">
-        <div class="photo-content">
-          <h3>Pare.<br>Converse.<br>Reflita.</h3>
-          <p>Às vezes, quando conseguimos colocar algo em palavras, começamos a enxergá-lo de outra maneira.</p>
+        <div class="cta-card">
+          <svg class="cta-swirl" viewBox="0 0 160 220" aria-hidden="true"><path d="M120 0 C90 30 140 70 100 100 C60 130 110 160 80 190 C60 210 70 220 55 230" stroke="#C68A3E" stroke-width="10" stroke-linecap="round" fill="none" opacity=".55"/></svg>
+          <p class="cta-eyebrow">Talvez você não precise de uma resposta agora. Talvez só precise <em>começar a conversar.</em></p>
+          <a href="https://app.kazuio.com" class="btn btn-primary">Começar uma conversa com o Kazuio</a>
+          <span class="cta-note">É rápido, gratuito e 100% confidencial.</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="final-cta reveal">
-        <h2>Talvez você não precise de uma resposta agora. Talvez só precise <em style="font-style:italic;color:var(--amber-deep);">começar a conversar.</em></h2>
-        <p>Você pode começar contando simplesmente o que está acontecendo.</p>
-        <a href="https://app.kazuio.com" class="btn btn-primary">Começar uma conversa com o Kazuio</a>
       </div>
     </div>
   </section>

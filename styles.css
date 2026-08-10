@@ -272,26 +272,35 @@ h1.hero-title em{
 .diff-strip{
   display:grid;
   grid-template-columns: repeat(4,1fr);
-  gap: 36px;
-  padding-top: 8px;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
 }
 .diff-item{
   display:flex;
-  flex-direction:column;
   gap: 14px;
+  align-items:flex-start;
+  padding: 26px 22px;
+  border-right: 1px solid var(--line);
 }
+.diff-item:last-child{ border-right:none; }
 .diff-mark{
-  width: 22px; height:1px;
-  background: var(--amber);
+  display:none;
+}
+.diff-icon{
+  flex-shrink:0;
+  color: var(--amber-deep);
+  margin-top: 2px;
 }
 .diff-item h4{
   font-family: var(--serif);
   font-weight: 500;
-  font-size: 1rem;
-  margin: 0;
+  font-size: .95rem;
+  margin: 0 0 4px;
 }
 .diff-item p{
-  font-size: .85rem;
+  font-size: .82rem;
   color: var(--ink-70);
   margin:0;
   line-height:1.5;
@@ -450,6 +459,27 @@ h2.section-title{
   border-radius: 0;
 }
 .msg.kazuio .who{ color: var(--amber-deep); }
+
+.mini-statement{
+  margin-top: 26px;
+  padding-left: 18px;
+  border-left: 2px solid var(--amber);
+}
+.mini-statement strong{
+  display:block;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+.mini-statement p{
+  font-size: .85rem;
+  color: var(--ink-70);
+  margin: 0;
+  max-width: 34ch;
+}
 
 .convo-copy p{
   color: var(--ink-70);
@@ -768,6 +798,49 @@ h2.section-title{
   color: rgba(251,246,239,.82);
   margin:0;
   max-width: 32ch;
+}
+
+/* CTA card (3rd column of compare row) */
+.cta-card{
+  background: var(--ink);
+  border-radius: var(--radius);
+  padding: 34px 30px;
+  position: relative;
+  overflow: hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap: 16px;
+}
+.cta-swirl{
+  position:absolute;
+  right: -10px; top: 0;
+  height: 100%;
+  width: auto;
+  opacity: .9;
+}
+.cta-eyebrow{
+  position:relative; z-index:1;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: var(--cream);
+  margin: 0;
+  max-width: 20ch;
+}
+.cta-eyebrow em{
+  font-style: italic;
+  color: var(--amber);
+}
+.cta-card .btn{
+  position:relative; z-index:1;
+  align-self:flex-start;
+}
+.cta-note{
+  position:relative; z-index:1;
+  font-size: .78rem;
+  color: rgba(251,246,239,.6);
 }
 
 /* ---------- Plans ---------- */
