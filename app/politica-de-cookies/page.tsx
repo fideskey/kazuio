@@ -10,38 +10,37 @@ export default function Page() {
   return (
     <LegalPage
       title="Política de Cookies"
-      updated="10 de agosto de 2026"
-      intro="Esta página explica o que são cookies, quais tipos o Kazuio utiliza e como você pode gerenciá-los."
+      updated="agosto de 2026"
+      intro="Esta página explica quais tecnologias de armazenamento local o Kazuio utiliza e como você pode gerenciá-las."
       sections={[
         {
-          heading: '1. O que são cookies',
+          heading: '1. O que usamos',
           paragraphs: [
-            'Cookies são pequenos arquivos de texto armazenados no seu navegador quando você visita um site. Eles ajudam o site a lembrar preferências e a entender como é utilizado.',
+            'O Kazuio usa o armazenamento local do seu navegador (localStorage) para manter sua sessão ativa depois que você faz login — isto é, para que você não precise digitar sua senha a cada mensagem. Essa tecnologia cumpre a mesma função de um cookie de autenticação, mas tecnicamente não é um cookie tradicional.',
           ],
         },
         {
-          heading: '2. Cookies que utilizamos',
+          heading: '2. O que NÃO usamos',
           paragraphs: [
-            'Utilizamos cookies essenciais, necessários para o funcionamento básico do site, e cookies analíticos, que nos ajudam a entender de forma agregada e anônima como as pessoas navegam pela Home do Kazuio, para melhorar a experiência.',
-            'Não utilizamos cookies de publicidade ou de rastreamento entre sites de terceiros.',
+            'Não usamos cookies ou tecnologias similares de rastreamento publicitário, não vendemos dados de navegação a terceiros, e não exibimos anúncios de terceiros dentro do serviço.',
           ],
         },
         {
-          heading: '3. Como gerenciar cookies',
+          heading: '3. Dados de localização aproximada',
           paragraphs: [
-            'Você pode configurar seu navegador para bloquear ou apagar cookies a qualquer momento. Bloquear cookies essenciais pode afetar o funcionamento de partes do site.',
+            'No momento do login, consultamos um serviço externo para estimar seu estado e cidade a partir do seu endereço IP (nunca sua localização GPS exata). Isso é usado apenas para estatísticas agregadas de uso, não para rastreamento individual entre sites.',
           ],
         },
         {
-          heading: '4. Alterações desta política',
+          heading: '4. Como gerenciar',
           paragraphs: [
-            'Esta Política de Cookies pode ser atualizada periodicamente. A data da última atualização estará sempre indicada no topo desta página.',
+            'Você pode apagar os dados de armazenamento local do Kazuio a qualquer momento pelas configurações de privacidade do seu navegador. Isso vai encerrar sua sessão, exigindo que você faça login novamente.',
           ],
         },
         {
-          heading: '5. Contato',
+          heading: 'Aviso',
           paragraphs: [
-            'Dúvidas sobre esta política podem ser enviadas para contato@kazuio.com.',
+            'Este documento foi elaborado com base em pesquisa regulatória de boa fé e não substitui a revisão de um advogado brasileiro especializado antes de um lançamento comercial.',
           ],
         },
       ]}
