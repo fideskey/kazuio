@@ -13,7 +13,7 @@ export function Hero() {
           <div className="pointer-events-none absolute inset-y-0 right-[-9%] w-[76%] lg:w-[67%]">
             <div className="absolute inset-0 opacity-95 [mask-image:linear-gradient(90deg,transparent_0%,black_18%,black_78%,transparent_100%)]">
               <Image
-                src="/images/hero-path.png"
+                src="/images/hero-path.jpg"
                 alt=""
                 fill
                 priority

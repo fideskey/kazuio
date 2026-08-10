@@ -13,7 +13,7 @@ export function Library() {
     <section id="biblioteca" className="mx-auto max-w-[1220px] px-5 py-10 md:px-8 md:py-16">
       <div className="relative overflow-hidden rounded-[28px] bg-deep text-cream">
         <div className="absolute inset-0 opacity-25">
-          <Image src="/images/library.png" alt="" fill className="object-cover object-left" />
+          <Image src="/images/library.jpg" alt="" fill className="object-cover object-left" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/95 to-deep/80" />
 
