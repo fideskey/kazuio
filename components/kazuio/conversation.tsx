@@ -117,46 +117,56 @@ export function Conversation() {
           </div>
         </div>
 
-        {/* 3 — Notebook na mesma linha do celular, mostrando a versão desktop realista. */}
+        {/* 3 — Notebook na mesma linha do celular, com moldura de laptop real. */}
         <div className="w-full lg:mt-10">
-          <div className="overflow-hidden rounded-[18px] border border-line/80 bg-paper shadow-[0_28px_70px_rgba(20,40,63,0.12)]">
-            <div className="grid min-h-[425px] grid-cols-[0.30fr_0.70fr]">
-              <div className="border-r border-line/70 bg-cream px-3.5 py-4 sm:px-4">
-                <Logo markClassName="h-6" wordClassName="text-[0.62rem] tracking-[0.22em]" />
-                <div className="mt-5 flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-[9px] font-medium text-navy">
-                  <Plus className="h-3 w-3" />
-                  Nova conversa
+          <div className="relative rounded-t-2xl bg-[#1c1c1e] p-3 shadow-[0_28px_70px_rgba(20,40,63,0.18)]">
+            <span className="absolute left-1/2 top-1.5 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#3a3a3c]" />
+            <div className="overflow-hidden rounded-[10px] bg-paper">
+              <div className="grid min-h-[400px] grid-cols-[0.30fr_0.70fr]">
+                <div className="border-r border-line/70 bg-cream px-3.5 py-4 sm:px-4">
+                  <Logo markClassName="h-6" wordClassName="text-[0.62rem] tracking-[0.22em]" />
+                  <div className="mt-5 flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-[9px] font-medium text-navy">
+                    <Plus className="h-3 w-3" />
+                    Nova conversa
+                  </div>
+                  <p className="mt-5 text-[8px] font-semibold uppercase tracking-[0.14em] text-kmuted">Conversas</p>
+                  <div className="mt-2 flex items-center gap-1.5 rounded-lg bg-white px-2 py-2 text-[9px] text-navy shadow-sm">
+                    <MessageSquare className="h-3 w-3 text-gold" />
+                    Decisão no trabalho
+                  </div>
                 </div>
-                <p className="mt-5 text-[8px] font-semibold uppercase tracking-[0.14em] text-kmuted">Conversas</p>
-                <div className="mt-2 flex items-center gap-1.5 rounded-lg bg-white px-2 py-2 text-[9px] text-navy shadow-sm">
-                  <MessageSquare className="h-3 w-3 text-gold" />
-                  Decisão no trabalho
-                </div>
-              </div>
 
-              <div className="flex min-w-0 flex-col">
-                <div className="border-b border-line/70 px-4 py-3 text-[9px] font-medium text-ink/60 sm:px-5">Briguei com minha mãe</div>
-                <div className="flex-1 space-y-3 overflow-hidden px-4 py-4 sm:px-5">
-                  <ChatMessages messages={LAPTOP_CHAT} laptop />
-                  <div className="flex justify-start">
-                    <div className="max-w-[78%]">
-                      <QuoteBubble text={LAPTOP_QUOTE.text} source={LAPTOP_QUOTE.source} />
+                <div className="flex min-w-0 flex-col">
+                  <div className="border-b border-line/70 px-4 py-3 text-[9px] font-medium text-ink/60 sm:px-5">Briguei com minha mãe</div>
+                  <div className="flex-1 space-y-3 overflow-hidden px-4 py-4 sm:px-5">
+                    <ChatMessages messages={LAPTOP_CHAT} laptop />
+                    <div className="flex justify-start">
+                      <div className="max-w-[78%]">
+                        <QuoteBubble text={LAPTOP_QUOTE.text} source={LAPTOP_QUOTE.source} />
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-2 border-t border-line/70 px-4 py-3 sm:px-5">
-                  <div className="flex flex-1 items-center gap-2 rounded-full border border-line bg-cream px-3.5 py-2">
-                    <span className="flex-1 text-[9px] text-kmuted sm:text-[10px]">Escreva sua mensagem...</span>
+                  <div className="flex items-center gap-2 border-t border-line/70 px-4 py-3 sm:px-5">
+                    <div className="flex flex-1 items-center gap-2 rounded-full border border-line bg-cream px-3.5 py-2">
+                      <span className="flex-1 text-[9px] text-kmuted sm:text-[10px]">Escreva sua mensagem...</span>
+                    </div>
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-deep text-cream">
+                      <Send className="h-3 w-3" />
+                    </span>
                   </div>
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-deep text-cream">
-                    <Send className="h-3 w-3" />
-                  </span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="mx-auto h-3 w-[92%] rounded-b-xl bg-gradient-to-b from-line/70 to-line/30" />
-          <p className="mt-4 text-center text-[10px] uppercase tracking-[0.16em] text-kmuted">Uma conversa que continua onde você estiver.</p>
+          {/* Dobradiça + base do teclado, imitando a perspectiva de um laptop aberto */}
+          <div className="h-[7px] bg-gradient-to-b from-[#1c1c1e] to-[#3a3a3c]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }} />
+          <div
+            className="relative mx-auto h-4 rounded-b-2xl bg-gradient-to-b from-[#e4e4e6] to-[#b7b7ba] shadow-[0_18px_28px_-14px_rgba(20,40,63,0.4)]"
+            style={{ width: '104%', marginLeft: '-2%', clipPath: 'polygon(1.5% 0, 98.5% 0, 100% 100%, 0% 100%)' }}
+          >
+            <span className="absolute left-1/2 top-0 h-1.5 w-16 -translate-x-1/2 rounded-b-md bg-[#1c1c1e]/90" />
+          </div>
+          <p className="mt-5 text-center text-[10px] uppercase tracking-[0.16em] text-kmuted">Uma conversa que continua onde você estiver.</p>
         </div>
       </div>
     </section>
