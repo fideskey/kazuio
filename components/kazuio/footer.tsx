@@ -1,44 +1,97 @@
-import { Logo } from './logo'
-
 const APP_URL = 'https://app.kazuio.com/'
+
 const NAVEGUE = [
   ['Como funciona', '#como-funciona'],
   ['Pilares', '#pilares'],
   ['Biblioteca', '#biblioteca'],
   ['Sobre', '#sobre'],
 ]
-const SUPORTE = [
-  ['Perguntas frequentes', '#faq'],
-  ['Privacidade', '#faq'],
-  ['Termos de uso', '#faq'],
-  ['Contato', 'mailto:contato@kazuio.com'],
+
+const LEGAL = [
+  ['Termos e Condições', '/termos-e-condicoes'],
+  ['Política de Privacidade', '/politica-de-privacidade'],
+  ['Política de Cookies', '/politica-de-cookies'],
+]
+
+function FacebookIcon({ className = 'h-4 w-4' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path d="M15 8.5h2.5V5h-2.5c-2.2 0-4 1.8-4 4v2H9v3.5h2v6.5h3.5V14.5H17l.6-3.5h-3.1V9c0-.3.3-.5.5-.5Z" fill="currentColor" />
+    </svg>
+  )
+}
+
+function InstagramIcon({ className = 'h-4 w-4' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="17" cy="7" r="1.1" fill="currentColor" />
+    </svg>
+  )
+}
+
+function TikTokIcon({ className = 'h-4 w-4' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path d="M14.2 4.2c.5 1.8 1.5 3 3.4 3.2v2.5c-1.3-.1-2.5-.5-3.4-1.2v5.1c0 3.1-2 5.1-4.9 5.1-2.6 0-4.5-1.8-4.5-4.3 0-2.7 2.2-4.7 5-4.7.3 0 .6 0 .9.1v2.6a3.7 3.7 0 0 0-.9-.1c-1.3 0-2.3.8-2.3 2 0 1 .8 1.8 1.9 1.8 1.3 0 2.3-.8 2.3-2.5V4.2h2.5Z" fill="currentColor" />
+    </svg>
+  )
+}
+
+const SOCIALS = [
+  { label: 'Facebook', href: '', icon: FacebookIcon },
+  { label: 'Instagram', href: '', icon: InstagramIcon },
+  { label: 'TikTok', href: '', icon: TikTokIcon },
 ]
 
 export function Footer() {
   return (
     <footer className="bg-deep text-cream">
       <div className="mx-auto max-w-[1220px] px-5 pb-8 pt-10 md:px-8 md:pt-12">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_0.8fr]">
+        <div className="grid gap-10 md:grid-cols-[1.25fr_1fr_1.25fr_0.9fr]">
           <div>
-            <a href="#top" aria-label="Kazuio — início"><Logo onDark markClassName="h-9" wordClassName="text-[1rem]" /></a>
+            <a href="#top" className="font-serif text-2xl tracking-[0.08em] text-cream" aria-label="Kazuio — início">Kazuio</a>
             <p className="mt-4 max-w-xs text-sm leading-6 text-cream/65">Perguntas que guiam. Reflexões que conectam.</p>
             <a href={APP_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block text-xs font-semibold text-gold2 underline decoration-gold2/50 underline-offset-4">Começar a conversar →</a>
           </div>
 
           <div>
             <h3 className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/80">Navegue</h3>
-            <ul className="mt-4 space-y-2.5">{NAVEGUE.map(([label, href]) => <li key={label}><a href={href} className="text-xs text-cream/60 transition-colors hover:text-cream">{label}</a></li>)}</ul>
+            <ul className="mt-4 space-y-2.5">
+              {NAVEGUE.map(([label, href]) => (
+                <li key={label}><a href={href} className="text-xs text-cream/60 transition-colors hover:text-cream">{label}</a></li>
+              ))}
+            </ul>
           </div>
 
           <div>
-            <h3 className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/80">Suporte</h3>
-            <ul className="mt-4 space-y-2.5">{SUPORTE.map(([label, href]) => <li key={label}><a href={href} className="text-xs text-cream/60 transition-colors hover:text-cream">{label}</a></li>)}</ul>
+            <h3 className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/80">Informações</h3>
+            <ul className="mt-4 space-y-2.5">
+              {LEGAL.map(([label, href]) => (
+                <li key={label}><a href={href} className="text-xs text-cream/60 transition-colors hover:text-cream">{label}</a></li>
+              ))}
+              <li><a href="#faq" className="text-xs text-cream/60 transition-colors hover:text-cream">Perguntas frequentes</a></li>
+              <li><a href="mailto:contato@kazuio.com" className="text-xs text-cream/60 transition-colors hover:text-cream">Contato</a></li>
+            </ul>
           </div>
 
           <div>
-            <h3 className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/80">Kazuio</h3>
-            <p className="mt-4 text-xs leading-5 text-cream/60">Psicologia · Fé · Filosofia</p>
-            <p className="mt-3 text-xs leading-5 text-cream/60">Uma IA transparente, ética e ao seu lado.</p>
+            <h3 className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cream/80">Siga-nos</h3>
+            <div className="mt-4 flex items-center gap-2.5">
+              {SOCIALS.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href || undefined}
+                  aria-label={label}
+                  title={href ? label : `${label} — link ainda não configurado`}
+                  className={`flex h-9 w-9 items-center justify-center rounded-full border border-cream/20 text-cream/70 transition-colors ${href ? 'hover:border-gold2/60 hover:text-gold2' : 'cursor-default opacity-70'}`}
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+            <p className="mt-5 max-w-[180px] text-xs leading-5 text-cream/50">Psicologia · Fé · Filosofia</p>
           </div>
         </div>
 
