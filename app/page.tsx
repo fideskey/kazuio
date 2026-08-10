@@ -1,6 +1,6 @@
 import { Header } from '@/components/kazuio/header'
 import { Hero } from '@/components/kazuio/hero'
-import { Features } from '@/components/kazuio/features'
+import { Pillars } from '@/components/kazuio/pillars'
 import { Conversation } from '@/components/kazuio/conversation'
 import { Library } from '@/components/kazuio/library'
 import { Reasons } from '@/components/kazuio/reasons'
@@ -14,7 +14,7 @@ export default function Page() {
       <Header />
       <main>
         <Hero />
-        <Features />
+        <Pillars />
         <Conversation />
         <Library />
         <Reasons />
