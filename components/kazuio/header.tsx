@@ -5,14 +5,13 @@ import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { Logo } from './logo'
 
 const NAV = [
-  { label: 'Como funciona', href: '#como-funciona' },
-  { label: 'Pilares', href: '#pilares' },
-  { label: 'Biblioteca', href: '#biblioteca' },
-  { label: 'Sobre', href: '#sobre' },
-  { label: 'Perguntas frequentes', href: '#faq' },
+  { label: 'Como funciona', href: '/#como-funciona' },
+  { label: 'Pilares', href: '/#pilares' },
+  { label: 'Biblioteca', href: '/#biblioteca' },
+  { label: 'Sobre', href: '/#sobre' },
+  { label: 'Perguntas frequentes', href: '/#faq' },
 ]
 
-const APP_URL = 'https://app.kazuio.com/'
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -20,7 +19,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/40 bg-cream/88 backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1220px] items-center justify-between px-5 py-4 md:px-8 md:py-5">
-        <a href="#top" aria-label="Kazuio — início" className="shrink-0">
+        <a href="/" aria-label="Kazuio — início" className="shrink-0">
           <Logo markClassName="h-9 md:h-10" wordClassName="text-[1.02rem] md:text-[1.1rem]" />
         </a>
 
@@ -37,15 +36,14 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={APP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden items-center gap-1.5 rounded-full bg-deep px-5 py-2.5 text-[12px] font-medium text-cream shadow-sm transition-transform hover:-translate-y-0.5 sm:inline-flex"
+          <button
+            type="button"
+            disabled
+            className="hidden items-center gap-1.5 rounded-full bg-deep px-5 py-2.5 text-[12px] font-medium text-cream shadow-sm transition-transform sm:inline-flex opacity-60 cursor-not-allowed"
           >
             Começar a conversar
             <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
+          </button>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -71,15 +69,14 @@ export function Header() {
                 {item.label}
               </a>
             ))}
-            <a
-              href={APP_URL}
-              target="_blank"
-              rel="noreferrer"
+            <button
+              type="button"
+              disabled
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-deep px-6 py-3.5 text-center text-sm font-medium text-cream"
+              className="mt-2 rounded-full bg-deep px-6 py-3.5 text-center text-sm font-medium text-cream opacity-60 cursor-not-allowed"
             >
               Começar a conversar
-            </a>
+            </button>
           </nav>
         </div>
       )}

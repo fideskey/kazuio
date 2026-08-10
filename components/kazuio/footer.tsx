@@ -1,10 +1,9 @@
-const APP_URL = 'https://app.kazuio.com/'
 
 const NAVEGUE = [
-  ['Como funciona', '#como-funciona'],
-  ['Pilares', '#pilares'],
-  ['Biblioteca', '#biblioteca'],
-  ['Sobre', '#sobre'],
+  ['Como funciona', '/#como-funciona'],
+  ['Pilares', '/#pilares'],
+  ['Biblioteca', '/#biblioteca'],
+  ['Sobre', '/#sobre'],
 ]
 
 const LEGAL = [
@@ -51,9 +50,9 @@ export function Footer() {
       <div className="mx-auto max-w-[1220px] px-5 pb-8 pt-10 md:px-8 md:pt-12">
         <div className="grid gap-10 md:grid-cols-[1.25fr_1fr_1.25fr_0.9fr]">
           <div>
-            <a href="#top" className="font-serif text-2xl tracking-[0.08em] text-cream" aria-label="Kazuio — início">Kazuio</a>
+            <a href="/" className="font-serif text-2xl tracking-[0.08em] text-cream" aria-label="Kazuio — início">Kazuio</a>
             <p className="mt-4 max-w-xs text-sm leading-6 text-cream/65">Perguntas que guiam. Reflexões que conectam.</p>
-            <a href={APP_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block text-xs font-semibold text-gold2 underline decoration-gold2/50 underline-offset-4">Começar a conversar →</a>
+            <span className="mt-5 inline-block text-xs font-semibold text-gold2/60 cursor-not-allowed">Começar a conversar → (em breve)</span>
           </div>
 
           <div>
@@ -71,7 +70,7 @@ export function Footer() {
               {LEGAL.map(([label, href]) => (
                 <li key={label}><a href={href} className="text-xs text-cream/60 transition-colors hover:text-cream">{label}</a></li>
               ))}
-              <li><a href="#faq" className="text-xs text-cream/60 transition-colors hover:text-cream">Perguntas frequentes</a></li>
+              <li><a href="/#faq" className="text-xs text-cream/60 transition-colors hover:text-cream">Perguntas frequentes</a></li>
               <li><a href="mailto:contato@kazuio.com" className="text-xs text-cream/60 transition-colors hover:text-cream">Contato</a></li>
             </ul>
           </div>

@@ -2,7 +2,6 @@ import Image from 'next/image'
 import { ArrowRight, ChevronDown, ShieldCheck } from 'lucide-react'
 import { JourneyIcon } from './icons'
 
-const APP_URL = 'https://app.kazuio.com/'
 
 export function Hero() {
   return (
@@ -43,15 +42,14 @@ export function Hero() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a
-                  href={APP_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-deep px-6 py-3.5 text-sm font-medium text-cream shadow-[0_12px_30px_rgba(32,57,47,0.12)] transition-transform hover:-translate-y-0.5"
+                <button
+                  type="button"
+                  disabled
+                  className="inline-flex items-center gap-2 rounded-full bg-deep px-6 py-3.5 text-sm font-medium text-cream shadow-[0_12px_30px_rgba(32,57,47,0.12)] transition-transform opacity-60 cursor-not-allowed"
                 >
                   Começar a conversar
                   <ArrowRight className="h-4 w-4" />
-                </a>
+                </button>
                 <a
                   href="#como-funciona"
                   className="inline-flex items-center gap-2 rounded-full px-4 py-3.5 text-sm font-medium text-navy transition-colors hover:text-gold"
