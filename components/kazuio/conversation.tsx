@@ -48,8 +48,8 @@ function QuoteBubble({ text, source }: { text: string; source: string }) {
 export function Conversation() {
   return (
     <section id="como-funciona" className="mx-auto max-w-[1220px] px-5 py-12 md:px-8 md:py-20">
-      <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-        <div>
+      <div className="flex flex-col">
+        <div className="max-w-[560px]">
           <p className="eyebrow">Como acontece</p>
           <h2 className="mt-3 max-w-[420px] font-serif text-3xl leading-[1.08] text-navy md:text-[2.5rem]">
             Veja como uma conversa pode mudar a forma de olhar para uma situação.
@@ -59,7 +59,7 @@ export function Conversation() {
             <strong className="font-semibold text-navy">pensar com perguntas</strong> que abrem novas perspectivas.
           </p>
 
-          <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line/80 pt-8 sm:grid-cols-4 lg:grid-cols-2">
+          <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line/80 pt-8 sm:grid-cols-4">
             {FEATURES.map(({ icon: Icon, title, body }) => (
               <div key={title}>
                 <Icon className="h-6 w-6 text-gold" />
@@ -70,7 +70,7 @@ export function Conversation() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-end lg:justify-center">
+        <div className="mt-14 flex flex-col items-center gap-10 lg:flex-row lg:items-end lg:justify-center">
           <div className="relative w-[250px] shrink-0 rounded-[2.4rem] bg-[#152331] p-2 shadow-[0_28px_70px_rgba(20,40,63,0.18)] ring-1 ring-black/10">
             <div className="absolute -inset-3 -z-10 rounded-[2.9rem] bg-gold/5 blur-2xl" />
             <div className="relative overflow-hidden rounded-[2rem] bg-paper">
