@@ -3,38 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kazuio — em breve</title>
-<meta name="description" content="Kazuio: perguntas que guiam, reflexões que conectam. Em breve.">
-<style>
-  *{ box-sizing: border-box; }
-  html, body{
-    margin:0;
-    height:100%;
-    width:100%;
-    overflow:hidden;
-    background: #FEFEFE; /* fundo da versão paisagem (desktop) */
-  }
-  body{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .landing{
-    max-width: 100vw;
-    max-height: 100vh;
-    width:auto;
-    height:auto;
-    object-fit: contain;
-  }
-  @media (max-width: 700px){
-    html, body{ background: #F7EAE0; } /* fundo da versão retrato (mobile) */
-  }
-</style>
+<title>Kazuio — Perguntas que guiam. Reflexões que conectam.</title>
+<meta name="description" content="Kazuio é um espaço de diálogo guiado por perguntas, baseado em psicologia, filosofia e espiritualidade, para você pensar com mais clareza sobre o que importa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <picture>
-    <source media="(max-width: 700px)" srcset="images/kazuio-landing-mobile.png">
-    <img class="landing" src="images/kazuio-landing.png" alt="Kazuio — perguntas que guiam, reflexões que conectam. Em breve.">
-  </picture>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Kazuio">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="27" cy="8" r="2.6" fill="#C68A3E"/>
+        <path d="M9 4 V30 C9 34 12 36 16 34 C20 32 16 27 20 24 C25 20 22 15 28 13 C33 11 34 16 30 18" stroke="#152341" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      </svg>
+      KAZUIO
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#principios">Princípios</a>
+      <a href="#planos">Planos</a>
+    </nav>
+    <div class="header-cta">
+      <a href="https://app.kazuio.com" class="btn btn-ghost btn-sm">Entrar</a>
+      <a href="https://app.kazuio.com" class="btn btn-primary btn-sm">Começar agora</a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobile-panel">
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#principios">Princípios</a>
+    <a href="#planos">Planos</a>
+    <a href="https://app.kazuio.com">Entrar</a>
+    <a href="https://app.kazuio.com" class="btn btn-primary">Começar agora</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <svg class="hero-river" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M660 10 C560 40 610 110 540 150 C450 200 500 260 420 300 C330 345 360 400 280 430 C210 455 220 490 160 505"
+          stroke="#4F7A68" stroke-opacity=".35" stroke-width="2" fill="none"/>
+        <path d="M700 60 C600 90 650 150 580 195 C480 255 530 310 450 355"
+          stroke="#C68A3E" stroke-opacity=".4" stroke-width="2" fill="none"/>
+      </svg>
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Diálogo guiado · psicologia, filosofia e espiritualidade</p>
+          <h1 class="hero-title">Perguntas que guiam.<br><em>Reflexões</em> que conectam.</h1>
+          <p class="hero-sub">Kazuio não entrega respostas prontas. É um espaço de conversa que devolve perguntas bem colocadas — para você enxergar com mais clareza o que já sabe, mas ainda não organizou.</p>
+          <div class="hero-actions">
+            <a href="https://app.kazuio.com" class="btn btn-primary">Começar a conversar</a>
+            <a href="#como-funciona" class="link-arrow">
+              Ver como funciona
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <p class="hero-note">"Nem toda pergunta precisa de resposta. Algumas precisam de espaço."</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="river-divider" aria-hidden="true">
+    <svg viewBox="0 0 1056 90" preserveAspectRatio="none">
+      <path d="M0 20 C150 20 150 70 300 70 C450 70 450 15 600 15 C750 15 750 60 900 60 C980 60 1000 40 1056 40"
+        stroke="#C68A3E"/>
+    </svg>
+  </div>
+
+  <section id="principios">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Princípios</p>
+        <h2 class="section-title">Cinco ideias guiam cada conversa</h2>
+        <p class="section-lede">Não são recursos de produto — são compromissos que moldam como Kazuio conversa com você, do primeiro "oi" em diante.</p>
+      </div>
+      <div class="values-grid reveal">
+        <div class="value-card">
+          <svg class="value-icon" viewBox="0 0 44 44" fill="none"><path d="M8 12h28a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H20l-8 7v-7h-4a3 3 0 0 1-3-3V15a3 3 0 0 1 3-3Z" stroke="currentColor" stroke-width="1.6"/></svg>
+          <h3>Diálogo</h3>
+          <p>Conversas que começam com perguntas, não com sermões.</p>
+        </div>
+        <div class="value-card">
+          <svg class="value-icon" viewBox="0 0 44 44" fill="none"><path d="M22 14c-3-3-9-4-14-3v22c5-1 11 0 14 3 3-3 9-4 14-3V11c-5-1-11 0-14 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M22 14v22" stroke="currentColor" stroke-width="1.6"/></svg>
+          <h3>Conhecimento</h3>
+          <p>Baseado em fontes confiáveis e verificadas, não em opinião solta.</p>
+        </div>
+        <div class="value-card">
+          <svg class="value-icon" viewBox="0 0 44 44" fill="none"><path d="M6 26c4-8 10-12 16-12s12 4 16 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M10 26v6M16 22v10M22 20v12M28 22v10M34 26v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <h3>Conexão</h3>
+          <p>Une psicologia, filosofia e espiritualidade com equilíbrio.</p>
+        </div>
+        <div class="value-card">
+          <svg class="value-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="14" stroke="currentColor" stroke-width="1.6"/><path d="M27 17l-6 6-2 6 6-2 6-6-4-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <h3>Propósito</h3>
+          <p>Reflexões que iluminam caminhos e escolhas — a decisão é sua.</p>
+        </div>
+        <div class="value-card">
+          <svg class="value-icon" viewBox="0 0 44 44" fill="none"><path d="M8 26a14 14 0 0 1 28 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 30h32" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M22 6v4M12 10l2.5 2.5M32 10l-2.5 2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <h3>Presença</h3>
+          <p>Uma IA transparente, ética, e ao seu lado sempre que precisar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Como funciona</p>
+        <h2 class="section-title">Três passos, na sua ordem, no seu ritmo</h2>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <span class="step-num">Primeiro</span>
+          <h3>Você traz o que está vivo agora</h3>
+          <p>Não precisa formular a pergunta perfeita. Um incômodo, uma dúvida, uma decisão parada — o ponto de partida é seu.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">Depois</span>
+          <h3>Kazuio devolve com perguntas, não vereditos</h3>
+          <p>Cada resposta se apoia em psicologia, filosofia e espiritualidade — fontes reais, nunca opinião inventada.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">No final</span>
+          <h3>Você sai com mais clareza, não com uma prescrição</h3>
+          <p>Kazuio ilumina o caminho. Quem caminha, e decide, continua sendo você.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="river-divider" aria-hidden="true">
+    <svg viewBox="0 0 1056 90" preserveAspectRatio="none">
+      <path d="M0 50 C150 50 150 10 300 10 C450 10 450 65 600 65 C750 65 750 25 900 25 C980 25 1000 45 1056 45"
+        stroke="#4F7A68"/>
+    </svg>
+  </div>
+
+  <section class="wrap">
+    <div class="sample reveal">
+      <div class="sample-copy">
+        <p class="eyebrow">Um exemplo</p>
+        <h2>Uma pergunta bem colocada vale mais que uma resposta pronta</h2>
+        <p>É assim que toda conversa com Kazuio se movimenta: menos veredito, mais espaço para você pensar.</p>
+      </div>
+      <div class="chat-mock">
+        <div class="bubble user">Sinto que estou tomando essa decisão só por medo de decepcionar as pessoas.</div>
+        <div class="bubble kazuio">Quando você imagina ter tomado essa decisão só por si, sem pensar em ninguém mais — o que muda?</div>
+        <div class="bubble user">Acho que eu escolheria diferente.</div>
+        <div class="bubble kazuio">E o que isso te diz sobre de quem é essa decisão, no fundo?</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="river-divider" aria-hidden="true">
+    <svg viewBox="0 0 1056 90" preserveAspectRatio="none">
+      <path d="M0 20 C150 20 150 70 300 70 C450 70 450 15 600 15 C750 15 750 60 900 60 C980 60 1000 40 1056 40"
+        stroke="#C68A3E"/>
+    </svg>
+  </div>
+
+  <section id="planos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Planos</p>
+        <h2 class="section-title">Escolha o ritmo da sua reflexão</h2>
+        <p class="section-lede">Sem anúncios, sem venda de dados. Você escolhe quanto espaço quer para conversar por mês.</p>
+      </div>
+
+      <div class="plans-grid reveal">
+        <div class="plan-card">
+          <p class="plan-name">Experiência</p>
+          <div class="plan-price"><span class="amount">R$19,99</span><span class="period">/ mês</span></div>
+          <ul class="plan-list">
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>80 conversas por mês</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Para conhecer o Kazuio no seu ritmo</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Histórico de conversas</li>
+          </ul>
+          <a href="https://app.kazuio.com" class="btn btn-ghost">Começar</a>
+        </div>
+
+        <div class="plan-card featured">
+          <span class="plan-badge">Mais escolhido</span>
+          <p class="plan-name">Essencial</p>
+          <div class="plan-price"><span class="amount">R$39,99</span><span class="period">/ mês</span></div>
+          <ul class="plan-list">
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>320 conversas por mês</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Para um espaço de reflexão contínuo</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Histórico de conversas</li>
+          </ul>
+          <a href="https://app.kazuio.com" class="btn btn-primary">Começar</a>
+        </div>
+
+        <div class="plan-card">
+          <p class="plan-name">Completo</p>
+          <div class="plan-price"><span class="amount">R$79,99</span><span class="period">/ mês</span></div>
+          <ul class="plan-list">
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>640 conversas por mês</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Para quem faz do diálogo um hábito diário</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Histórico de conversas</li>
+          </ul>
+          <a href="https://app.kazuio.com" class="btn btn-ghost">Começar</a>
+        </div>
+      </div>
+      <p class="plans-note">Preços em reais, cobrança mensal recorrente, cancelamento a qualquer momento.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="final-cta reveal">
+        <h2>Volte para dentro de você.</h2>
+        <p>Kazuio está esperando, sem pressa, quando você quiser começar a pensar com mais clareza.</p>
+        <a href="https://app.kazuio.com" class="btn btn-primary">Começar a conversar</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <a href="#" class="logo" aria-label="Kazuio">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+        <circle cx="27" cy="8" r="2.6" fill="#C68A3E"/>
+        <path d="M9 4 V30 C9 34 12 36 16 34 C20 32 16 27 20 24 C25 20 22 15 28 13 C33 11 34 16 30 18" stroke="#152341" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      </svg>
+      KAZUIO
+    </a>
+    <nav class="footer-links" aria-label="Rodapé">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#principios">Princípios</a>
+      <a href="#planos">Planos</a>
+      <a href="https://app.kazuio.com">Entrar</a>
+    </nav>
+    <p class="copyright">© 2026 Kazuio</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
