@@ -3,7 +3,6 @@ import { Hero } from '@/components/kazuio/hero'
 import { Pillars } from '@/components/kazuio/pillars'
 import { Conversation } from '@/components/kazuio/conversation'
 import { Library } from '@/components/kazuio/library'
-import { Reasons } from '@/components/kazuio/reasons'
 import { Identity } from '@/components/kazuio/identity'
 import { Footer } from '@/components/kazuio/footer'
 import { FAQ } from '@/components/kazuio/faq'
@@ -17,7 +16,6 @@ export default function Page() {
         <Pillars />
         <Conversation />
         <Library />
-        <Reasons />
         <Identity />
         <FAQ />
       </main>
