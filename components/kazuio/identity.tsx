@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArrowRight, SearchX, Stethoscope, Compass, ShieldCheck } from 'lucide-react'
+import { SearchX, Stethoscope, Compass } from 'lucide-react'
 
 
 const NOT = [
@@ -32,33 +32,20 @@ export function Identity() {
           </div>
         </div>
 
-        <div id="começar" className="relative overflow-hidden rounded-[28px] bg-deep px-8 py-10 text-cream md:px-11 md:py-12">
-          <div className="pointer-events-none absolute right-[-4%] top-0 h-full w-[62%] opacity-[0.22]" aria-hidden="true">
-            <Image
-              src="/brand/kazuio-mark.png"
-              alt=""
-              fill
-              sizes="480px"
-              className="object-contain object-right"
-            />
-          </div>
-          <div className="relative z-10 max-w-[560px]">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold2">Talvez seja hora de conversar</p>
-            <h2 className="mt-4 max-w-[510px] font-serif text-3xl leading-[1.08] md:text-[2.65rem]">
-              Talvez você não precise de uma resposta agora. Talvez só precise{' '}
-              <span className="text-gold2">começar a conversar.</span>
-            </h2>
-            <p className="mt-5 max-w-[470px] text-sm leading-6 text-cream/70">Entre no Kazuio e veja como é conversar com uma inteligência artificial que não tenta resolver sua vida por você.</p>
-            <a href="/precos" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-deep transition-transform hover:scale-[1.02]">
-              Começar uma conversa com o Kazuio
-              <ArrowRight className="h-4 w-4" />
-            </a>
-            <p className="mt-4 flex items-start gap-2 text-[11px] leading-5 text-cream/60">
-              <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cream/60" />
-              Sua conversa é privada, segura e nunca compartilhada.
-            </p>
-          </div>
-        </div>
+        <a
+          href="/precos"
+          id="começar"
+          className="group relative block overflow-hidden rounded-[28px]"
+          aria-label="Começar uma conversa com o Kazuio — ver planos"
+        >
+          <Image
+            src="/images/cta-conversar.png"
+            alt="Talvez você não precise de uma resposta agora. Talvez só precise começar a conversar. Entre no Kazuio e veja como é conversar com uma inteligência artificial que não tenta resolver sua vida por você. Sua conversa é privada, segura e nunca compartilhada."
+            width={1496}
+            height={1051}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.015]"
+          />
+        </a>
       </div>
     </section>
   )
