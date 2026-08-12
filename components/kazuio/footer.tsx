@@ -12,14 +12,6 @@ const LEGAL = [
   ['Política de Cookies', '/politica-de-cookies'],
 ]
 
-function FacebookIcon({ className = 'h-4 w-4' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path d="M15 8.5h2.5V5h-2.5c-2.2 0-4 1.8-4 4v2H9v3.5h2v6.5h3.5V14.5H17l.6-3.5h-3.1V9c0-.3.3-.5.5-.5Z" fill="currentColor" />
-    </svg>
-  )
-}
-
 function InstagramIcon({ className = 'h-4 w-4' }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
@@ -39,7 +31,6 @@ function TikTokIcon({ className = 'h-4 w-4' }: { className?: string }) {
 }
 
 const SOCIALS = [
-  { label: 'Facebook', href: '', icon: FacebookIcon },
   { label: 'Instagram', href: '', icon: InstagramIcon },
   { label: 'TikTok', href: '', icon: TikTokIcon },
 ]
@@ -84,7 +75,7 @@ export function Footer() {
                   href={href || undefined}
                   aria-label={label}
                   title={href ? label : `${label} — link ainda não configurado`}
-                  className={`flex h-9 w-9 items-center justify-center rounded-full border border-cream/20 text-cream/70 transition-colors ${href ? 'hover:border-gold2/60 hover:text-gold2' : 'cursor-default opacity-70'}`}
+                  className={`flex h-9 w-9 items-center justify-center rounded-full border border-gold2/30 text-gold2 transition-colors ${href ? 'hover:border-gold2 hover:bg-gold2/10' : 'cursor-default opacity-80'}`}
                 >
                   <Icon className="h-4 w-4" />
                 </a>

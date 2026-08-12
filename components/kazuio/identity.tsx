@@ -45,11 +45,11 @@ export function Identity() {
               <span className="text-gold2">começar a conversar.</span>
             </h2>
             <p className="mt-5 max-w-[470px] text-sm leading-6 text-cream/70">Entre no Kazuio e veja como é conversar com uma inteligência artificial que não tenta resolver sua vida por você.</p>
-            <button type="button" disabled className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-deep transition-transform opacity-60 cursor-not-allowed">
+            <a href="/precos" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-deep transition-transform hover:scale-[1.02]">
               Começar uma conversa com o Kazuio
               <ArrowRight className="h-4 w-4" />
-            </button>
-            <p className="mt-4 text-[11px] text-cream/50">Em breve disponível.</p>
+            </a>
+            <p className="mt-4 text-[11px] text-cream/50">Escolha seu plano e comece agora.</p>
           </div>
         </div>
       </div>

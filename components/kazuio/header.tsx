@@ -5,11 +5,11 @@ import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { Logo } from './logo'
 
 const NAV = [
-  { label: 'Como funciona', href: '/#como-funciona' },
-  { label: 'Pilares', href: '/#pilares' },
-  { label: 'Biblioteca', href: '/#biblioteca' },
-  { label: 'Sobre', href: '/#sobre' },
-  { label: 'Perguntas frequentes', href: '/#faq' },
+  { label: 'Quem Somos', href: '/quem-somos' },
+  { label: 'Pilares', href: '/pilares' },
+  { label: 'Como Funciona', href: '/como-funciona' },
+  { label: 'Preços', href: '/precos' },
+  { label: 'Login', href: '/login' },
 ]
 
 
@@ -36,14 +36,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button
-            type="button"
-            disabled
-            className="hidden items-center gap-1.5 rounded-full bg-deep px-5 py-2.5 text-[12px] font-medium text-cream shadow-sm transition-transform sm:inline-flex opacity-60 cursor-not-allowed"
+          <a
+            href="/precos"
+            className="hidden items-center gap-1.5 rounded-full bg-deep px-5 py-2.5 text-[12px] font-medium text-cream shadow-sm transition-transform hover:scale-[1.02] sm:inline-flex"
           >
             Começar a conversar
             <ArrowUpRight className="h-3.5 w-3.5" />
-          </button>
+          </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -69,14 +68,13 @@ export function Header() {
                 {item.label}
               </a>
             ))}
-            <button
-              type="button"
-              disabled
+            <a
+              href="/precos"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-deep px-6 py-3.5 text-center text-sm font-medium text-cream opacity-60 cursor-not-allowed"
+              className="mt-2 rounded-full bg-deep px-6 py-3.5 text-center text-sm font-medium text-cream"
             >
               Começar a conversar
-            </button>
+            </a>
           </nav>
         </div>
       )}
