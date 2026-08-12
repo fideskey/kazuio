@@ -1,15 +1,21 @@
-# v0 sandbox internal files
-__v0_runtime_loader.js
-__v0_devtools.tsx
-__v0_jsx-dev-runtime.ts
-.snowflake/
-.v0-trash/
+# Common ignores
+node_modules/
+.next/
 .vercel/
-
-# Environment variables
 .env*.local
 
-# Common ignores
-node_modules
-.next/
+# Lockfiles -- este projeto usa pnpm (pnpm-lock.yaml). Nao versionar
+# package-lock.json/yarn.lock para nao confundir o Vercel com dois lockfiles.
+package-lock.json
+yarn.lock
+
+# Build artifacts
+tsconfig.tsbuildinfo
 .DS_Store
+
+# v0 sandbox internal files
+.snowflake/
+.v0-trash/
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+__v0_runtime_loader.js
