@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Check, Lock } from 'lucide-react'
+import { Header } from '@/components/kazuio/header'
+import { Footer } from '@/components/kazuio/footer'
 
 export const metadata: Metadata = {
   title: 'Preços — Kazuio',
@@ -63,7 +65,9 @@ function MercadoPagoBadge() {
 
 export default function Page() {
   return (
-    <main>
+    <div className="min-h-screen bg-cream text-ink">
+      <Header />
+      <main>
       <section className="mx-auto max-w-[900px] px-5 pb-4 pt-14 text-center md:px-8 md:pt-20">
         <p className="eyebrow justify-center">Planos</p>
         <h1 className="mx-auto mt-3 max-w-[700px] font-serif text-[2.4rem] leading-[1.08] text-navy sm:text-[3.1rem]">
@@ -147,6 +151,8 @@ export default function Page() {
           </p>
         </div>
       </section>
-    </main>
+      </main>
+      <Footer />
+    </div>
   )
 }
