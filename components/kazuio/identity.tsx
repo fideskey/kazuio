@@ -1,4 +1,5 @@
-import { ArrowRight, SearchX, Stethoscope, Compass } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, SearchX, Stethoscope, Compass, ShieldCheck } from 'lucide-react'
 
 
 const NOT = [
@@ -32,11 +33,14 @@ export function Identity() {
         </div>
 
         <div id="começar" className="relative overflow-hidden rounded-[28px] bg-deep px-8 py-10 text-cream md:px-11 md:py-12">
-          <div className="absolute right-0 top-0 h-full w-1/2 opacity-70" aria-hidden="true">
-            <svg viewBox="0 0 300 500" fill="none" className="h-full w-full">
-              <circle cx="235" cy="72" r="17" fill="var(--gold)" opacity=".9" />
-              <path d="M235 90C200 145 120 140 170 220C215 290 255 315 205 385C165 440 205 460 225 490" stroke="var(--gold)" strokeWidth="5" strokeLinecap="round" opacity=".85" />
-            </svg>
+          <div className="pointer-events-none absolute right-[-4%] top-0 h-full w-[62%] opacity-[0.22]" aria-hidden="true">
+            <Image
+              src="/brand/kazuio-mark.png"
+              alt=""
+              fill
+              sizes="480px"
+              className="object-contain object-right"
+            />
           </div>
           <div className="relative z-10 max-w-[560px]">
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold2">Talvez seja hora de conversar</p>
@@ -49,7 +53,10 @@ export function Identity() {
               Começar uma conversa com o Kazuio
               <ArrowRight className="h-4 w-4" />
             </a>
-            <p className="mt-4 text-[11px] text-cream/50">Escolha seu plano e comece agora.</p>
+            <p className="mt-4 flex items-start gap-2 text-[11px] leading-5 text-cream/60">
+              <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cream/60" />
+              Sua conversa é privada, segura e nunca compartilhada.
+            </p>
           </div>
         </div>
       </div>
