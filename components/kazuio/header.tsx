@@ -23,12 +23,12 @@ export function Header() {
           <Logo markClassName="h-9 md:h-10" wordClassName="text-[1.02rem] md:text-[1.1rem]" />
         </a>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Principal">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Principal">
           {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-[12px] font-medium text-ink/70 transition-colors hover:text-navy"
+              className="rounded-full px-3.5 py-2 text-[12px] font-medium text-ink/70 transition-colors hover:bg-deep hover:text-cream"
             >
               {item.label}
             </a>
@@ -63,7 +63,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-3 py-3 text-sm text-ink/80 hover:bg-paper hover:text-navy"
+                className="rounded-xl px-3 py-3 text-sm text-ink/80 transition-colors hover:bg-deep hover:text-cream"
               >
                 {item.label}
               </a>
