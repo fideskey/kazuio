@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ShieldCheck, HeartHandshake, BookMarked, Sparkles } from 'lucide-react'
 import { DialogueIcon, QuestionIcon, BookIcon, PresenceIcon } from '@/components/kazuio/icons'
 import { Header } from '@/components/kazuio/header'
 import { Footer } from '@/components/kazuio/footer'
@@ -20,20 +20,27 @@ const ETAPAS = [
     icon: QuestionIcon,
     numero: '02',
     title: 'Kazuio faz perguntas, não dá respostas prontas',
-    body: 'Em vez de te dizer o que fazer, o Kazuio pergunta o que vai aprofundando a conversa: o que pesa mais, o que você já tentou, o que mudaria se a situação fosse diferente. É um processo, parecido com o de uma boa conversa terapêutica — sem pressa de chegar a uma conclusão antes da hora.',
+    body: 'Em vez de te dizer o que fazer, o Kazuio pergunta o que vai aprofundando a conversa: o que pesa mais, o que você já tentou, o que mudaria se a situação fosse diferente.',
   },
   {
     icon: BookIcon,
     numero: '03',
     title: 'Quando fizer sentido, uma reflexão real entra na conversa',
-    body: 'Depois de entender melhor o que você está vivendo, o Kazuio pode trazer uma citação — de Psicologia, Filosofia, ou da tradição religiosa que você escolher. Sempre de uma biblioteca curada e verificada. Kazuio nunca inventa uma citação, nunca atribui uma frase à pessoa errada.',
+    body: 'O Kazuio pode trazer uma citação — de Psicologia, Filosofia, ou da tradição religiosa que você escolher. Sempre de uma biblioteca curada e verificada. Nunca uma citação inventada.',
   },
   {
     icon: PresenceIcon,
     numero: '04',
     title: 'A conversa aponta para um próximo passo possível',
-    body: 'O objetivo final não é só refletir — é sair da conversa enxergando algo com mais clareza, com um caminho concreto pela frente, por menor que seja. E se a situação pedir cuidado profissional de verdade, o Kazuio é honesto sobre isso e te aponta na direção certa.',
+    body: 'O objetivo é sair enxergando algo com mais clareza, com um caminho concreto pela frente. Se a situação pedir cuidado profissional de verdade, o Kazuio é honesto sobre isso.',
   },
+]
+
+const PRINCIPIOS = [
+  { icon: ShieldCheck, title: 'Privado e seguro', body: 'Suas conversas são protegidas.' },
+  { icon: HeartHandshake, title: 'Sem julgamentos', body: 'Um espaço seguro, para ser real.' },
+  { icon: BookMarked, title: 'Fontes reais', body: 'Nunca uma citação inventada.' },
+  { icon: Sparkles, title: 'No seu ritmo', body: 'Você guia a conversa.' },
 ]
 
 export default function Page() {
@@ -41,67 +48,84 @@ export default function Page() {
     <div className="min-h-screen bg-cream text-ink">
       <Header />
       <main>
-      <section className="mx-auto max-w-[900px] px-5 pb-4 pt-14 md:px-8 md:pt-20">
-        <p className="eyebrow">Como funciona</p>
-        <h1 className="mt-3 max-w-[760px] font-serif text-[2.4rem] leading-[1.08] text-navy sm:text-[3.2rem]">
-          Uma conversa que não tenta resolver sua vida em uma única resposta.
-        </h1>
-        <p className="mt-6 max-w-[620px] text-[17px] leading-8 text-ink/78">
-          O Kazuio foi construído como um processo, não como um mecanismo de perguntas e respostas. Cada conversa segue
-          um caminho — às vezes curto, às vezes mais longo — que respeita o tempo que cada pessoa precisa para colocar
-          em palavras o que está vivendo.
-        </p>
-      </section>
-
-      <section className="mx-auto max-w-[1220px] px-5 py-10 md:px-8 md:py-14">
-        <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
-          {ETAPAS.map(({ icon: Icon, numero, title, body }) => (
-            <div key={numero} className="border-t border-line/80 pt-6">
-              <div className="flex items-center gap-4">
-                <span className="font-serif text-3xl text-gold/60">{numero}</span>
-                <Icon className="h-7 w-7 text-navy/70" />
-              </div>
-              <h2 className="mt-4 font-serif text-xl leading-[1.2] text-navy">{title}</h2>
-              <p className="mt-3 max-w-[420px] text-sm leading-6 text-kmuted">{body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[900px] px-5 py-10 md:px-8 md:py-14">
-        <div className="border-t border-line/80 pt-10">
-          <h2 className="font-serif text-2xl leading-[1.15] text-navy md:text-3xl">Um processo, não uma fórmula</h2>
-          <p className="mt-4 max-w-[640px] text-sm leading-7 text-kmuted">
-            Nem toda conversa segue esse caminho na mesma velocidade. Algumas pessoas chegam a uma reflexão na primeira
-            troca de mensagens. Outras precisam de várias conversas, ao longo de vários dias, até sentir que
-            realmente entenderam o que estavam vivendo — e está tudo bem assim. O Kazuio guarda o essencial do que foi
-            conversado, então você não precisa recomeçar do zero toda vez que voltar.
+        <section className="mx-auto max-w-[980px] px-5 pb-10 pt-16 md:px-8 md:pt-24">
+          <p className="eyebrow">Como funciona</p>
+          <h1 className="mt-4 max-w-[850px] font-serif text-[2.6rem] leading-[1.05] text-navy sm:text-[3.6rem]">
+            Uma conversa que não tenta resolver sua vida em uma única resposta.
+          </h1>
+          <p className="mt-7 max-w-[700px] text-[17px] leading-8 text-ink/75">
+            O Kazuio foi construído como um processo, não como um mecanismo de perguntas e respostas. Cada conversa
+            segue um caminho — às vezes curto, às vezes mais longo — que respeita o tempo que cada pessoa precisa
+            para colocar em palavras o que está vivendo.
           </p>
-          <p className="mt-4 max-w-[640px] text-sm leading-7 text-kmuted">
-            O que não muda é o compromisso por trás de cada etapa: nunca inventar uma citação, nunca fingir ter certeza
-            sobre algo que exige cuidado profissional, e nunca apressar uma pessoa a chegar numa conclusão antes da
-            hora dela.
-          </p>
-        </div>
-      </section>
+        </section>
 
-      <section className="mx-auto max-w-[1220px] px-5 pb-16 md:px-8 md:pb-24">
-        <div className="relative overflow-hidden rounded-[28px] bg-deep px-8 py-10 text-cream md:px-14 md:py-14">
-          <div className="relative z-10 max-w-[560px]">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold2">Talvez seja hora de conversar</p>
-            <h2 className="mt-4 max-w-[510px] font-serif text-3xl leading-[1.08] md:text-[2.5rem]">
-              Pronto para experimentar uma conversa assim?
-            </h2>
-            <a
-              href="/precos"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-deep transition-transform hover:scale-[1.02]"
-            >
-              Conheça os planos do Kazuio
-              <ArrowRight className="h-4 w-4" />
-            </a>
+        <section className="mx-auto max-w-[1220px] px-5 py-8 md:px-8 md:py-14">
+          <div className="grid gap-5 sm:grid-cols-2">
+            {ETAPAS.map(({ icon: Icon, numero, title, body }) => (
+              <article key={numero} className="relative overflow-hidden rounded-[26px] border border-line bg-paper p-7 md:p-8">
+                <div className="flex items-center gap-4">
+                  <span className="font-serif text-3xl text-gold/50">{numero}</span>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-cream text-gold">
+                    <Icon className="h-5.5 w-5.5" />
+                  </span>
+                </div>
+                <h2 className="mt-5 font-serif text-xl leading-[1.2] text-navy">{title}</h2>
+                <p className="mt-3 text-sm leading-6 text-kmuted">{body}</p>
+              </article>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className="mx-auto max-w-[1220px] px-5 py-10 md:px-8 md:py-14">
+          <div className="rounded-[30px] bg-deep px-8 py-10 text-cream md:px-12 md:py-12">
+            <p className="eyebrow text-gold2">Princípios da experiência</p>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {PRINCIPIOS.map(({ icon: Icon, title, body }) => (
+                <div key={title}>
+                  <Icon className="h-6 w-6 text-gold2" />
+                  <p className="mt-3.5 text-sm font-semibold text-cream">{title}</p>
+                  <p className="mt-1 text-xs leading-5 text-cream/60">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-[900px] px-5 py-10 md:px-8 md:py-14">
+          <div className="border-t border-line/80 pt-10">
+            <h2 className="font-serif text-2xl leading-[1.15] text-navy md:text-3xl">Um processo, não uma fórmula</h2>
+            <p className="mt-4 max-w-[640px] text-sm leading-7 text-kmuted">
+              Nem toda conversa segue esse caminho na mesma velocidade. Algumas pessoas chegam a uma reflexão na
+              primeira troca de mensagens. Outras precisam de várias conversas, ao longo de vários dias, até sentir
+              que realmente entenderam o que estavam vivendo — e está tudo bem assim. O Kazuio guarda o essencial do
+              que foi conversado, então você não precisa recomeçar do zero toda vez que voltar.
+            </p>
+            <p className="mt-4 max-w-[640px] text-sm leading-7 text-kmuted">
+              O que não muda é o compromisso por trás de cada etapa: nunca inventar uma citação, nunca fingir ter
+              certeza sobre algo que exige cuidado profissional, e nunca apressar uma pessoa a chegar numa conclusão
+              antes da hora dela.
+            </p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-[1220px] px-5 pb-16 md:px-8 md:pb-24">
+          <div className="relative overflow-hidden rounded-[28px] bg-deep px-8 py-10 text-cream md:px-14 md:py-14">
+            <div className="relative z-10 max-w-[560px]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold2">Talvez seja hora de conversar</p>
+              <h2 className="mt-4 max-w-[510px] font-serif text-3xl leading-[1.08] md:text-[2.5rem]">
+                Pronto para experimentar uma conversa assim?
+              </h2>
+              <a
+                href="/precos"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-deep transition-transform hover:scale-[1.02]"
+              >
+                Conheça os planos do Kazuio
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

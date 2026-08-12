@@ -1,35 +1,38 @@
 import type { Metadata } from 'next'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Brain, Cross, Columns3, CheckCircle2 } from 'lucide-react'
 import { FaithIcon, PhilosophyIcon, PsychologyIcon } from '@/components/kazuio/icons'
 import { Header } from '@/components/kazuio/header'
 import { Footer } from '@/components/kazuio/footer'
 
 export const metadata: Metadata = {
   title: 'Pilares — Kazuio',
-  description: 'Psicologia, Fé e Filosofia — os três pilares que sustentam cada conversa no Kazuio.',
+  description: 'Psicologia, Fé e Filosofia: os três pilares que orientam a experiência Kazuio.',
 }
 
 const PILARES = [
   {
     icon: PsychologyIcon,
-    tag: 'Psicologia',
-    title: 'Entender por que sentimos o que sentimos',
-    body: 'A Psicologia nos ajuda a nomear emoções, reconhecer padrões de comportamento e entender por que certas situações pesam mais do que outras. Kazuio usa essa lente para fazer perguntas que ajudam você a olhar para dentro com mais clareza — nunca para rotular, diagnosticar ou reduzir o que você vive a um termo técnico.',
-    extra: 'Quando fizer sentido, o Kazuio pode trazer uma reflexão de pensadores e autores reconhecidos da Psicologia — sempre de uma biblioteca curada e verificada, nunca inventada.',
+    label: 'Psicologia',
+    title: 'Olhar para dentro com mais clareza.',
+    intro: 'A Psicologia oferece ferramentas para compreender emoções, comportamentos e padrões — nunca para reduzir uma pessoa a um diagnóstico.',
+    questions: ['O que você está sentindo de verdade?', 'Existe um padrão que vem se repetindo?', 'O que essa situação está despertando em você?'],
+    note: 'A lente psicológica ajuda a compreender. Não substitui avaliação ou acompanhamento profissional.',
   },
   {
     icon: FaithIcon,
-    tag: 'Fé',
-    title: 'Encontrar sentido além do que se vê',
-    body: 'Para muita gente, a fé é onde a esperança mora quando tudo o mais parece incerto. Kazuio respeita isso: se você pertence a uma tradição religiosa — Catolicismo, Evangelismo ou Espiritismo — e quiser que a conversa passe por esse lugar, o Kazuio pode trazer reflexões dessa tradição específica, sempre de fontes reais e verificadas.',
-    extra: 'Kazuio nunca tenta te convencer de uma fé, nem julga a que você já tem (ou a ausência dela). A fé só entra na conversa se e quando você quiser que ela entre.',
+    label: 'Fé',
+    title: 'Encontrar sentido, esperança e direção.',
+    intro: 'A espiritualidade pode oferecer uma linguagem para momentos em que lógica e planejamento não são suficientes. Kazuio respeita a tradição escolhida por você.',
+    questions: ['O que sustenta você quando tudo parece incerto?', 'Que significado essa experiência tem para você?', 'Que valores ou crenças você gostaria de preservar?'],
+    note: 'A fé só entra na conversa quando você quiser. Kazuio nunca tenta converter, convencer ou julgar.',
   },
   {
     icon: PhilosophyIcon,
-    tag: 'Filosofia',
-    title: 'Questionar em vez de aceitar respostas prontas',
-    body: 'A Filosofia é o convite para olhar de novo para aquilo que parecia óbvio. Grandes pensadores, ao longo de séculos, já se perguntaram sobre o sofrimento, a liberdade, a incerteza e o sentido da vida — e essas perguntas continuam vivas hoje. Kazuio usa essa tradição para ampliar sua visão de mundo, não para te empurrar para uma filosofia específica.',
-    extra: 'A ideia não é te dar uma doutrina para seguir, mas te mostrar que outras mentes brilhantes já pensaram sobre isso — e que pensar junto com elas pode abrir um caminho novo.',
+    label: 'Filosofia',
+    title: 'Questionar aquilo que parecia óbvio.',
+    intro: 'A Filosofia convida a examinar ideias, escolhas e certezas. Muitas vezes, uma pergunta nova abre mais espaço do que uma resposta definitiva.',
+    questions: ['E se a forma de olhar para isso estivesse limitando suas opções?', 'O que está sob seu controle?', 'Que escolha faria sentido de acordo com os seus próprios valores?'],
+    note: 'A Filosofia amplia possibilidades. Não existe uma única doutrina que o Kazuio tente impor.',
   },
 ]
 
@@ -38,67 +41,89 @@ export default function Page() {
     <div className="min-h-screen bg-cream text-ink">
       <Header />
       <main>
-      <section className="mx-auto max-w-[900px] px-5 pb-4 pt-14 md:px-8 md:pt-20">
-        <p className="eyebrow">Três pilares</p>
-        <h1 className="mt-3 max-w-[760px] font-serif text-[2.4rem] leading-[1.08] text-navy sm:text-[3.2rem]">
-          Nenhuma pergunta da vida cabe em uma única lente.
-        </h1>
-        <p className="mt-6 max-w-[620px] text-[17px] leading-8 text-ink/78">
-          Por isso o Kazuio não escolhe um caminho só. Ele equilibra três formas diferentes de olhar para a experiência
-          humana — Psicologia, Fé e Filosofia — para que a conversa vá aonde ela realmente precisa ir, sem forçar
-          nenhuma delas a virar a resposta certa para tudo.
-        </p>
-      </section>
+        <section className="mx-auto max-w-[980px] px-5 pb-10 pt-16 md:px-8 md:pt-24">
+          <p className="eyebrow">Três pilares</p>
+          <h1 className="mt-4 max-w-[880px] font-serif text-[2.7rem] leading-[1.04] text-navy sm:text-[4rem]">
+            Psicologia, Fé e Filosofia — três caminhos para olhar para a mesma vida.
+          </h1>
+          <p className="mt-7 max-w-[730px] text-[17px] leading-8 text-ink/75">
+            O Kazuio não escolhe uma única lente para interpretar o que você vive. Ele combina perspectivas diferentes e deixa a conversa mostrar qual delas pode ser útil naquele momento.
+          </p>
+        </section>
 
-      <section className="mx-auto max-w-[1220px] px-5 py-10 md:px-8 md:py-14">
-        <div className="grid gap-8 lg:grid-cols-3">
-          {PILARES.map(({ icon: Icon, tag, title, body, extra }) => (
-            <div key={tag} className="rounded-[24px] border border-line bg-paper px-7 py-8">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-deep/[0.06] text-gold">
-                <Icon className="h-8 w-8" />
-              </span>
-              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-navy">{tag}</p>
-              <h2 className="mt-2 font-serif text-xl leading-[1.2] text-navy">{title}</h2>
-              <p className="mt-4 text-sm leading-6 text-kmuted">{body}</p>
-              <p className="mt-4 text-sm leading-6 text-kmuted/85">{extra}</p>
+        <section className="mx-auto max-w-[1220px] px-5 py-8 md:px-8 md:py-14">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {PILARES.map(({ icon: Icon, label, title, intro, questions, note }) => (
+              <article key={label} className="relative overflow-hidden rounded-[30px] border border-line bg-paper p-7 md:p-8">
+                <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full border border-gold/10" />
+                <span className="relative flex h-16 w-16 items-center justify-center rounded-full border border-gold/25 bg-cream text-gold">
+                  <Icon className="h-8 w-8" />
+                </span>
+                <p className="mt-7 text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">{label}</p>
+                <h2 className="mt-3 font-serif text-[1.7rem] leading-[1.08] text-navy">{title}</h2>
+                <p className="mt-4 text-sm leading-6 text-kmuted">{intro}</p>
+                <div className="mt-7 border-t border-line pt-6">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-kmuted">Perguntas que essa lente pode abrir</p>
+                  <ul className="mt-4 space-y-3">
+                    {questions.map((q) => (
+                      <li key={q} className="flex gap-3 text-sm leading-5 text-ink/75">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                        {q}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <p className="mt-7 rounded-2xl bg-cream px-4 py-4 text-xs leading-5 text-kmuted">{note}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-[1220px] px-5 py-10 md:px-8 md:py-16">
+          <div className="rounded-[30px] bg-deep px-8 py-10 text-cream md:px-12 md:py-14">
+            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+              <div>
+                <p className="eyebrow text-gold2">O equilíbrio é a ideia</p>
+                <h2 className="mt-4 font-serif text-3xl leading-[1.08] md:text-[2.8rem]">Nenhuma dessas perspectivas precisa vencer.</h2>
+                <p className="mt-5 text-sm leading-7 text-cream/65">
+                  Uma conversa pode começar pela emoção, passar por uma pergunta filosófica e terminar encontrando sentido naquilo que você acredita. O importante é que a perspectiva ajude você — e não o contrário.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {[
+                  { label: 'Psicologia', icon: Brain },
+                  { label: 'Fé', icon: Cross },
+                  { label: 'Filosofia', icon: Columns3 },
+                ].map(({ label, icon: Icon }) => (
+                  <div key={label} className="rounded-2xl border border-cream/12 bg-white/[0.05] p-5">
+                    <Icon className="h-6 w-6 text-gold2" />
+                    <p className="mt-4 text-sm font-semibold text-cream">{label}</p>
+                    <p className="mt-1 text-xs leading-5 text-cream/55">Uma lente. Não uma sentença.</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section className="mx-auto max-w-[900px] px-5 py-10 md:px-8 md:py-14">
-        <div className="border-t border-line/80 pt-10">
-          <h2 className="font-serif text-2xl leading-[1.15] text-navy md:text-3xl">Por que equilíbrio, e não escolha</h2>
-          <p className="mt-4 max-w-[640px] text-sm leading-7 text-kmuted">
-            Um psicólogo não vai te citar um versículo. Um líder religioso não vai te explicar um viés cognitivo. Um
-            filósofo não vai perguntar sobre sua infância. Cada um desses olhares, sozinho, é parcial — não porque
-            esteja errado, mas porque a vida humana é grande demais para uma única disciplina explicar sozinha.
-          </p>
-          <p className="mt-4 max-w-[640px] text-sm leading-7 text-kmuted">
-            O Kazuio não tenta ser nenhum desses profissionais. Ele é uma conversa que sabe transitar entre os três
-            olhares, na medida certa para o que você está vivendo — sem nunca deixar de te lembrar que, quando a
-            situação pedir um cuidado profissional de verdade, ele vai te apontar para lá.
-          </p>
-        </div>
-      </section>
+        <section className="mx-auto max-w-[900px] px-5 py-10 md:px-8 md:py-14">
+          <div className="border-t border-line pt-10">
+            <h2 className="font-serif text-2xl text-navy md:text-3xl">Uma distinção importante</h2>
+            <p className="mt-4 text-sm leading-7 text-kmuted">
+              Ter Psicologia, Fé e Filosofia como pilares não significa que o Kazuio seja psicólogo, líder religioso ou filósofo. Significa que essas tradições orientam a forma como a experiência é explorada. Quando uma situação exige diagnóstico, tratamento, aconselhamento religioso formal ou outra forma de cuidado especializado, o Kazuio reconhece esse limite.
+            </p>
+          </div>
+        </section>
 
-      <section className="mx-auto max-w-[1220px] px-5 pb-16 md:px-8 md:pb-24">
-        <div className="relative overflow-hidden rounded-[28px] bg-deep px-8 py-10 text-cream md:px-14 md:py-14">
-          <div className="relative z-10 max-w-[560px]">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold2">Talvez seja hora de conversar</p>
-            <h2 className="mt-4 max-w-[510px] font-serif text-3xl leading-[1.08] md:text-[2.5rem]">
-              Veja como esses três pilares se encontram numa conversa real.
-            </h2>
-            <a
-              href="/precos"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-deep transition-transform hover:scale-[1.02]"
-            >
-              Conheça os planos do Kazuio
-              <ArrowRight className="h-4 w-4" />
+        <section className="mx-auto max-w-[1220px] px-5 pb-20 md:px-8 md:pb-28">
+          <div className="rounded-[30px] border border-line bg-paper px-8 py-10 md:px-12 md:py-12">
+            <p className="eyebrow">Próximo passo</p>
+            <h2 className="mt-3 font-serif text-3xl text-navy md:text-[2.5rem]">Veja esses três pilares funcionando dentro de uma conversa.</h2>
+            <a href="/como-funciona" className="mt-7 inline-flex items-center gap-2 rounded-full bg-deep px-6 py-3.5 text-sm font-semibold text-cream hover:scale-[1.02]">
+              Como funciona <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-        </div>
-      </section>
+        </section>
       </main>
       <Footer />
     </div>

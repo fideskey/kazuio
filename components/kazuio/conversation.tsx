@@ -1,4 +1,4 @@
-import { Mic, Send, Plus, MessageSquare } from 'lucide-react'
+import { Mic, Send } from 'lucide-react'
 import { Logo } from './logo'
 import { BookIcon, DialogueIcon, PresenceIcon, QuestionIcon } from './icons'
 
@@ -12,18 +12,6 @@ const PHONE_CHAT = [
 const PHONE_QUOTE = {
   text: 'A ansiedade é a vertigem da liberdade.',
   source: 'Søren Kierkegaard — O Conceito de Angústia',
-}
-
-const LAPTOP_CHAT = [
-  { who: 'Você', text: 'Briguei com minha mãe e agora estou me sentindo culpado.' },
-  { who: 'Kazuio', text: 'Quando você pensa nessa culpa, ela vem mais do que você disse durante a discussão ou do que gostaria de ter conseguido dizer?' },
-  { who: 'Você', text: 'Acho que do que eu disse...' },
-  { who: 'Kazuio', text: 'E se você pudesse voltar àquela conversa, o que gostaria que sua mãe tivesse entendido sobre você?' },
-]
-
-const LAPTOP_QUOTE = {
-  text: 'Além das ideias de certo e de errado, há um campo. Encontro-te lá.',
-  source: 'Rumi',
 }
 
 const FEATURES = [
@@ -45,13 +33,13 @@ function QuoteBubble({ text, source }: { text: string; source: string }) {
   )
 }
 
-function ChatMessages({ messages, laptop = false }: { messages: { who: string; text: string }[]; laptop?: boolean }) {
+function ChatMessages({ messages }: { messages: { who: string; text: string }[] }) {
   return (
     <>
       {messages.map((m, i) => (
         <div key={i} className={`flex flex-col ${m.who === 'Você' ? 'items-end' : 'items-start'}`}>
-          <span className={`mb-1 px-1 font-semibold text-ink/55 ${laptop ? 'text-[9px]' : 'text-[8.5px]'}`}>{m.who}</span>
-          <div className={`max-w-[92%] rounded-[14px] px-3 py-2 text-[10px] leading-[1.5] ${laptop ? 'sm:px-3.5 sm:py-2.5 sm:text-[11px] sm:max-w-[78%]' : ''} ${m.who === 'Kazuio' ? 'rounded-tl-md border border-line bg-cream' : 'rounded-tr-md bg-[#e9dfcf]'}`}>
+          <span className="mb-1 px-1 text-[8.5px] font-semibold text-ink/55">{m.who}</span>
+          <div className={`max-w-[92%] rounded-[14px] px-3 py-2 text-[10px] leading-[1.5] ${m.who === 'Kazuio' ? 'rounded-tl-md border border-line bg-cream' : 'rounded-tr-md bg-[#e9dfcf]'}`}>
             {m.text}
           </div>
         </div>
@@ -63,20 +51,20 @@ function ChatMessages({ messages, laptop = false }: { messages: { who: string; t
 export function Conversation() {
   return (
     <section id="como-funciona" className="mx-auto max-w-[1220px] px-5 py-14 md:px-8 md:py-20">
-      <div className="grid items-start gap-10 lg:grid-cols-[minmax(230px,0.82fr)_250px_minmax(430px,1.45fr)] lg:gap-8 xl:gap-10">
-        {/* 1 — A explicação fica na mesma linha dos dois mockups. */}
-        <div className="lg:pt-8">
+      <div className="grid items-center gap-12 lg:grid-cols-[1fr_310px] lg:gap-16">
+        {/* 1 — A explicação, ao lado do mockup do celular. */}
+        <div>
           <p className="eyebrow">Como acontece</p>
-          <h2 className="mt-3 font-serif text-3xl leading-[1.08] text-navy md:text-[2.35rem]">
+          <h2 className="mt-3 max-w-[540px] font-serif text-3xl leading-[1.08] text-navy md:text-[2.35rem]">
             Veja como uma conversa pode mudar a forma de olhar para uma situação.
           </h2>
-          <p className="mt-5 text-sm leading-6 text-kmuted">
+          <p className="mt-5 max-w-[480px] text-sm leading-6 text-kmuted">
             Kazuio não te dá respostas prontas. Ele te ajuda a{' '}
             <strong className="font-semibold text-navy">pensar com perguntas</strong> que abrem novas perspectivas.
           </p>
 
           <div className="mt-8 border-t border-line/80 pt-6">
-            <div className="grid grid-cols-2 gap-x-5 gap-y-7">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-7 sm:max-w-[440px]">
               {FEATURES.map(({ icon: Icon, title, body }) => (
                 <div key={title}>
                   <Icon className="h-5 w-5 text-gold" />
@@ -89,84 +77,35 @@ export function Conversation() {
         </div>
 
         {/* 2 — Uma única conversa no celular. */}
-        <div className="mx-auto w-[230px] shrink-0 lg:mt-8">
-          <div className="relative rounded-[2.35rem] bg-[#152331] p-2 shadow-[0_28px_70px_rgba(20,40,63,0.18)] ring-1 ring-black/10">
-            <div className="absolute -inset-3 -z-10 rounded-[2.9rem] bg-gold/5 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[1.95rem] bg-paper">
-              <div className="flex items-center justify-between border-b border-line/70 px-4 py-2.5">
-                <span className="text-[9px] font-medium text-ink">9:41</span>
-                <Logo markClassName="h-5" wordClassName="text-[0.6rem] tracking-[0.22em]" />
+        <div className="mx-auto w-[280px] shrink-0">
+          <div className="relative rounded-[2.6rem] bg-[#152331] p-2.5 shadow-[0_28px_70px_rgba(20,40,63,0.18)] ring-1 ring-black/10">
+            <div className="absolute -inset-4 -z-10 rounded-[3.1rem] bg-gold/5 blur-2xl" />
+            <div className="relative overflow-hidden rounded-[2.15rem] bg-paper">
+              <div className="flex items-center justify-between border-b border-line/70 px-4 py-3">
+                <span className="text-[10px] font-medium text-ink">9:41</span>
+                <Logo markClassName="h-5.5" wordClassName="text-[0.65rem] tracking-[0.22em]" />
                 <span />
               </div>
 
-              <div className="h-[380px] space-y-2.5 overflow-hidden px-3 py-3">
+              <div className="h-[430px] space-y-2.5 overflow-hidden px-3.5 py-3.5">
                 <ChatMessages messages={PHONE_CHAT} />
                 <QuoteBubble text={PHONE_QUOTE.text} source={PHONE_QUOTE.source} />
               </div>
 
-              <div className="flex items-center gap-2 px-3 pb-3.5 pt-1">
-                <div className="flex flex-1 items-center gap-2 rounded-full border border-line bg-cream px-3 py-2">
-                  <span className="flex-1 text-[9px] text-kmuted">Escreva sua mensagem...</span>
-                  <Mic className="h-3 w-3 text-kmuted" />
+              <div className="flex items-center gap-2 px-3.5 pb-4 pt-1.5">
+                <div className="flex flex-1 items-center gap-2 rounded-full border border-line bg-cream px-3.5 py-2.5">
+                  <span className="flex-1 text-[9.5px] text-kmuted">Escreva sua mensagem...</span>
+                  <Mic className="h-3.5 w-3.5 text-kmuted" />
                 </div>
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-deep text-cream">
-                  <Send className="h-3 w-3" />
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-deep text-cream">
+                  <Send className="h-3.5 w-3.5" />
                 </span>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* 3 — Notebook na mesma linha do celular, com moldura de laptop real. */}
-        <div className="w-full lg:mt-10">
-          <div className="relative rounded-t-2xl bg-[#1c1c1e] p-3 shadow-[0_28px_70px_rgba(20,40,63,0.18)]">
-            <span className="absolute left-1/2 top-1.5 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#3a3a3c]" />
-            <div className="overflow-hidden rounded-[10px] bg-paper">
-              <div className="grid min-h-[400px] grid-cols-[0.30fr_0.70fr]">
-                <div className="border-r border-line/70 bg-cream px-3.5 py-4 sm:px-4">
-                  <Logo markClassName="h-6" wordClassName="text-[0.62rem] tracking-[0.22em]" />
-                  <div className="mt-5 flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-[9px] font-medium text-navy">
-                    <Plus className="h-3 w-3" />
-                    Nova conversa
-                  </div>
-                  <p className="mt-5 text-[8px] font-semibold uppercase tracking-[0.14em] text-kmuted">Conversas</p>
-                  <div className="mt-2 flex items-center gap-1.5 rounded-lg bg-white px-2 py-2 text-[9px] text-navy shadow-sm">
-                    <MessageSquare className="h-3 w-3 text-gold" />
-                    Decisão no trabalho
-                  </div>
-                </div>
-
-                <div className="flex min-w-0 flex-col">
-                  <div className="border-b border-line/70 px-4 py-3 text-[9px] font-medium text-ink/60 sm:px-5">Briguei com minha mãe</div>
-                  <div className="flex-1 space-y-3 overflow-hidden px-4 py-4 sm:px-5">
-                    <ChatMessages messages={LAPTOP_CHAT} laptop />
-                    <div className="flex justify-start">
-                      <div className="max-w-[78%]">
-                        <QuoteBubble text={LAPTOP_QUOTE.text} source={LAPTOP_QUOTE.source} />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 border-t border-line/70 px-4 py-3 sm:px-5">
-                    <div className="flex flex-1 items-center gap-2 rounded-full border border-line bg-cream px-3.5 py-2">
-                      <span className="flex-1 text-[9px] text-kmuted sm:text-[10px]">Escreva sua mensagem...</span>
-                    </div>
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-deep text-cream">
-                      <Send className="h-3 w-3" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Dobradiça + base do teclado, imitando a perspectiva de um laptop aberto */}
-          <div className="h-[7px] bg-gradient-to-b from-[#1c1c1e] to-[#3a3a3c]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }} />
-          <div
-            className="relative mx-auto h-4 rounded-b-2xl bg-gradient-to-b from-[#e4e4e6] to-[#b7b7ba] shadow-[0_18px_28px_-14px_rgba(20,40,63,0.4)]"
-            style={{ width: '104%', marginLeft: '-2%', clipPath: 'polygon(1.5% 0, 98.5% 0, 100% 100%, 0% 100%)' }}
-          >
-            <span className="absolute left-1/2 top-0 h-1.5 w-16 -translate-x-1/2 rounded-b-md bg-[#1c1c1e]/90" />
-          </div>
-          <p className="mt-5 text-center text-[10px] uppercase tracking-[0.16em] text-kmuted">Uma conversa que continua onde você estiver.</p>
+          <p className="mt-5 text-center text-[10px] uppercase tracking-[0.16em] text-kmuted">
+            Uma conversa que continua onde você estiver.
+          </p>
         </div>
       </div>
     </section>

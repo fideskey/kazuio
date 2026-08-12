@@ -43,7 +43,7 @@ export function Identity() {
             alt="Talvez você não precise de uma resposta agora. Talvez só precise começar a conversar. Entre no Kazuio e veja como é conversar com uma inteligência artificial que não tenta resolver sua vida por você. Sua conversa é privada, segura e nunca compartilhada."
             width={1496}
             height={1051}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.015]"
+            className="h-auto w-full object-contain transition-transform duration-300 group-hover:scale-[1.015]"
           />
         </a>
       </div>

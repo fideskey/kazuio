@@ -13,12 +13,12 @@ export default function Page() {
     <div className="min-h-screen bg-cream text-ink">
       <Header />
       <main>
-      <section className="mx-auto max-w-[900px] px-5 pb-4 pt-14 md:px-8 md:pt-20">
+      <section className="mx-auto max-w-[980px] px-5 pb-4 pt-16 md:px-8 md:pt-24">
         <p className="eyebrow">Quem somos</p>
-        <h1 className="mt-3 max-w-[760px] font-serif text-[2.4rem] leading-[1.08] text-navy sm:text-[3.2rem]">
+        <h1 className="mt-4 max-w-[850px] font-serif text-[2.6rem] leading-[1.05] text-navy sm:text-[3.6rem]">
           Nascemos de uma pergunta simples: e se alguém pudesse sempre te ouvir, sem pressa e sem julgamento?
         </h1>
-        <p className="mt-6 max-w-[620px] text-[17px] leading-8 text-ink/78">
+        <p className="mt-7 max-w-[650px] text-[17px] leading-8 text-ink/78">
           Kazuio começou com uma constatação incômoda: quase todo mundo, em algum momento, precisa colocar em palavras
           algo que não sabe nomear — e nem sempre tem, naquele instante, alguém disponível pra ouvir. Um amigo que está
           longe. Um psicólogo com agenda cheia até o mês que vem. Uma família que ama, mas que a gente não quer sobrecarregar
