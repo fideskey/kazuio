@@ -17,8 +17,8 @@ export function Logo({
         <Image
           src="/brand/kazuio-mark.png"
           alt=""
-          width={420}
-          height={410}
+          width={290}
+          height={442}
           priority
           className={`h-11 w-auto object-contain ${markClassName ?? ''}`}
           aria-hidden="true"
