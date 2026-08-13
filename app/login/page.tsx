@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { ArrowRight, KeyRound, UserPlus } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, UserPlus } from 'lucide-react'
 import { Header } from '@/components/kazuio/header'
 import { Footer } from '@/components/kazuio/footer'
 
@@ -70,8 +71,8 @@ export default function Page() {
       <Header />
 
       <main className="mx-auto flex min-h-[70vh] max-w-[480px] flex-col items-center px-5 py-16 md:px-8">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-deep/[0.06] text-gold">
-          <KeyRound className="h-7 w-7" />
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-deep/[0.06]">
+          <Image src="/brand/kazuio-mark.png" alt="" width={420} height={410} className="h-9 w-auto object-contain" />
         </span>
 
         <p className="eyebrow mt-6 justify-center">Kazuio</p>
