@@ -1,9 +1,9 @@
 
 const NAVEGUE = [
-  ['Como funciona', '/como-funciona'],
+  ['Quem Somos', '/quem-somos'],
   ['Pilares', '/pilares'],
   ['Biblioteca', '/biblioteca'],
-  ['Quem Somos', '/quem-somos'],
+  ['Como funciona', '/como-funciona'],
 ]
 
 const LEGAL = [
