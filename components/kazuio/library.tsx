@@ -3,24 +3,9 @@ import { ShieldCheck, SearchX, Quote } from 'lucide-react'
 import { BookIcon } from './icons'
 
 const ITEMS = [
-  { icon: BookIcon, title: 'Biblioteca própria', body: 'Centenas de citações verificadas uma a uma, com fonte exata.' },
+  { icon: BookIcon, title: 'Biblioteca própria', body: 'com fontes confiáveis e verificadas.' },
   { icon: ShieldCheck, title: 'Fontes reais', body: 'Referências verificáveis. Nada de citações inventadas.' },
   { icon: SearchX, title: 'Sem busca durante a conversa', body: 'Kazuio não sai procurando respostas na internet para completar uma reflexão.' },
-]
-
-const PILARES = [
-  {
-    nome: 'Psicologia',
-    body: 'Carl Rogers, Erich Fromm, Viktor Frankl, Irvin Yalom — cobrindo desde ansiedade e autoestima até luto, relacionamentos e sentido de vida.',
-  },
-  {
-    nome: 'Filosofia',
-    body: 'Marco Aurélio, em Meditações, e Sócrates, na Apologia — para quem busca compreender através da razão, não só da fé.',
-  },
-  {
-    nome: 'Fé',
-    body: 'Catolicismo, Evangelismo e Espiritismo, tratados com o mesmo peso e respeito. A pessoa escolhe se quer esse lado da reflexão.',
-  },
 ]
 
 export function Library() {
@@ -39,7 +24,7 @@ export function Library() {
               Não inventamos conhecimento para preencher uma resposta.
             </h2>
             <p className="mt-5 max-w-[590px] text-sm leading-6 text-cream/70">
-              Quando uma reflexão pede uma referência, Kazuio pode trazer uma passagem de um livro, filósofo ou tradição religiosa — sempre a partir da biblioteca que construímos e verificamos. Organizada por dezenas de temas de vida — esperança, sofrimento, confiança, ansiedade, transformação, perdão, identidade e muitos outros — para encontrar a reflexão que realmente conversa com o que você está vivendo.
+              Quando uma reflexão pede uma referência, Kazuio pode trazer uma passagem de um livro, filósofo ou tradição religiosa — sempre a partir da biblioteca que construímos e verificamos.
             </p>
 
             <div className="mt-10 grid gap-7 sm:grid-cols-3">
@@ -47,15 +32,6 @@ export function Library() {
                 <div key={title} className="border-t border-cream/15 pt-5">
                   <Icon className="h-7 w-7 text-gold2" />
                   <p className="mt-3 text-xs leading-5 text-cream/75"><span className="font-semibold text-cream">{title}.</span> {body}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-10 grid gap-7 sm:grid-cols-3">
-              {PILARES.map(({ nome, body }) => (
-                <div key={nome} className="rounded-xl border border-cream/10 bg-white/[0.04] p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold2">{nome}</p>
-                  <p className="mt-2 text-xs leading-5 text-cream/70">{body}</p>
                 </div>
               ))}
             </div>
