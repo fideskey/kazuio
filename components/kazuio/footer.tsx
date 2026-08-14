@@ -62,7 +62,7 @@ export function Footer() {
                 <li key={label}><a href={href} className="text-xs text-cream/60 transition-colors hover:text-cream">{label}</a></li>
               ))}
               <li><a href="/#faq" className="text-xs text-cream/60 transition-colors hover:text-cream">Perguntas frequentes</a></li>
-              <li><a href="mailto:contato@kazuio.com" className="text-xs text-cream/60 transition-colors hover:text-cream">Contato</a></li>
+              <li><a href="mailto:kazuio@kazuio.com" className="text-xs text-cream/60 transition-colors hover:text-cream">Contato</a></li>
             </ul>
           </div>
 

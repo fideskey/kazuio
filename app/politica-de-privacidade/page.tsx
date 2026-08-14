@@ -86,7 +86,7 @@ export default function Page() {
         {
           heading: '10. Contato',
           paragraphs: [
-            'Para exercer qualquer um dos direitos acima, ou tirar dúvidas sobre esta política, entre em contato pelo email: [email de contato pendente]',
+            'Para exercer qualquer um dos direitos acima, ou tirar dúvidas sobre esta política, entre em contato pelo email: kazuio@kazuio.com',
           ],
         },
         {
