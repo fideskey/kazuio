@@ -41,9 +41,9 @@ export function Library() {
             <div className="w-full rounded-2xl border border-cream/10 bg-white/[0.06] p-6 backdrop-blur-sm">
               <Quote className="h-7 w-7 text-gold2" strokeWidth={1.2} />
               <blockquote className="mt-5 font-serif text-xl italic leading-snug text-cream">
-                O eu observador é a parte de você que pode notar pensamentos e emoções sem ser arrastado por eles.
+                Deixo-vos a paz, a minha paz vos dou; não vo-la dou como o mundo a dá. Não se turbe o vosso coração, nem se atemorize.
               </blockquote>
-              <cite className="mt-5 block text-[10px] font-semibold uppercase not-italic tracking-[0.2em] text-gold2">Steven Hayes</cite>
+              <cite className="mt-5 block text-[10px] font-semibold uppercase not-italic tracking-[0.2em] text-gold2">João 14:27</cite>
             </div>
           </div>
         </div>
