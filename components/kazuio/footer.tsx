@@ -31,8 +31,8 @@ function TikTokIcon({ className = 'h-4 w-4' }: { className?: string }) {
 }
 
 const SOCIALS = [
-  { label: 'Instagram', href: '', icon: InstagramIcon },
-  { label: 'TikTok', href: '', icon: TikTokIcon },
+  { label: 'Instagram', href: 'https://www.instagram.com/kazuio.app/', icon: InstagramIcon },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@kazuio_ia', icon: TikTokIcon },
 ]
 
 export function Footer() {
@@ -73,6 +73,8 @@ export function Footer() {
                 <a
                   key={label}
                   href={href || undefined}
+                  target={href ? '_blank' : undefined}
+                  rel={href ? 'noopener noreferrer' : undefined}
                   aria-label={label}
                   title={href ? label : `${label} — link ainda não configurado`}
                   className={`flex h-9 w-9 items-center justify-center rounded-full border border-gold2/30 text-gold2 transition-colors ${href ? 'hover:border-gold2 hover:bg-gold2/10' : 'cursor-default opacity-80'}`}
