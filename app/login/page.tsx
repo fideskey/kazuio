@@ -106,29 +106,11 @@ export default function Page() {
             <p className="text-center text-sm leading-6 text-kmuted">
               Você será direcionado para o Kazuio para entrar com sua conta.
             </p>
-            <div>
-              <label htmlFor="email-entrar" className="mb-1.5 block text-xs font-medium text-navy">E-mail</label>
-              <input
-                id="email-entrar"
-                type="email"
-                placeholder="seu@email.com"
-                className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none focus:border-gold"
-              />
-            </div>
-            <div>
-              <label htmlFor="senha-entrar" className="mb-1.5 block text-xs font-medium text-navy">Senha</label>
-              <input
-                id="senha-entrar"
-                type="password"
-                placeholder="••••••••"
-                className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none focus:border-gold"
-              />
-            </div>
             <button
               type="submit"
               className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-deep px-6 py-3.5 text-sm font-semibold text-cream transition-transform hover:scale-[1.01]"
             >
-              Entrar
+              Ir para o Kazuio
               <ArrowRight className="h-4 w-4" />
             </button>
           </form>
