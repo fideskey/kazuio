@@ -13,7 +13,7 @@ const PILARES = [
   {
     icon: PsychologyIcon,
     label: 'Psicologia',
-    autores: 'Carl Rogers, Erich Fromm, Viktor Frankl, Irvin Yalom, Aaron Beck, Albert Ellis, entre outros.',
+    autores: 'Carl Rogers (Tornar-se Pessoa), Erich Fromm (O Medo à Liberdade), Viktor Frankl (Em Busca de Sentido), Irvin Yalom (Psicoterapia Existencial), entre outros.',
     cobre: 'Ansiedade, autoestima, luto, relacionamentos, padrões de comportamento e sentido de vida.',
   },
   {
