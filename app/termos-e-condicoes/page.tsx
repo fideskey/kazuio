@@ -47,10 +47,9 @@ export default function Page() {
           ],
         },
         {
-          heading: '5. Plano gratuito e assinatura',
+          heading: '5. Planos e assinatura',
           paragraphs: [
-            '— O plano gratuito inclui um número limitado de mensagens/conversas de uso, conforme informado na interface do produto.',
-            '— Ao atingir o limite, você pode assinar um dos planos pagos disponíveis para continuar conversando.',
+            '— O Kazuio é oferecido exclusivamente por meio de planos pagos, sem versão gratuita.',
             '— Os valores e limites de cada plano são exibidos na tela de assinatura antes da confirmação do pagamento, processado via Mercado Pago, podendo ser cancelado a qualquer momento.',
             '— Alterações de preço serão comunicadas com antecedência.',
           ],
