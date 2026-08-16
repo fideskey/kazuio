@@ -10,7 +10,6 @@ const NAV = [
   { label: 'Biblioteca', href: '/biblioteca' },
   { label: 'Como Funciona', href: '/como-funciona' },
   { label: 'Preços', href: '/precos' },
-  { label: 'Chat', href: '/chat' },
   { label: 'Login', href: '/login' },
 ]
 
@@ -39,7 +38,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="/precos"
+            href="/chat"
             className="hidden items-center gap-1.5 rounded-full bg-deep px-5 py-2.5 text-[12px] font-medium text-cream shadow-sm transition-transform hover:scale-[1.02] sm:inline-flex"
           >
             Começar a conversar
@@ -71,7 +70,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/precos"
+              href="/chat"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-deep px-6 py-3.5 text-center text-sm font-medium text-cream"
             >
