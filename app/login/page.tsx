@@ -12,12 +12,14 @@ export default function Page() {
   const [aba, setAba] = useState<Aba>('entrar')
 
   // --- Aba "Entrar" (já tem conta) ---
-  // O login de verdade já existe e funciona em app.kazuio.com — este
-  // projeto (landing) não está conectado ao Supabase ainda, então aqui só
-  // linkamos para lá em vez de duplicar um formulário que não teria efeito.
+  // Agora que o chat/login real está disponível em kazuio.com/chat (via
+  // proxy pra app.kazuio.com), levamos a pessoa pra lá em vez do domínio
+  // separado. O parâmetro ?login=1 faz o próprio app abrir o modal de
+  // login automaticamente ao carregar, em vez de deixar a pessoa perdida
+  // numa tela de chat sem saber que precisa clicar em "Minha conta".
   function handleEntrar(e: FormEvent) {
     e.preventDefault()
-    window.location.href = 'https://app.kazuio.com'
+    window.location.href = '/chat?login=1'
   }
 
   // --- Aba "Cadastrar" (ainda não tem conta) ---
@@ -104,7 +106,7 @@ export default function Page() {
         {aba === 'entrar' ? (
           <form onSubmit={handleEntrar} className="mt-8 w-full space-y-4">
             <p className="text-center text-sm leading-6 text-kmuted">
-              Você será direcionado para o Kazuio para entrar com sua conta.
+              Você será direcionado para a tela de login do Kazuio.
             </p>
             <button
               type="submit"
