@@ -2,9 +2,10 @@
 
 import { useState, type FormEvent } from 'react'
 import Image from 'next/image'
-import { ArrowRight, UserPlus } from 'lucide-react'
+import { ArrowRight, UserPlus, Eye, EyeOff } from 'lucide-react'
 import { Header } from '@/components/kazuio/header'
 import { Footer } from '@/components/kazuio/footer'
+import { supabase } from '@/lib/supabaseClient'
 
 type Aba = 'entrar' | 'cadastrar'
 
@@ -12,14 +13,67 @@ export default function Page() {
   const [aba, setAba] = useState<Aba>('entrar')
 
   // --- Aba "Entrar" (já tem conta) ---
-  // Agora que o chat/login real está disponível em kazuio.com/chat (via
-  // proxy pra app.kazuio.com), levamos a pessoa pra lá em vez do domínio
-  // separado. O parâmetro ?login=1 faz o próprio app abrir o modal de
-  // login automaticamente ao carregar, em vez de deixar a pessoa perdida
-  // numa tela de chat sem saber que precisa clicar em "Minha conta".
-  function handleEntrar(e: FormEvent) {
+  // Login real, direto aqui na página (não é mais só um botão que manda
+  // pro app) — assim a pessoa não vê a tela de chat nem as opções de
+  // cadastro se repetindo atrás de um modal. Como /chat é servido sob o
+  // mesmo domínio kazuio.com (via proxy pra app.kazuio.com), a sessão
+  // criada aqui pelo Supabase já é reconhecida automaticamente lá também.
+  const [emailEntrar, setEmailEntrar] = useState('')
+  const [senhaEntrar, setSenhaEntrar] = useState('')
+  const [mostrarSenhaEntrar, setMostrarSenhaEntrar] = useState(false)
+  const [erroEntrar, setErroEntrar] = useState('')
+  const [carregandoEntrar, setCarregandoEntrar] = useState(false)
+
+  async function handleEntrar(e: FormEvent) {
     e.preventDefault()
-    window.location.href = '/chat?login=1'
+    setErroEntrar('')
+
+    if (!emailEntrar || !senhaEntrar) {
+      setErroEntrar('Preencha e-mail e senha para continuar.')
+      return
+    }
+
+    setCarregandoEntrar(true)
+    const { error } = await supabase.auth.signInWithPassword({
+      email: emailEntrar,
+      password: senhaEntrar,
+    })
+    setCarregandoEntrar(false)
+
+    if (error) {
+      setErroEntrar(
+        error.message.toLowerCase().includes('invalid login credentials')
+          ? 'E-mail ou senha incorretos.'
+          : 'Não foi possível entrar agora. Tente novamente em instantes.'
+      )
+      return
+    }
+
+    window.location.href = '/chat'
+  }
+
+  async function handleEntrarComGoogle() {
+    setErroEntrar('')
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: `${window.location.origin}/chat` },
+    })
+    if (error) setErroEntrar('Não foi possível entrar com o Google agora. Tente novamente.')
+  }
+
+  async function handleEsqueciSenha() {
+    setErroEntrar('')
+    if (!emailEntrar) {
+      setErroEntrar('Digite seu e-mail acima primeiro, depois clique em "Esqueceu sua senha?".')
+      return
+    }
+    const { error } = await supabase.auth.resetPasswordForEmail(emailEntrar)
+    if (error) {
+      setErroEntrar('Não foi possível enviar o e-mail de recuperação agora. Tente novamente.')
+    } else {
+      setErroEntrar('')
+      window.alert('Enviamos um link de recuperação de senha para o seu e-mail.')
+    }
   }
 
   // --- Aba "Cadastrar" (ainda não tem conta) ---
@@ -105,15 +159,70 @@ export default function Page() {
 
         {aba === 'entrar' ? (
           <form onSubmit={handleEntrar} className="mt-8 w-full space-y-4">
-            <p className="text-center text-sm leading-6 text-kmuted">
-              Você será direcionado para a tela de login do Kazuio.
-            </p>
+            <div>
+              <label htmlFor="email-entrar" className="mb-1.5 block text-xs font-medium text-navy">E-mail</label>
+              <input
+                id="email-entrar"
+                type="email"
+                value={emailEntrar}
+                onChange={(e) => setEmailEntrar(e.target.value)}
+                placeholder="seu@email.com"
+                className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none focus:border-gold"
+              />
+            </div>
+            <div>
+              <label htmlFor="senha-entrar" className="mb-1.5 block text-xs font-medium text-navy">Senha</label>
+              <div className="relative">
+                <input
+                  id="senha-entrar"
+                  type={mostrarSenhaEntrar ? 'text' : 'password'}
+                  value={senhaEntrar}
+                  onChange={(e) => setSenhaEntrar(e.target.value)}
+                  placeholder="••••••••"
+                  className="w-full rounded-xl border border-line bg-white px-4 py-3 pr-11 text-sm text-ink outline-none focus:border-gold"
+                />
+                <button
+                  type="button"
+                  onClick={() => setMostrarSenhaEntrar((v) => !v)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-navy/50 hover:text-navy"
+                  aria-label={mostrarSenhaEntrar ? 'Esconder senha' : 'Mostrar senha'}
+                >
+                  {mostrarSenhaEntrar ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
+              </div>
+            </div>
+
+            {erroEntrar && <p className="text-xs font-medium text-red-600">{erroEntrar}</p>}
+
             <button
               type="submit"
-              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-deep px-6 py-3.5 text-sm font-semibold text-cream transition-transform hover:scale-[1.01]"
+              disabled={carregandoEntrar}
+              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-deep px-6 py-3.5 text-sm font-semibold text-cream transition-transform hover:scale-[1.01] disabled:opacity-60 disabled:hover:scale-100"
             >
-              Ir para o Kazuio
-              <ArrowRight className="h-4 w-4" />
+              {carregandoEntrar ? 'Entrando…' : 'Entrar'}
+              {!carregandoEntrar && <ArrowRight className="h-4 w-4" />}
+            </button>
+
+            <button
+              type="button"
+              onClick={handleEntrarComGoogle}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-line bg-white px-6 py-3.5 text-sm font-semibold text-navy transition-transform hover:scale-[1.01]"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.9c1.7-1.57 2.7-3.88 2.7-6.62z" />
+                <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.96v2.33A9 9 0 0 0 9 18z" />
+                <path fill="#FBBC05" d="M3.95 10.7A5.4 5.4 0 0 1 3.67 9c0-.59.1-1.17.28-1.7V4.97H.96A9 9 0 0 0 0 9c0 1.45.35 2.83.96 4.03l2.99-2.33z" />
+                <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .96 4.97L3.95 7.3C4.66 5.17 6.65 3.58 9 3.58z" />
+              </svg>
+              Continuar com Google
+            </button>
+
+            <button
+              type="button"
+              onClick={handleEsqueciSenha}
+              className="block w-full text-center text-xs font-medium text-navy/70 underline underline-offset-2 hover:text-navy"
+            >
+              Esqueceu sua senha?
             </button>
           </form>
         ) : (
