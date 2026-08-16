@@ -6,27 +6,17 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  async redirects() {
-    return [
-      // Sem isto, "kazuio.com/chat" (sem barra) faz o navegador resolver
-      // os caminhos relativos do app (css/, js/, images/) a partir da raiz
-      // do site, não de /chat/ — quebrando todo o CSS e JS. Com a barra,
-      // a resolução relativa acontece corretamente dentro de /chat/.
-      {
-        source: '/chat',
-        destination: '/chat/',
-        permanent: false,
-      },
-    ]
-  },
   async rewrites() {
     return [
       // Serve o app (chat) como se fosse uma página do próprio kazuio.com,
       // sem redirecionar visivelmente o usuário para app.kazuio.com.
-      // Cobre a página em si e todos os assets que ela carrega com caminho
-      // relativo (js/, css/, images/, legal/*.html).
+      // A resolução de caminhos relativos (css/, js/, images/, legal/)
+      // é garantida pela tag <base href="/chat/"> no próprio HTML do app,
+      // não por regras de barra final aqui — evita loop de redirecionamento
+      // (Next.js remove barra final por padrão, o que conflitava com uma
+      // tentativa anterior de forçar /chat -> /chat/ aqui).
       {
-        source: '/chat/',
+        source: '/chat',
         destination: 'https://app.kazuio.com',
       },
       {
