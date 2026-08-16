@@ -10,7 +10,7 @@ const NAV = [
   { label: 'Biblioteca', href: '/biblioteca' },
   { label: 'Como Funciona', href: '/como-funciona' },
   { label: 'Preços', href: '/precos' },
-  { label: 'Chat', href: '/chat' },
+  { label: 'Chat', href: '/chat/' },
   { label: 'Login', href: '/login' },
 ]
 
