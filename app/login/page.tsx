@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
+import { useState, type FormEvent, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import { ArrowRight, UserPlus, Eye, EyeOff } from 'lucide-react'
 import { Header } from '@/components/kazuio/header'
@@ -9,7 +10,9 @@ import { supabase } from '@/lib/supabaseClient'
 
 type Aba = 'entrar' | 'cadastrar'
 
-export default function Page() {
+function LoginPageContent() {
+  const searchParams = useSearchParams()
+  const planoId = searchParams.get('plano')
   const [aba, setAba] = useState<Aba>('entrar')
 
   // --- Aba "Entrar" (já tem conta) ---
@@ -49,6 +52,25 @@ export default function Page() {
       return
     }
 
+    if (planoId) {
+      const { data: { session } } = await supabase.auth.getSession()
+      try {
+        const res = await fetch('https://uzzmxteysziypvweppkb.supabase.co/functions/v1/assinatura', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session?.access_token}` },
+          body: JSON.stringify({ action: 'iniciar', planId: planoId }),
+        })
+        const data = await res.json()
+        if (data.checkoutUrl) {
+          window.location.href = data.checkoutUrl
+          return
+        }
+      } catch {
+        // Se falhar, segue pro chat normalmente -- a pessoa pode tentar
+        // assinar de novo pela tela de Faturação.
+      }
+    }
+
     window.location.href = '/chat'
   }
 
@@ -82,8 +104,12 @@ export default function Page() {
   const [aceitaTermos, setAceitaTermos] = useState(false)
   const [confirmaIdade, setConfirmaIdade] = useState(false)
   const [erro, setErro] = useState('')
+  const [carregandoCadastro, setCarregandoCadastro] = useState(false)
+  const [cadastroConcluido, setCadastroConcluido] = useState(false)
 
-  function handleCadastrar(e: FormEvent) {
+  const SENHA_FORTE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{6,}$/
+
+  async function handleCadastrar(e: FormEvent) {
     e.preventDefault()
     setErro('')
 
@@ -91,8 +117,8 @@ export default function Page() {
       setErro('Preencha e-mail e senha para continuar.')
       return
     }
-    if (senha.length < 8) {
-      setErro('A senha precisa ter pelo menos 8 caracteres.')
+    if (!SENHA_FORTE.test(senha)) {
+      setErro('A senha precisa ter letra maiúscula, minúscula, número e um símbolo (ex: !@#$%), com pelo menos 6 caracteres.')
       return
     }
     if (!aceitaTermos) {
@@ -104,22 +130,22 @@ export default function Page() {
       return
     }
 
-    // Guarda a intenção de cadastro no navegador da pessoa (não em um
-    // servidor — este projeto ainda não está conectado ao Supabase).
-    // Quando a assinatura for confirmada em /precos, esses dados podem ser
-    // reaproveitados para finalizar a criação da conta de verdade.
-    try {
-      sessionStorage.setItem(
-        'kazuio_cadastro_pendente',
-        JSON.stringify({ email, aceitaTermos, confirmaIdade, criadoEm: new Date().toISOString() })
+    setCarregandoCadastro(true)
+    const { error: signUpError } = await supabase.auth.signUp({ email, password: senha })
+    setCarregandoCadastro(false)
+
+    if (signUpError) {
+      setErro(
+        signUpError.message.toLowerCase().includes('already registered')
+          ? 'Já existe uma conta com esse e-mail.'
+          : /^password should contain/i.test(signUpError.message)
+          ? 'A senha precisa ter letra maiúscula, minúscula, número e um símbolo (ex: !@#$%).'
+          : 'Não foi possível criar a conta agora. Tente novamente.'
       )
-    } catch {
-      // Se o navegador bloquear sessionStorage (modo privado, etc.), segue
-      // o fluxo mesmo assim — a pessoa só vai precisar digitar de novo na
-      // hora de assinar.
+      return
     }
 
-    window.location.href = '/precos'
+    setCadastroConcluido(true)
   }
 
   return (
@@ -225,6 +251,20 @@ export default function Page() {
               Esqueceu sua senha?
             </button>
           </form>
+        ) : cadastroConcluido ? (
+          <div className="mt-8 w-full space-y-4 text-center">
+            <p className="text-sm leading-6 text-ink/80">
+              Quase lá! Mandamos um link de confirmação para <strong className="text-navy">{email}</strong>.
+              Abra seu e-mail e clique no link — depois volte aqui e entre normalmente para continuar.
+            </p>
+            <button
+              type="button"
+              onClick={() => { setCadastroConcluido(false); setAba('entrar') }}
+              className="text-xs font-medium text-navy underline underline-offset-2"
+            >
+              Já confirmei — ir para o login
+            </button>
+          </div>
         ) : (
           <form onSubmit={handleCadastrar} className="mt-8 w-full space-y-4">
             <div>
@@ -245,9 +285,12 @@ export default function Page() {
                 type="password"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
-                placeholder="Mínimo 8 caracteres"
+                placeholder="Senha"
                 className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none focus:border-gold"
               />
+              <p className="mt-1.5 text-[11px] leading-4 text-kmuted">
+                Precisa ter letra maiúscula, minúscula, número e símbolo (ex: !@#$%). Mínimo 6 caracteres.
+              </p>
             </div>
 
             <label className="flex items-start gap-2.5 text-xs leading-5 text-kmuted">
@@ -284,13 +327,14 @@ export default function Page() {
 
             <button
               type="submit"
-              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-deep transition-transform hover:scale-[1.01]"
+              disabled={carregandoCadastro}
+              className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-deep transition-transform hover:scale-[1.01] disabled:opacity-60 disabled:hover:scale-100"
             >
               <UserPlus className="h-4 w-4" />
-              Continuar para os planos
+              {carregandoCadastro ? 'Criando conta…' : 'Criar conta grátis'}
             </button>
             <p className="text-center text-[11px] text-kmuted">
-              Depois de criar seus dados, você escolhe um plano para ativar sua conta.
+              Depois de confirmar seu e-mail, você escolhe um plano para ativar sua conta.
             </p>
           </form>
         )}
@@ -298,5 +342,13 @@ export default function Page() {
 
       <Footer />
     </div>
+  )
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={null}>
+      <LoginPageContent />
+    </Suspense>
   )
 }
