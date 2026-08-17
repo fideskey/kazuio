@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Check, Lock, MessageCircle } from 'lucide-react'
 import { Header } from '@/components/kazuio/header'
 import { Footer } from '@/components/kazuio/footer'
+import { AssinarButton } from '@/components/kazuio/assinar-button'
 
 export const metadata: Metadata = {
   title: 'Preços — Kazuio',
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 
 const PLANOS = [
   {
+    id: '8106e077-88ca-4590-98e6-d5ac298be98d',
     nome: 'Experiência',
     preco: 'R$ 19,99',
     periodo: '/mês',
@@ -24,6 +26,7 @@ const PLANOS = [
     ],
   },
   {
+    id: '6aba5db1-3b7a-4732-a124-a46c7f3cfcd5',
     nome: 'Essencial',
     preco: 'R$ 39,99',
     periodo: '/mês',
@@ -37,6 +40,7 @@ const PLANOS = [
     ],
   },
   {
+    id: '35f57d46-477a-4339-8ecf-2244991d07f8',
     nome: 'Completo',
     preco: 'R$ 79,99',
     periodo: '/mês',
@@ -108,16 +112,7 @@ export default function Page() {
                   ))}
                 </ul>
                 <div className="mt-auto pt-8">
-                  <button
-                    type="button"
-                    disabled
-                    className={`inline-flex w-full cursor-not-allowed items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold opacity-70 ${
-                      plano.destaque ? 'bg-gold text-deep' : 'bg-deep text-cream'
-                    }`}
-                  >
-                    Assinar {plano.nome}
-                  </button>
-                  <p className={`mt-3 text-center text-[11px] ${plano.destaque ? 'text-cream/45' : 'text-kmuted'}`}>Assinaturas em breve.</p>
+                  <AssinarButton planId={plano.id} planoNome={plano.nome} destaque={plano.destaque} />
                 </div>
               </article>
             ))}
