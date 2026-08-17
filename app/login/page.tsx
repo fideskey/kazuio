@@ -66,12 +66,16 @@ function LoginPageContent() {
           return
         }
       } catch {
-        // Se falhar, segue pro chat normalmente -- a pessoa pode tentar
-        // assinar de novo pela tela de Faturação.
+        // Se falhar, segue pro fluxo normal abaixo.
       }
     }
 
-    window.location.href = '/chat'
+    // Sem plano específico escolhido antes: só manda pro chat quem já tem
+    // assinatura ativa. Quem acabou de criar a conta (sem assinatura ainda)
+    // vai para /precos escolher um plano -- /chat não serve pra comprar.
+    const { data: { user } } = await supabase.auth.getUser()
+    const { data: sus } = await supabase.from('suscripciones').select('estado').eq('usuario_id', user?.id).maybeSingle()
+    window.location.href = sus?.estado === 'activa' ? '/chat' : '/precos'
   }
 
   async function handleEntrarComGoogle() {
