@@ -43,7 +43,7 @@ export function Hero() {
 
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
-                  href="/precos"
+                  href="/login"
                   className="inline-flex items-center gap-2 rounded-full bg-deep px-6 py-3.5 text-sm font-medium text-cream shadow-[0_12px_30px_rgba(32,57,47,0.12)] transition-transform hover:scale-[1.02]"
                 >
                   Começar a conversar

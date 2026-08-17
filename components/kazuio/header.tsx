@@ -38,7 +38,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="/chat"
+            href="/login"
             className="hidden items-center gap-1.5 rounded-full bg-deep px-5 py-2.5 text-[12px] font-medium text-cream shadow-sm transition-transform hover:scale-[1.02] sm:inline-flex"
           >
             Começar a conversar
@@ -70,7 +70,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/chat"
+              href="/login"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-deep px-6 py-3.5 text-center text-sm font-medium text-cream"
             >

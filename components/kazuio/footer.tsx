@@ -43,7 +43,7 @@ export function Footer() {
           <div>
             <a href="/" className="font-serif text-2xl tracking-[0.08em] text-cream" aria-label="Kazuio — início">Kazuio</a>
             <p className="mt-4 max-w-xs text-sm leading-6 text-cream/65">Perguntas que guiam. Reflexões que conectam.</p>
-            <a href="/precos" className="mt-5 inline-block text-xs font-semibold text-gold2 hover:text-cream">Começar a conversar →</a>
+            <a href="/login" className="mt-5 inline-block text-xs font-semibold text-gold2 hover:text-cream">Começar a conversar →</a>
           </div>
 
           <div>
