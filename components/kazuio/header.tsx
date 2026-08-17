@@ -1,21 +1,31 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { Logo } from './logo'
+import { supabase } from '@/lib/supabaseClient'
 
-const NAV = [
+const NAV_BASE = [
   { label: 'Quem Somos', href: '/quem-somos' },
   { label: 'Pilares', href: '/pilares' },
   { label: 'Biblioteca', href: '/biblioteca' },
   { label: 'Como Funciona', href: '/como-funciona' },
   { label: 'Preços', href: '/precos' },
-  { label: 'Login', href: '/login' },
 ]
-
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  // null = ainda não sabemos (checando sessão); depois vira true/false.
+  // Enquanto null, mantém o comportamento padrão (como se fosse deslogado),
+  // pra não piscar/mudar de link visivelmente depois que a página carrega.
+  const [logado, setLogado] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => setLogado(!!session))
+  }, [])
+
+  const destinoPrincipal = logado ? '/chat' : '/login'
+  const NAV = [...NAV_BASE, { label: logado ? 'Chat' : 'Login', href: destinoPrincipal }]
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/40 bg-cream/88 backdrop-blur-xl">
@@ -38,10 +48,10 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="/login"
+            href={destinoPrincipal}
             className="hidden items-center gap-1.5 rounded-full bg-deep px-5 py-2.5 text-[12px] font-medium text-cream shadow-sm transition-transform hover:scale-[1.02] sm:inline-flex"
           >
-            Começar a conversar
+            {logado ? 'Ir para o chat' : 'Começar a conversar'}
             <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
           <button
@@ -70,11 +80,11 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/login"
+              href={destinoPrincipal}
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-deep px-6 py-3.5 text-center text-sm font-medium text-cream"
             >
-              Começar a conversar
+              {logado ? 'Ir para o chat' : 'Começar a conversar'}
             </a>
           </nav>
         </div>
