@@ -26,6 +26,7 @@ function LoginPageContent() {
   const [mostrarSenhaEntrar, setMostrarSenhaEntrar] = useState(false)
   const [erroEntrar, setErroEntrar] = useState('')
   const [carregandoEntrar, setCarregandoEntrar] = useState(false)
+  const [mensagemEntrar, setMensagemEntrar] = useState('')
 
   async function handleEntrar(e: FormEvent) {
     e.preventDefault()
@@ -89,6 +90,7 @@ function LoginPageContent() {
 
   async function handleEsqueciSenha() {
     setErroEntrar('')
+    setMensagemEntrar('')
     if (!emailEntrar) {
       setErroEntrar('Digite seu e-mail acima primeiro, depois clique em "Esqueceu sua senha?".')
       return
@@ -98,7 +100,7 @@ function LoginPageContent() {
       setErroEntrar('Não foi possível enviar o e-mail de recuperação agora. Tente novamente.')
     } else {
       setErroEntrar('')
-      window.alert('Enviamos um link de recuperação de senha para o seu e-mail.')
+      setMensagemEntrar('E-mail enviado! Confira sua caixa de entrada para redefinir sua senha.')
     }
   }
 
@@ -223,6 +225,11 @@ function LoginPageContent() {
             </div>
 
             {erroEntrar && <p className="text-xs font-medium text-red-600">{erroEntrar}</p>}
+            {mensagemEntrar && (
+              <p className="rounded-xl border border-gold/30 bg-gold/10 px-4 py-3 text-xs font-medium text-navy">
+                {mensagemEntrar}
+              </p>
+            )}
 
             <button
               type="submit"
