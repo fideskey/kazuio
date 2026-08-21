@@ -107,6 +107,9 @@ function LoginPageContent() {
   // --- Aba "Cadastrar" (ainda não tem conta) ---
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
+  const [confirmarSenha, setConfirmarSenha] = useState('')
+  const [mostrarSenhaCadastro, setMostrarSenhaCadastro] = useState(false)
+  const [mostrarConfirmarSenha, setMostrarConfirmarSenha] = useState(false)
   const [aceitaTermos, setAceitaTermos] = useState(false)
   const [confirmaIdade, setConfirmaIdade] = useState(false)
   const [erro, setErro] = useState('')
@@ -119,12 +122,16 @@ function LoginPageContent() {
     e.preventDefault()
     setErro('')
 
-    if (!email || !senha) {
-      setErro('Preencha e-mail e senha para continuar.')
+    if (!email || !senha || !confirmarSenha) {
+      setErro('Preencha e-mail e senha (e a confirmação) para continuar.')
       return
     }
     if (!SENHA_FORTE.test(senha)) {
       setErro('A senha precisa ter letra maiúscula, minúscula, número e um símbolo (ex: !@#$%), com pelo menos 6 caracteres.')
+      return
+    }
+    if (senha !== confirmarSenha) {
+      setErro('As senhas não coincidem. Verifique e tente novamente.')
       return
     }
     if (!aceitaTermos) {
@@ -291,17 +298,48 @@ function LoginPageContent() {
             </div>
             <div>
               <label htmlFor="senha-cadastro" className="mb-1.5 block text-xs font-medium text-navy">Crie uma senha</label>
-              <input
-                id="senha-cadastro"
-                type="password"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
-                placeholder="Senha"
-                className="w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none focus:border-gold"
-              />
+              <div className="relative">
+                <input
+                  id="senha-cadastro"
+                  type={mostrarSenhaCadastro ? 'text' : 'password'}
+                  value={senha}
+                  onChange={(e) => setSenha(e.target.value)}
+                  placeholder="Senha"
+                  className="w-full rounded-xl border border-line bg-white px-4 py-3 pr-11 text-sm text-ink outline-none focus:border-gold"
+                />
+                <button
+                  type="button"
+                  onClick={() => setMostrarSenhaCadastro((v) => !v)}
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-kmuted hover:text-navy"
+                  aria-label={mostrarSenhaCadastro ? 'Esconder senha' : 'Mostrar senha'}
+                >
+                  {mostrarSenhaCadastro ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
+              </div>
               <p className="mt-1.5 text-[11px] leading-4 text-kmuted">
                 Precisa ter letra maiúscula, minúscula, número e símbolo (ex: !@#$%). Mínimo 6 caracteres.
               </p>
+            </div>
+            <div>
+              <label htmlFor="confirmar-senha-cadastro" className="mb-1.5 block text-xs font-medium text-navy">Confirme sua senha</label>
+              <div className="relative">
+                <input
+                  id="confirmar-senha-cadastro"
+                  type={mostrarConfirmarSenha ? 'text' : 'password'}
+                  value={confirmarSenha}
+                  onChange={(e) => setConfirmarSenha(e.target.value)}
+                  placeholder="Repita a senha"
+                  className="w-full rounded-xl border border-line bg-white px-4 py-3 pr-11 text-sm text-ink outline-none focus:border-gold"
+                />
+                <button
+                  type="button"
+                  onClick={() => setMostrarConfirmarSenha((v) => !v)}
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-kmuted hover:text-navy"
+                  aria-label={mostrarConfirmarSenha ? 'Esconder senha' : 'Mostrar senha'}
+                >
+                  {mostrarConfirmarSenha ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
+              </div>
             </div>
 
             <label className="flex items-start gap-2.5 text-xs leading-5 text-kmuted">
