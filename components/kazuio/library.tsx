@@ -8,14 +8,20 @@ const ITEMS = [
   { icon: SearchX, title: 'Sem busca durante a conversa', body: 'Kazuio não sai procurando respostas na internet para completar uma reflexão.' },
 ]
 
+const STATS = [
+  { number: '933', label: 'citações curadas' },
+  { number: '76', label: 'autores reais' },
+  { number: '641', label: 'temas classificados' },
+]
+
 export function Library() {
   return (
     <section id="biblioteca" className="mx-auto max-w-[1220px] px-5 py-10 md:px-8 md:py-16">
       <div className="relative overflow-hidden rounded-[28px] bg-deep text-cream">
-        <div className="absolute inset-0 opacity-25">
+        <div className="absolute inset-0 opacity-40">
           <Image src="/images/library.jpg" alt="" fill className="object-cover object-left" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/95 to-deep/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/90 to-deep/70" />
 
         <div className="relative grid lg:grid-cols-[1.35fr_0.75fr]">
           <div className="px-7 py-11 md:px-12 md:py-14">
@@ -27,7 +33,16 @@ export function Library() {
               Quando uma reflexão pede uma referência, Kazuio pode trazer uma passagem de um livro, filósofo ou tradição religiosa — sempre a partir da biblioteca que construímos e verificamos.
             </p>
 
-            <div className="mt-10 grid gap-7 sm:grid-cols-3">
+            <div className="mt-9 flex flex-wrap gap-x-10 gap-y-4">
+              {STATS.map(({ number, label }) => (
+                <div key={label}>
+                  <p className="font-serif text-3xl text-gold2 md:text-4xl">{number}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.14em] text-cream/60">{label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-9 grid gap-7 sm:grid-cols-3">
               {ITEMS.map(({ icon: Icon, title, body }) => (
                 <div key={title} className="border-t border-cream/15 pt-5">
                   <Icon className="h-7 w-7 text-gold2" />
