@@ -9,7 +9,7 @@ const ITEMS = [
 ]
 
 const STATS = [
-  { number: '933', label: 'citações curadas' },
+  { number: '+1000', label: 'citações curadas' },
   { number: '76', label: 'autores reais' },
   { number: '641', label: 'temas classificados' },
 ]
@@ -18,10 +18,10 @@ export function Library() {
   return (
     <section id="biblioteca" className="mx-auto max-w-[1220px] px-5 py-10 md:px-8 md:py-16">
       <div className="relative overflow-hidden rounded-[28px] bg-deep text-cream">
-        <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 opacity-70">
           <Image src="/images/library.jpg" alt="" fill className="object-cover object-left" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/90 to-deep/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep/95 via-deep/65 to-deep/35" />
 
         <div className="relative grid lg:grid-cols-[1.35fr_0.75fr]">
           <div className="px-7 py-11 md:px-12 md:py-14">
@@ -66,3 +66,4 @@ export function Library() {
     </section>
   )
 }
+
