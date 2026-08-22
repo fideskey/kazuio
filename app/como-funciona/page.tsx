@@ -77,6 +77,51 @@ export default function Page() {
           </div>
         </section>
 
+        <section className="mx-auto max-w-[900px] px-5 py-10 md:px-8 md:py-14">
+          <div className="border-t border-line/80 pt-10">
+            <p className="eyebrow">Três níveis de cuidado</p>
+            <h2 className="mt-4 font-serif text-2xl leading-[1.15] text-navy md:text-3xl">
+              Uma conversa que reconhece o que você está vivendo
+            </h2>
+            <p className="mt-4 max-w-[640px] text-sm leading-7 text-kmuted">
+              Kazuio não trata toda conversa da mesma forma. Dependendo do que você compartilha, a resposta muda de
+              tom e de prioridade — sempre com o mesmo compromisso de fundo: cuidar bem de você.
+            </p>
+
+            <div className="mt-8 grid gap-5 sm:grid-cols-3">
+              <div className="rounded-[22px] border border-line bg-paper p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Nível 1</p>
+                <h3 className="mt-2 font-serif text-lg leading-[1.2] text-navy">Acompanhamento diário</h3>
+                <p className="mt-3 text-sm leading-6 text-kmuted">
+                  A maior parte das conversas. Reflexão, escuta e perspectiva a partir da Psicologia, da Filosofia e
+                  da Fé — para os altos e baixos do dia a dia.
+                </p>
+              </div>
+              <div className="rounded-[22px] border border-line bg-paper p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Nível 2</p>
+                <h3 className="mt-2 font-serif text-lg leading-[1.2] text-navy">Atenção reforçada</h3>
+                <p className="mt-3 text-sm leading-6 text-kmuted">
+                  Quando o tema pede mais cuidado, Kazuio prioriza a escuta atenta e incentiva, sempre que fizer
+                  sentido, buscar apoio profissional qualificado.
+                </p>
+              </div>
+              <div className="rounded-[22px] border border-line bg-paper p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold">Nível 3</p>
+                <h3 className="mt-2 font-serif text-lg leading-[1.2] text-navy">Resposta a momentos de crise</h3>
+                <p className="mt-3 text-sm leading-6 text-kmuted">
+                  Se surgem sinais de risco real, a prioridade muda por completo: a segurança da pessoa vem antes de
+                  qualquer outra coisa, e Kazuio conecta com recursos de ajuda apropriados.
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-7 max-w-[640px] text-sm leading-7 text-kmuted">
+              Kazuio não substitui acompanhamento profissional de saúde mental — é uma ponte para o bem-estar, todos
+              os dias.
+            </p>
+          </div>
+        </section>
+
         <section className="mx-auto max-w-[1220px] px-5 py-10 md:px-8 md:py-14">
           <div className="rounded-[30px] bg-deep px-8 py-10 text-cream md:px-12 md:py-12">
             <p className="eyebrow text-gold2">Princípios da experiência</p>
@@ -131,3 +176,4 @@ export default function Page() {
     </div>
   )
 }
+
