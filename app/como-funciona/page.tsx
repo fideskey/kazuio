@@ -63,15 +63,15 @@ export default function Page() {
         <section className="mx-auto max-w-[1220px] px-5 py-8 md:px-8 md:py-14">
           <div className="grid gap-5 sm:grid-cols-2">
             {ETAPAS.map(({ icon: Icon, numero, title, body }) => (
-              <article key={numero} className="relative overflow-hidden rounded-[26px] border border-line bg-paper p-7 md:p-8">
+              <article key={numero} className="relative overflow-hidden rounded-[26px] border border-cream/12 bg-deep p-7 md:p-8">
                 <div className="flex items-center gap-4">
-                  <span className="font-serif text-3xl text-gold/50">{numero}</span>
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-cream text-gold">
+                  <span className="font-serif text-3xl text-gold2/50">{numero}</span>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-cream/10 text-gold2">
                     <Icon className="h-5.5 w-5.5" />
                   </span>
                 </div>
-                <h2 className="mt-5 font-serif text-xl leading-[1.2] text-navy">{title}</h2>
-                <p className="mt-3 text-sm leading-6 text-kmuted">{body}</p>
+                <h2 className="mt-5 font-serif text-xl leading-[1.2] text-cream">{title}</h2>
+                <p className="mt-3 text-sm leading-6 text-cream/68">{body}</p>
               </article>
             ))}
           </div>
@@ -176,4 +176,5 @@ export default function Page() {
     </div>
   )
 }
+
 
