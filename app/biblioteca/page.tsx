@@ -13,13 +13,13 @@ const PILARES = [
   {
     icon: PsychologyIcon,
     label: 'Psicologia',
-    autores: 'Carl Rogers (Tornar-se Pessoa), Erich Fromm (O Medo à Liberdade), Viktor Frankl (Em Busca de Sentido), Irvin Yalom (Psicoterapia Existencial), entre outros.',
+    autores: 'Bessel van der Kolk, Irvin Yalom, Erich Fromm, Gabor Maté, Carl Rogers, Albert Ellis, Carl Jung, Viktor Frankl, Kristin Neff, Brené Brown, entre outros.',
     cobre: 'Ansiedade, autoestima, luto, relacionamentos, padrões de comportamento e sentido de vida.',
   },
   {
     icon: PhilosophyIcon,
     label: 'Filosofia',
-    autores: 'Marco Aurélio (Meditações), Sócrates (Apologia), Albert Camus, entre outros.',
+    autores: 'Sêneca, Marco Aurélio, Aristóteles, Sócrates (via Platão), Søren Kierkegaard, Friedrich Nietzsche, Lao-Tsé, Albert Camus, Epicteto, Simone Weil, entre outros.',
     cobre: 'Para quem busca compreender a própria vida através da razão — não só da fé.',
   },
   {
@@ -62,6 +62,19 @@ export default function Page() {
           <p className="mt-7 max-w-[730px] text-[17px] leading-8 text-ink/75">
             Quando o Kazuio traz uma reflexão de um autor, um filósofo ou uma tradição de fé, essa citação nunca vem da memória da IA nem de uma busca aberta na internet. Ela vem de uma biblioteca própria — centenas de citações verificadas uma a uma, cada uma com fonte exata.
           </p>
+
+          <div className="mt-9 flex flex-wrap gap-x-12 gap-y-5">
+            {[
+              { number: '933', label: 'citações curadas' },
+              { number: '76', label: 'autores reais' },
+              { number: '641', label: 'temas classificados' },
+            ].map(({ number, label }) => (
+              <div key={label}>
+                <p className="font-serif text-4xl text-gold md:text-[2.75rem]">{number}</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.14em] text-kmuted">{label}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Como funciona a garantia */}
@@ -112,7 +125,7 @@ export default function Page() {
               <div>
                 <p className="eyebrow text-gold2">Organizada por tema de vida</p>
                 <h2 className="mt-4 font-serif text-3xl leading-[1.08] md:text-[2.5rem]">
-                  Dezenas de temas — não uma lista genérica.
+                  641 temas classificados — não uma lista genérica.
                 </h2>
                 <p className="mt-5 text-sm leading-7 text-cream/70">
                   Cada citação é classificada pelo tema de vida que ela realmente aborda. Isso permite ao Kazuio encontrar, entre centenas de opções, a reflexão que conversa de verdade com o que você está vivendo — não uma frase genérica encaixada à força.
@@ -175,3 +188,4 @@ export default function Page() {
     </div>
   )
 }
+
