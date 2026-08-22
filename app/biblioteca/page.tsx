@@ -13,19 +13,19 @@ const PILARES = [
   {
     icon: PsychologyIcon,
     label: 'Psicologia',
-    autores: 'Carl Rogers (Tornar-se Pessoa), Erich Fromm (O Medo à Liberdade), Viktor Frankl (Em Busca de Sentido), Irvin Yalom (Psicoterapia Existencial), entre outros.',
+    autores: 'Bessel van der Kolk, Irvin Yalom, Erich Fromm, Gabor Maté, Carl Rogers, Albert Ellis, Carl Jung, Viktor Frankl, Kristin Neff, Brené Brown, Martin Seligman, Elisabeth Kübler-Ross, Paul Gilbert, Tara Brach, Steven Hayes, Aaron Beck, John Bowlby, Judith Herman, Marsha Linehan, Peter Levine, Abraham Maslow, entre outros.',
     cobre: 'Ansiedade, autoestima, luto, relacionamentos, padrões de comportamento e sentido de vida.',
   },
   {
     icon: PhilosophyIcon,
     label: 'Filosofia',
-    autores: 'Marco Aurélio (Meditações), Sócrates (Apologia), Albert Camus, entre outros.',
+    autores: 'Sêneca, Marco Aurélio, Aristóteles, Sócrates (via Platão), Søren Kierkegaard, Friedrich Nietzsche, Lao-Tsé, Albert Camus, Epicteto, Simone Weil, Agostinho de Hipona, Tomás de Aquino, Confúcio, Baruch Spinoza, Epicuro, Arthur Schopenhauer, Blaise Pascal, Hannah Arendt, Simone de Beauvoir, entre outros.',
     cobre: 'Para quem busca compreender a própria vida através da razão — não só da fé.',
   },
   {
     icon: FaithIcon,
     label: 'Fé',
-    autores: 'Catolicismo (Catecismo, Santo Agostinho, Santa Teresa d\u2019Ávila), Evangelismo (Spurgeon, Tim Keller, John Piper) e Espiritismo (Allan Kardec, Chico Xavier).',
+    autores: 'Bíblia Sagrada (dezenas de versículos citados diretamente), Catecismo da Igreja Católica, Santo Agostinho, Santa Teresa d\u2019Ávila (Catolicismo) · Charles Spurgeon, John Piper, Tim Keller (Evangelismo) · O Livro dos Espíritos e O Evangelho segundo o Espiritismo (Allan Kardec), Nosso Lar (pelo Espírito André Luiz, psicografado por Chico Xavier) (Espiritismo).',
     cobre: 'Três tradições tratadas com o mesmo peso e respeito. A pessoa escolhe se quer esse lado da reflexão.',
   },
 ]
@@ -62,6 +62,19 @@ export default function Page() {
           <p className="mt-7 max-w-[730px] text-[17px] leading-8 text-ink/75">
             Quando o Kazuio traz uma reflexão de um autor, um filósofo ou uma tradição de fé, essa citação nunca vem da memória da IA nem de uma busca aberta na internet. Ela vem de uma biblioteca própria — centenas de citações verificadas uma a uma, cada uma com fonte exata.
           </p>
+
+          <div className="mt-9 flex flex-wrap gap-x-12 gap-y-5">
+            {[
+              { number: '+1000', label: 'citações curadas' },
+              { number: '76', label: 'autores reais' },
+              { number: '641', label: 'temas classificados' },
+            ].map(({ number, label }) => (
+              <div key={label}>
+                <p className="font-serif text-4xl text-gold md:text-[2.75rem]">{number}</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.14em] text-kmuted">{label}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Como funciona a garantia */}
@@ -112,14 +125,14 @@ export default function Page() {
               <div>
                 <p className="eyebrow text-gold2">Organizada por tema de vida</p>
                 <h2 className="mt-4 font-serif text-3xl leading-[1.08] md:text-[2.5rem]">
-                  Dezenas de temas — não uma lista genérica.
+                  641 temas classificados — não uma lista genérica.
                 </h2>
                 <p className="mt-5 text-sm leading-7 text-cream/70">
                   Cada citação é classificada pelo tema de vida que ela realmente aborda. Isso permite ao Kazuio encontrar, entre centenas de opções, a reflexão que conversa de verdade com o que você está vivendo — não uma frase genérica encaixada à força.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2.5">
-                {['Esperança', 'Sofrimento', 'Confiança', 'Ansiedade', 'Transformação', 'Perdão', 'Identidade', 'Propósito', 'Medo', 'Missão', 'Responsabilidade', 'Luto', 'Sentido', 'Liberdade', 'Alegria'].map((tema) => (
+                {['Esperança', 'Trauma', 'Sofrimento', 'Amor', 'Confiança', 'Ansiedade', 'Morte', 'Transformação', 'Propósito', 'Aceitação', 'Fé', 'Perdão', 'Liberdade', 'Medo', 'Identidade', 'Luto', 'Amizade', 'Segurança', 'Vida', 'Responsabilidade', 'Missão', 'Progresso', 'Oração', 'Sentido', 'Alegria', 'Graça', 'Consolo', 'Cura', 'Autenticidade', 'Perseverança', 'Finitude', 'Coragem', 'Libertação', 'Paz', 'Autocompaixão', 'Misericórdia', 'Verdade', 'Consciência', 'Conversão'].map((tema) => (
                   <span key={tema} className="rounded-full border border-cream/15 bg-white/[0.05] px-4 py-2 text-xs text-cream/75">
                     {tema}
                   </span>
@@ -175,3 +188,5 @@ export default function Page() {
     </div>
   )
 }
+
+
