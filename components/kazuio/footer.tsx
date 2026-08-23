@@ -30,8 +30,18 @@ function TikTokIcon({ className = 'h-4 w-4' }: { className?: string }) {
   )
 }
 
+function FacebookIcon({ className = 'h-4 w-4' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M13.6 20.6v-6.4h2.1l.3-2.5h-2.4V10c0-.7.2-1.2 1.2-1.2h1.3V6.5c-.2 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3v1.9H8.9v2.5H11v6.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
 const SOCIALS = [
   { label: 'Instagram', href: 'https://www.instagram.com/kazuio.app/', icon: InstagramIcon },
+  { label: 'Facebook', href: 'https://www.facebook.com/kazuio.app', icon: FacebookIcon },
   { label: 'TikTok', href: 'https://www.tiktok.com/@kazuio_ia', icon: TikTokIcon },
 ]
 
