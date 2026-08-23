@@ -41,7 +41,7 @@ function FacebookIcon({ className = 'h-4 w-4' }: { className?: string }) {
 
 const SOCIALS = [
   { label: 'Instagram', href: 'https://www.instagram.com/kazuio.app/', icon: InstagramIcon },
-  { label: 'Facebook', href: 'https://www.facebook.com/kazuio.app', icon: FacebookIcon },
+  { label: 'Facebook', href: 'https://www.facebook.com/kazuio', icon: FacebookIcon },
   { label: 'TikTok', href: 'https://www.tiktok.com/@kazuio_ia', icon: TikTokIcon },
 ]
 
