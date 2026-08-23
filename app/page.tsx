@@ -4,7 +4,6 @@ import { Pillars } from '@/components/kazuio/pillars'
 import { CareLevels } from '@/components/kazuio/care-levels'
 import { Conversation } from '@/components/kazuio/conversation'
 import { Library } from '@/components/kazuio/library'
-import { Identity } from '@/components/kazuio/identity'
 import { Footer } from '@/components/kazuio/footer'
 import { FAQ } from '@/components/kazuio/faq'
 
@@ -18,7 +17,6 @@ export default function Page() {
         <CareLevels />
         <Conversation />
         <Library />
-        <Identity />
         <FAQ />
       </main>
       <Footer />
