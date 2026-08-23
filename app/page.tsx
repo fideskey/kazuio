@@ -1,8 +1,8 @@
 import { Header } from '@/components/kazuio/header'
 import { Hero } from '@/components/kazuio/hero'
 import { Pillars } from '@/components/kazuio/pillars'
-import { CareLevels } from '@/components/kazuio/care-levels'
 import { Conversation } from '@/components/kazuio/conversation'
+import { CareLevels } from '@/components/kazuio/care-levels'
 import { Library } from '@/components/kazuio/library'
 import { Footer } from '@/components/kazuio/footer'
 import { FAQ } from '@/components/kazuio/faq'
@@ -14,8 +14,8 @@ export default function Page() {
       <main>
         <Hero />
         <Pillars />
-        <CareLevels />
         <Conversation />
+        <CareLevels />
         <Library />
         <FAQ />
       </main>
