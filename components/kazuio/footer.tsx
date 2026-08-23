@@ -39,9 +39,21 @@ function FacebookIcon({ className = 'h-4 w-4' }: { className?: string }) {
   )
 }
 
+function LinkedinIcon({ className = 'h-4 w-4' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke="currentColor" strokeWidth="1.6" />
+      <rect x="6.7" y="10" width="1.9" height="7.3" fill="currentColor" />
+      <circle cx="7.65" cy="7.2" r="1.15" fill="currentColor" />
+      <path d="M10.6 17.3V10h1.9v1c.5-.75 1.3-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.2v4.3h-1.9v-3.9c0-1.1-.5-1.8-1.5-1.8-.9 0-1.7.65-1.7 1.9v3.8h-1.9Z" fill="currentColor" />
+    </svg>
+  )
+}
+
 const SOCIALS = [
   { label: 'Instagram', href: 'https://www.instagram.com/kazuio.app/', icon: InstagramIcon },
   { label: 'Facebook', href: 'https://www.facebook.com/kazuio.ia/', icon: FacebookIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/kazuio/', icon: LinkedinIcon },
   { label: 'TikTok', href: 'https://www.tiktok.com/@kazuio_app', icon: TikTokIcon },
 ]
 
@@ -105,3 +117,4 @@ export function Footer() {
     </footer>
   )
 }
+
