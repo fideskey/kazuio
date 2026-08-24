@@ -37,12 +37,6 @@ export default function Page() {
             'Você pode apagar os dados de armazenamento local do Kazuio a qualquer momento pelas configurações de privacidade do seu navegador. Isso vai encerrar sua sessão, exigindo que você faça login novamente.',
           ],
         },
-        {
-          heading: 'Aviso',
-          paragraphs: [
-            'Este documento foi elaborado com base em pesquisa regulatória de boa fé e não substitui a revisão de um advogado brasileiro especializado antes de um lançamento comercial.',
-          ],
-        },
       ]}
     />
   )
