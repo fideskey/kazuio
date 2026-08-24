@@ -89,12 +89,6 @@ export default function Page() {
             'Para exercer qualquer um dos direitos acima, ou tirar dúvidas sobre esta política, entre em contato pelo email: kazuio@kazuio.com',
           ],
         },
-        {
-          heading: 'Aviso',
-          paragraphs: [
-            'Este documento foi elaborado com base em pesquisa regulatória de boa fé e não substitui a revisão de um advogado brasileiro especializado em proteção de dados. Recomendamos essa revisão profissional antes de um lançamento comercial.',
-          ],
-        },
       ]}
     />
   )
