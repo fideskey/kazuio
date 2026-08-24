@@ -90,12 +90,6 @@ export default function Page() {
             'Estes Termos são regidos pelas leis da República Federativa do Brasil.',
           ],
         },
-        {
-          heading: 'Aviso',
-          paragraphs: [
-            'Este documento foi elaborado com base em pesquisa regulatória de boa fé e não substitui a revisão de um advogado brasileiro especializado antes de um lançamento comercial.',
-          ],
-        },
       ]}
     />
   )
