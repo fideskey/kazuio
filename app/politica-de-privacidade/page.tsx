@@ -12,6 +12,12 @@ export default function Page() {
       title="Política de Privacidade"
       updated="agosto de 2026"
       intro="Esta Política de Privacidade explica como o Kazuio coleta, usa, armazena e protege suas informações, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)."
+      summary={[
+        'Suas conversas são tratadas como dado sensível de saúde — só as usamos com seu consentimento explícito, nunca por padrão.',
+        'Não vendemos, nem compartilhamos suas conversas com terceiros para publicidade.',
+        'Você pode apagar seu histórico ou excluir sua conta inteira a qualquer momento, pelas Configurações.',
+        'Se uma resposta do Kazuio parecer errada, ofensiva ou insegura, você pode nos avisar — veja a seção 11.',
+      ]}
       sections={[
         {
           heading: '1. Quem somos',
@@ -62,6 +68,8 @@ export default function Page() {
             '— Apagar seu histórico de conversas, a qualquer momento, pelo botão "Apagar todo o histórico" em Configurações;',
             '— Eliminar totalmente sua conta e todos os dados associados, pelo botão "Excluir minha conta" em Configurações;',
             '— Revogar seu consentimento ao tratamento de dados sensíveis a qualquer momento, o que pode implicar o encerramento da conta, já que o serviço depende desse tratamento para funcionar;',
+            '— Portabilidade: solicitar que enviemos seus dados a você (ou a outro fornecedor, quando tecnicamente viável) em formato estruturado;',
+            '— Oposição: se opor a um tratamento específico de dados que considere inadequado, sem necessariamente excluir toda a sua conta;',
             '— Solicitar informações sobre com quem compartilhamos seus dados, entrando em contato pelo canal abaixo.',
           ],
         },
@@ -87,6 +95,13 @@ export default function Page() {
           heading: '10. Contato',
           paragraphs: [
             'Para exercer qualquer um dos direitos acima, ou tirar dúvidas sobre esta política, entre em contato pelo email: kazuio@kazuio.com',
+          ],
+        },
+        {
+          heading: '11. Relato de conteúdo problemático da IA',
+          paragraphs: [
+            'O Kazuio cita exclusivamente de uma biblioteca verificada, mas nenhuma inteligência artificial está livre de erros. Se uma resposta do Kazuio parecer incorreta, ofensiva, insegura, ou fora do que você esperava, escreva para kazuio@kazuio.com descrevendo o que aconteceu (pode incluir um recorte da conversa). Usamos esses relatos para corrigir e melhorar o sistema.',
+            'Este canal não é para emergências. Se você estiver em risco imediato, procure ajuda conforme a seção 2 dos Termos e Condições (CVV: 188, SAMU: 192).',
           ],
         },
       ]}
