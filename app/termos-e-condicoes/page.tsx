@@ -12,6 +12,12 @@ export default function Page() {
       title="Termos e Condições"
       updated="agosto de 2026"
       intro="Estes Termos e Condições regulam o uso do Kazuio, um espaço de reflexão com inteligência artificial. Ao usar o Kazuio, você concorda com os termos abaixo."
+      summary={[
+        'O Kazuio é uma IA de reflexão — não substitui psicólogo, psiquiatra, autoridade religiosa nem atendimento de emergência.',
+        'É destinado exclusivamente a maiores de 18 anos.',
+        'Você tem 7 dias após assinar um plano para se arrepender e pedir reembolso total, sem precisar justificar (art. 49 do Código de Defesa do Consumidor) — veja a seção 5.1.',
+        'Você pode cancelar ou excluir sua conta quando quiser.',
+      ]}
       sections={[
         {
           heading: '1. Natureza do serviço',
@@ -55,6 +61,14 @@ export default function Page() {
           ],
         },
         {
+          heading: '5.1 Direito de arrependimento (Código de Defesa do Consumidor)',
+          paragraphs: [
+            'Como a contratação do Kazuio é feita fora de um estabelecimento físico (compra digital), você tem direito de se arrepender da assinatura em até 7 (sete) dias corridos a partir da confirmação do pagamento, conforme o art. 49 da Lei nº 8.078/1990 (Código de Defesa do Consumidor) — sem precisar apresentar nenhuma justificativa.',
+            'Para exercer esse direito, entre em contato pelo email kazuio@kazuio.com dentro desse prazo. O reembolso será integral e processado pelo mesmo meio de pagamento utilizado, em até 10 dias úteis.',
+            'Após o prazo de 7 dias, o cancelamento continua disponível a qualquer momento, mas passa a valer somente a partir do fim do ciclo já pago, sem reembolso proporcional do período em curso.',
+          ],
+        },
+        {
           heading: '6. Uso adequado',
           paragraphs: [
             'Você concorda em não usar o Kazuio para: contornar o protocolo de segurança em situações de risco; enviar conteúdo ilegal, ofensivo ou que viole direitos de terceiros; tentar extrair, copiar ou redistribuir a base de citações verificadas do Kazuio; ou usar o serviço para fins diferentes do acompanhamento pessoal e reflexivo a que se destina.',
@@ -64,6 +78,7 @@ export default function Page() {
           heading: '7. Conteúdo e citações',
           paragraphs: [
             'O Kazuio cita exclusivamente de uma base de dados curada e verificada de autores, filósofos e textos religiosos — nunca de memória livre nem de buscas na internet. Ainda assim, como toda inteligência artificial, o Kazuio pode eventualmente cometer erros na formulação das respostas; verifique qualquer informação importante de forma independente.',
+            'Se uma resposta parecer incorreta, ofensiva ou insegura, você pode nos avisar — veja a seção 11 da nossa Política de Privacidade.',
           ],
         },
         {
