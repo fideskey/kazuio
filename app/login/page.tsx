@@ -112,6 +112,7 @@ function LoginPageContent() {
   const [mostrarConfirmarSenha, setMostrarConfirmarSenha] = useState(false)
   const [aceitaTermos, setAceitaTermos] = useState(false)
   const [confirmaIdade, setConfirmaIdade] = useState(false)
+  const [aceitaDadoFe, setAceitaDadoFe] = useState(false)
   const [erro, setErro] = useState('')
   const [carregandoCadastro, setCarregandoCadastro] = useState(false)
   const [cadastroConcluido, setCadastroConcluido] = useState(false)
@@ -370,6 +371,22 @@ function LoginPageContent() {
                 className="mt-0.5 h-4 w-4 shrink-0 accent-gold"
               />
               <span>Confirmo que tenho 18 anos de idade ou mais.</span>
+            </label>
+
+            <label className="flex items-start gap-2.5 rounded-lg border border-gold/40 bg-gold/10 px-3 py-2.5 text-xs leading-5 text-kmuted">
+              <input
+                type="checkbox"
+                checked={aceitaDadoFe}
+                onChange={(e) => setAceitaDadoFe(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-gold"
+              />
+              <span>
+                <strong className="text-navy">Consentimento específico (Art. 11 da LGPD):</strong> se eu compartilhar durante as
+                conversas minha religião ou tradição de fé (ex.: Catolicismo, Evangelismo, Espiritismo), autorizo o Kazuio a usar
+                esse dado exclusivamente para personalizar as reflexões e citações que recebo — nunca para publicidade ou
+                compartilhamento com terceiros. Posso recusar isso a qualquer momento na própria conversa, sem perder acesso ao
+                restante do app. Este consentimento é opcional e não é necessário para criar sua conta.
+              </span>
             </label>
 
             {erro && <p className="text-xs font-medium text-red-600">{erro}</p>}
