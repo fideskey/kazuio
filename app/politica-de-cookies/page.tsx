@@ -12,6 +12,10 @@ export default function Page() {
       title="Política de Cookies"
       updated="agosto de 2026"
       intro="Esta página explica quais tecnologias de armazenamento local o Kazuio utiliza e como você pode gerenciá-las."
+      summary={[
+        'Usamos armazenamento local só para manter você conectado — não é cookie de rastreamento nem de publicidade.',
+        'Não vendemos dados de navegação, não exibimos anúncios de terceiros.',
+      ]}
       sections={[
         {
           heading: '1. O que usamos',
