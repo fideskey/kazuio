@@ -10,11 +10,13 @@ export function LegalPage({
   title,
   updated,
   intro,
+  summary,
   sections,
 }: {
   title: string
   updated: string
   intro: string
+  summary?: string[]
   sections: LegalSection[]
 }) {
   return (
@@ -26,6 +28,18 @@ export function LegalPage({
         <p className="mt-3 text-xs text-kmuted">Última atualização: {updated}</p>
 
         <p className="mt-8 text-sm leading-7 text-ink/85">{intro}</p>
+
+        {summary && summary.length > 0 && (
+          <div className="mt-6 rounded-xl border border-gold/40 bg-gold/10 px-5 py-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-navy">Em resumo, em linguagem simples</p>
+            <ul className="mt-2 space-y-1.5">
+              {summary.map((s, i) => (
+                <li key={i} className="text-sm leading-6 text-ink/85">— {s}</li>
+              ))}
+            </ul>
+            <p className="mt-2 text-xs text-kmuted">Este resumo não substitui o texto completo abaixo.</p>
+          </div>
+        )}
 
         <div className="mt-10 space-y-9 border-t border-line/80 pt-9">
           {sections.map((s) => (
