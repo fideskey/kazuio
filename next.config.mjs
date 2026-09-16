@@ -25,6 +25,24 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      // Corrige URL indexada incorretamente no Google Search Console
+      // (com "políticas" no plural) para a página real do site, que
+      // sempre existiu no singular. Sem isso, o Google tenta validar
+      // uma URL que nunca existiu e a validação falha permanentemente.
+      {
+        source: '/politicas-de-cookies',
+        destination: '/politica-de-cookies',
+        permanent: true,
+      },
+      {
+        source: '/politicas-de-privacidade',
+        destination: '/politica-de-privacidade',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig
