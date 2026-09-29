@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <LegalPage
       title="Termos e Condições"
-      updated="agosto de 2026"
+      updated="setembro de 2026"
       intro="Estes Termos e Condições regulam o uso do Kazuio, um espaço de reflexão com inteligência artificial. Ao usar o Kazuio, você concorda com os termos abaixo."
       summary={[
         'O Kazuio é uma IA de reflexão — não substitui psicólogo, psiquiatra, autoridade religiosa nem atendimento de emergência.',

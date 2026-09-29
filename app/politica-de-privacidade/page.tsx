@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <LegalPage
       title="Política de Privacidade"
-      updated="agosto de 2026"
+      updated="setembro de 2026"
       intro="Esta Política de Privacidade explica como o Kazuio coleta, usa, armazena e protege suas informações, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)."
       summary={[
         'Suas conversas são tratadas como dado sensível de saúde — só as usamos com seu consentimento explícito, nunca por padrão.',
@@ -57,6 +57,9 @@ export default function Page() {
             '— Voyage AI: processa trechos do conteúdo das suas mensagens para viabilizar a busca de reflexões relevantes na nossa biblioteca curada (busca semântica). Também envolve processamento fora do Brasil.',
             '— Supabase (nossa infraestrutura de banco de dados): armazena seus dados de forma segura, hospedados em servidores localizados no Brasil (São Paulo).',
             '— Mercado Pago: processa os dados relacionados ao pagamento da sua assinatura (como CPF e status da transação), operando como controlador independente dos dados de pagamento propriamente ditos (os dados do seu cartão nunca chegam até o Kazuio).',
+            '— Google: se você escolher entrar com sua conta Google, o Google autentica o seu acesso e informa ao Kazuio o seu nome e email. Nesse caso, o Google trata os seus dados de acordo com a própria política de privacidade dele.',
+            '— Vercel: hospeda o site do Kazuio e realiza a medição de acessos (Vercel Web Analytics), que registra dados técnicos e agregados de navegação, como páginas visitadas, origem do acesso, tipo de dispositivo e país, sem uso de cookies de rastreamento entre sites. Pode envolver processamento fora do Brasil.',
+            '— ipapi.co: serviço externo de geolocalização consultado no momento do login para estimar seu estado e cidade a partir do endereço IP. Esse serviço recebe o seu endereço IP para responder a essa consulta. Pode envolver processamento fora do Brasil.',
           ],
         },
         {

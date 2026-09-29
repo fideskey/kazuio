@@ -10,10 +10,11 @@ export default function Page() {
   return (
     <LegalPage
       title="Política de Cookies"
-      updated="agosto de 2026"
+      updated="setembro de 2026"
       intro="Esta página explica quais tecnologias de armazenamento local o Kazuio utiliza e como você pode gerenciá-las."
       summary={[
         'Usamos armazenamento local só para manter você conectado — não é cookie de rastreamento nem de publicidade.',
+        'Medimos os acessos ao site de forma agregada, sem cookies de rastreamento entre sites.',
         'Não vendemos dados de navegação, não exibimos anúncios de terceiros.',
       ]}
       sections={[
@@ -32,11 +33,17 @@ export default function Page() {
         {
           heading: '3. Dados de localização aproximada',
           paragraphs: [
-            'No momento do login, consultamos um serviço externo para estimar seu estado e cidade a partir do seu endereço IP (nunca sua localização GPS exata). Isso é usado apenas para estatísticas agregadas de uso, não para rastreamento individual entre sites.',
+            'No momento do login, consultamos um serviço externo (ipapi.co) para estimar seu estado e cidade a partir do seu endereço IP (nunca sua localização GPS exata). Isso é usado apenas para estatísticas agregadas de uso, não para rastreamento individual entre sites.',
           ],
         },
         {
-          heading: '4. Como gerenciar',
+          heading: '4. Medição de acessos ao site',
+          paragraphs: [
+            'Usamos o Vercel Web Analytics para entender, de forma agregada, como o site é acessado: páginas visitadas, origem do acesso, tipo de dispositivo e país. Essa ferramenta não usa cookies de rastreamento entre sites e não é usada para publicidade.',
+          ],
+        },
+        {
+          heading: '5. Como gerenciar',
           paragraphs: [
             'Você pode apagar os dados de armazenamento local do Kazuio a qualquer momento pelas configurações de privacidade do seu navegador. Isso vai encerrar sua sessão, exigindo que você faça login novamente.',
           ],
