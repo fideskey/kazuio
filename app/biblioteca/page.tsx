@@ -56,7 +56,7 @@ export default function Page() {
         {/* Hero */}
         <section className="mx-auto max-w-[980px] px-5 pb-10 pt-16 md:px-8 md:pt-24">
           <p className="eyebrow">Biblioteca Kazuio</p>
-          <h1 className="mt-4 max-w-[880px] font-serif text-[2.7rem] leading-[1.04] text-navy sm:text-[4rem]">
+          <h1 className="mt-4 max-w-[880px] rounded-[24px] bg-deep px-6 py-6 font-serif text-[2.7rem] leading-[1.04] text-cream sm:px-8 sm:py-8 sm:text-[4rem]">
             Não inventamos conhecimento para preencher uma resposta.
           </h1>
           <p className="mt-7 max-w-[730px] text-[17px] leading-8 text-ink/75">
