@@ -422,6 +422,7 @@ function LoginPageContent() {
             <p className="text-[11px] text-kmuted">Art. 11, I, da LGPD · versão {CONSENT_VERSION}</p>
             <div className="max-h-[42vh] space-y-2 overflow-y-auto border-y border-line py-3 pr-1 text-sm leading-6 text-ink/85">
               <p>Ao conversar com o Kazuio, você pode compartilhar informações sobre sua <strong>saúde emocional e mental</strong>, que são dados pessoais sensíveis.</p>
+              <p><strong>Este consentimento é necessário para usar o Kazuio:</strong> sem ele o serviço não pode ser prestado e a conta poderá ser encerrada.</p>
               <p>Autorizo o Kazuio a tratar o conteúdo das minhas conversas e um resumo de memória delas para:</p>
               <ol className="list-decimal space-y-1 pl-5">
                 <li>responder a mim e personalizar o atendimento;</li>
@@ -430,8 +431,7 @@ function LoginPageContent() {
               </ol>
               <p>O conteúdo é processado por provedores de tecnologia (Anthropic, Supabase e Voyage AI, esta apenas com palavras-chave de temas) e não é usado para publicidade.</p>
               <p>
-                <strong>Este consentimento é necessário para usar o Kazuio:</strong> sem ele o serviço não pode ser prestado e a conta poderá ser encerrada.
-                Você pode revogá-lo a qualquer momento escrevendo para{' '}
+                Você pode revogar este consentimento a qualquer momento escrevendo para{' '}
                 <a href="mailto:kazuio@kazuio.com" className="font-medium text-navy underline underline-offset-2">kazuio@kazuio.com</a>.
                 Seus direitos estão descritos na{' '}
                 <a href="/politica-de-privacidade" target="_blank" className="font-medium text-navy underline underline-offset-2">Política de Privacidade</a>.
