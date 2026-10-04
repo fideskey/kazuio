@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <LegalPage
       title="Política de Privacidade"
-      updated="setembro de 2026"
+      updated="outubro de 2026"
       intro="Esta Política de Privacidade explica como o Kazuio coleta, usa, armazena e protege suas informações, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)."
       summary={[
         'Suas conversas são tratadas como dado sensível de saúde — só as usamos com seu consentimento explícito, nunca por padrão.',
@@ -28,7 +28,7 @@ export default function Page() {
         {
           heading: '2. Dados sensíveis: um aviso especial',
           paragraphs: [
-            'O conteúdo das suas conversas com o Kazuio — incluindo referências ao seu estado emocional, saúde mental ou situação de vida — é tratado como dado pessoal sensível nos termos do art. 5º, II da LGPD (dado referente à saúde). Por isso, o tratamento desses dados é feito com base no consentimento específico e destacado, conforme exige o art. 11, I da LGPD para dados sensíveis — não com base em interesse legítimo nem em qualquer outra hipótese menos restritiva. Pedimos esse consentimento explicitamente no momento do cadastro, não através de um aceite genérico.',
+            'O conteúdo das suas conversas com o Kazuio — incluindo referências ao seu estado emocional, saúde mental ou situação de vida — é tratado como dado pessoal sensível nos termos do art. 5º, II da LGPD (dado referente à saúde). Por isso, o tratamento desses dados é feito com base no consentimento específico e destacado, conforme exige o art. 11, I da LGPD para dados sensíveis — não com base em interesse legítimo nem em qualquer outra hipótese menos restritiva. Pedimos esse consentimento em um aviso próprio e destacado, ao criar a conta (no cadastro ou, se você entrar com o Google, no primeiro acesso ao chat), e não por meio de um aceite genérico. Esse consentimento é necessário para usar o Kazuio e fica registrado com a data e a versão do texto que você aceitou. Você pode revogá-lo a qualquer momento (veja a seção 6).',
           ],
         },
         {
@@ -45,7 +45,7 @@ export default function Page() {
         {
           heading: '4. Como usamos essas informações',
           paragraphs: [
-            'Usamos seus dados exclusivamente para: (a) manter a continuidade do acompanhamento entre conversas; (b) gerar um resumo interno breve da sua situação, para que o Kazuio não "esqueça" o que você já contou; (c) avaliar, de forma agregada e anônima, se as citações oferecidas realmente ajudam as pessoas; e (d) cumprir obrigações legais quando aplicável.',
+            'Usamos seus dados exclusivamente para: (a) manter a continuidade do acompanhamento entre conversas; (b) gerar um resumo interno breve da sua situação, para que o Kazuio não "esqueça" o que você já contou; (c) avaliar, de forma agregada e anônima, se as citações oferecidas realmente ajudam as pessoas; (d) identificar sinais de risco por meio de sistema automatizado e exibir canais de ajuda (veja a seção 12); (e) registrar, sem o texto da conversa, o resultado dessa identificação, para auditar a segurança do serviço; e (f) cumprir obrigações legais quando aplicável.',
             'Não usamos seus dados para treinar modelos de inteligência artificial de terceiros, nem para fins de publicidade.',
           ],
         },
@@ -54,7 +54,7 @@ export default function Page() {
           paragraphs: [
             'Não vendemos, alugamos nem compartilhamos o conteúdo das suas conversas com terceiros para fins comerciais. Utilizamos os seguintes fornecedores, que atuam como operadores de dados sob nossas instruções, não como destinatários finais dos seus dados:',
             '— Anthropic (empresa responsável pelo modelo de IA Claude, que gera as respostas do Kazuio): processa o conteúdo das suas mensagens em infraestrutura localizada principalmente nos Estados Unidos. Isso caracteriza transferência internacional de dados, amparada por Cláusulas-Padrão Contratuais (SCCs) previstas em Acordo de Processamento de Dados (DPA) com a Anthropic. Seus dados não são utilizados para treinar modelos de terceiros, e são retidos pela Anthropic por prazo curto (atualmente 7 dias) antes de exclusão automática.',
-            '— Voyage AI: processa trechos do conteúdo das suas mensagens para viabilizar a busca de reflexões relevantes na nossa biblioteca curada (busca semântica). Também envolve processamento fora do Brasil.',
+            '— Voyage AI: recebe apenas palavras-chave de temas extraídas da conversa (por exemplo, "luto" ou "ansiedade"), sem seu nome, e-mail ou o texto das suas mensagens, para viabilizar a busca de reflexões relevantes na nossa biblioteca curada (busca semântica). Também envolve processamento fora do Brasil.',
             '— Supabase (nossa infraestrutura de banco de dados): armazena seus dados de forma segura, hospedados em servidores localizados no Brasil (São Paulo).',
             '— Mercado Pago: processa os dados relacionados ao pagamento da sua assinatura (como CPF e status da transação), operando como controlador independente dos dados de pagamento propriamente ditos (os dados do seu cartão nunca chegam até o Kazuio).',
             '— Google: se você escolher entrar com sua conta Google, o Google autentica o seu acesso e informa ao Kazuio o seu nome e email. Nesse caso, o Google trata os seus dados de acordo com a própria política de privacidade dele.',
@@ -74,6 +74,7 @@ export default function Page() {
             '— Portabilidade: solicitar que enviemos seus dados a você (ou a outro fornecedor, quando tecnicamente viável) em formato estruturado;',
             '— Oposição: se opor a um tratamento específico de dados que considere inadequado, sem necessariamente excluir toda a sua conta;',
             '— Solicitar informações sobre com quem compartilhamos seus dados, entrando em contato pelo canal abaixo.',
+            'Atendemos as solicitações dos seus direitos de forma facilitada e gratuita. Quando possível, respondemos de imediato, em formato simplificado; quando for necessária uma declaração completa (origem dos dados, critérios e finalidade do tratamento), ela será fornecida em até 15 (quinze) dias a partir do seu pedido. Para solicitar, escreva para kazuio@kazuio.com.',
           ],
         },
         {
@@ -91,7 +92,7 @@ export default function Page() {
         {
           heading: '9. Incidentes de segurança',
           paragraphs: [
-            'Em caso de incidente de segurança que possa acarretar risco relevante aos seus dados, notificaremos a Autoridade Nacional de Proteção de Dados (ANPD) e, quando aplicável, você, conforme exigido pela LGPD.',
+            'Em caso de incidente de segurança que possa acarretar risco ou dano relevante aos titulares, comunicaremos a ANPD e os titulares afetados em até 3 (três) dias úteis contados do momento em que tivermos conhecimento de que o incidente afetou dados pessoais, conforme a Resolução CD/ANPD nº 15/2024. Manteremos o registro do incidente pelo prazo mínimo de 5 (cinco) anos.',
           ],
         },
         {
@@ -105,6 +106,12 @@ export default function Page() {
           paragraphs: [
             'O Kazuio cita exclusivamente de uma biblioteca verificada, mas nenhuma inteligência artificial está livre de erros. Se uma resposta do Kazuio parecer incorreta, ofensiva, insegura, ou fora do que você esperava, escreva para kazuio@kazuio.com descrevendo o que aconteceu (pode incluir um recorte da conversa). Usamos esses relatos para corrigir e melhorar o sistema.',
             'Este canal não é para emergências. Se você estiver em risco imediato, procure ajuda conforme a seção 2 dos Termos e Condições (CVV: 188, SAMU: 192).',
+          ],
+        },
+        {
+          heading: '12. Identificação automatizada de risco (art. 20 da LGPD)',
+          paragraphs: [
+            'O Kazuio utiliza um sistema automatizado para identificar sinais de risco (por exemplo, menção a autolesão) e adaptar a resposta, priorizando canais de ajuda. Essa identificação não encerra seu contrato nem lhe nega acesso a direitos. Você pode solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado que afetem seus interesses, e pedir informações claras sobre os critérios utilizados, escrevendo para kazuio@kazuio.com.',
           ],
         },
       ]}
