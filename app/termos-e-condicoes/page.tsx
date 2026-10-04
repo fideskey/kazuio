@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <LegalPage
       title="Termos e Condições"
-      updated="setembro de 2026"
+      updated="outubro de 2026"
       intro="Estes Termos e Condições regulam o uso do Kazuio, um espaço de reflexão com inteligência artificial. Ao usar o Kazuio, você concorda com os termos abaixo."
       summary={[
         'O Kazuio é uma IA de reflexão — não substitui psicólogo, psiquiatra, autoridade religiosa nem atendimento de emergência.',
@@ -37,7 +37,8 @@ export default function Page() {
             'Se você está em risco imediato ou pensando em se machucar, o Kazuio não é suficiente. Procure ajuda imediatamente:',
             '— CVV — Centro de Valorização da Vida: ligue 188 (gratuito, 24h) ou acesse cvv.org.br para chat online.',
             '— SAMU: 192',
-            '— Ou procure o pronto-socorro mais próximo.',
+            '— Polícia: 190 · Bombeiros: 193',
+            '— CAPS (Centro de Atenção Psicossocial) ou UPA 24h da sua cidade, ou o pronto-socorro mais próximo.',
           ],
         },
         {
@@ -96,13 +97,13 @@ export default function Page() {
         {
           heading: '10. Alterações destes Termos',
           paragraphs: [
-            'Podemos atualizar estes Termos periodicamente. A data no topo desta página reflete a versão vigente. Mudanças significativas serão comunicadas dentro do serviço.',
+            'Podemos atualizar estes Termos periodicamente. A data no topo desta página reflete a versão vigente. Alterações relevantes serão comunicadas dentro do serviço e por email com antecedência mínima de 30 (trinta) dias antes de entrarem em vigor. Se você não concordar, poderá cancelar sua assinatura antes dessa data.',
           ],
         },
         {
           heading: '11. Foro e legislação aplicável',
           paragraphs: [
-            'Estes Termos são regidos pelas leis da República Federativa do Brasil.',
+            'Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro do domicílio do consumidor para dirimir quaisquer controvérsias, nos termos do art. 101, I, do Código de Defesa do Consumidor.',
           ],
         },
       ]}
