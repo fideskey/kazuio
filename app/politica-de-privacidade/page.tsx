@@ -96,9 +96,10 @@ export default function Page() {
           ],
         },
         {
-          heading: '10. Contato',
+          heading: '10. Contato e encarregado',
           paragraphs: [
             'Para exercer qualquer um dos direitos acima, ou tirar dúvidas sobre esta política, entre em contato pelo email: kazuio@kazuio.com',
+            'Encarregado pelo tratamento de dados pessoais (art. 41 da LGPD): Gustavo Merladett Mecol. Contato: kazuio@kazuio.com.',
           ],
         },
         {
