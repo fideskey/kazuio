@@ -111,8 +111,12 @@ function LoginPageContent() {
   const [mostrarSenhaCadastro, setMostrarSenhaCadastro] = useState(false)
   const [mostrarConfirmarSenha, setMostrarConfirmarSenha] = useState(false)
   const [aceitaTermos, setAceitaTermos] = useState(false)
-  const [confirmaIdade, setConfirmaIdade] = useState(false)
-  const [aceitaDadoFe, setAceitaDadoFe] = useState(false)
+  // Consentimento específico (LGPD art. 11, I): só fica "aceito" depois de a
+  // pessoa abrir o pop-up, ler e clicar em "Li e concordo".
+  const CONSENT_VERSION = '2026-10-04-v1'
+  const [consentimento, setConsentimento] = useState<{ aceitoEm: string; fe: boolean } | null>(null)
+  const [mostrarConsentimento, setMostrarConsentimento] = useState(false)
+  const [feNoPopup, setFeNoPopup] = useState(false)
   const [erro, setErro] = useState('')
   const [carregandoCadastro, setCarregandoCadastro] = useState(false)
   const [cadastroConcluido, setCadastroConcluido] = useState(false)
@@ -136,16 +140,25 @@ function LoginPageContent() {
       return
     }
     if (!aceitaTermos) {
-      setErro('Você precisa aceitar os Termos e a Política de Privacidade para continuar.')
+      setErro('Para continuar, confirme que tem 18 anos ou mais e aceite os Termos e a Política de Privacidade.')
       return
     }
-    if (!confirmaIdade) {
-      setErro('É preciso confirmar que você tem 18 anos ou mais.')
+    if (!consentimento) {
+      setErro('Leia e concorde com o consentimento sobre dados de saúde emocional para criar a conta.')
       return
     }
 
     setCarregandoCadastro(true)
-    const { error: signUpError } = await supabase.auth.signUp({ email, password: senha })
+    const { error: signUpError } = await supabase.auth.signUp({
+      email,
+      password: senha,
+      options: {
+        data: {
+          consent_saude: { versao: CONSENT_VERSION, aceito_em: consentimento.aceitoEm },
+          consent_fe: consentimento.fe,
+        },
+      },
+    })
     setCarregandoCadastro(false)
 
     if (signUpError) {
@@ -351,7 +364,7 @@ function LoginPageContent() {
                 className="mt-0.5 h-4 w-4 shrink-0 accent-gold"
               />
               <span>
-                Li e aceito os{' '}
+                Tenho <strong className="text-navy">18 anos ou mais</strong> e li e aceito os{' '}
                 <a href="/termos-e-condicoes" target="_blank" className="font-medium text-navy underline underline-offset-2">
                   Termos e Condições
                 </a>{' '}
@@ -363,29 +376,20 @@ function LoginPageContent() {
               </span>
             </label>
 
-            <label className="flex items-start gap-2.5 text-xs leading-5 text-kmuted">
-              <input
-                type="checkbox"
-                checked={confirmaIdade}
-                onChange={(e) => setConfirmaIdade(e.target.checked)}
-                className="mt-0.5 h-4 w-4 shrink-0 accent-gold"
-              />
-              <span>Confirmo que tenho 18 anos de idade ou mais.</span>
-            </label>
-
             <label className="flex items-start gap-2.5 rounded-lg border border-gold/40 bg-gold/10 px-3 py-2.5 text-xs leading-5 text-kmuted">
               <input
                 type="checkbox"
-                checked={aceitaDadoFe}
-                onChange={(e) => setAceitaDadoFe(e.target.checked)}
+                checked={!!consentimento}
+                onChange={(e) => {
+                  e.preventDefault()
+                  setFeNoPopup(false)
+                  setMostrarConsentimento(true)
+                }}
                 className="mt-0.5 h-4 w-4 shrink-0 accent-gold"
               />
               <span>
-                <strong className="text-navy">Consentimento específico (Art. 11 da LGPD):</strong> se eu compartilhar durante as
-                conversas minha religião ou tradição de fé (ex.: Catolicismo, Evangelismo, Espiritismo), autorizo o Kazuio a usar
-                esse dado exclusivamente para personalizar as reflexões e citações que recebo — nunca para publicidade ou
-                compartilhamento com terceiros. Posso recusar isso a qualquer momento na própria conversa, sem perder acesso ao
-                restante do app. Este consentimento é opcional e não é necessário para criar sua conta.
+                <strong className="text-navy">Consentimento sobre dados de saúde emocional (Art. 11 da LGPD).</strong>{' '}
+                Toque para ler e concordar.
               </span>
             </label>
 
@@ -405,6 +409,71 @@ function LoginPageContent() {
           </form>
         )}
       </main>
+
+      {mostrarConsentimento && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/55 px-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="consentimento-titulo"
+        >
+          <div className="flex max-h-[90vh] w-full max-w-[460px] flex-col gap-3 rounded-2xl border border-line bg-paper p-6">
+            <h2 id="consentimento-titulo" className="font-serif text-xl text-navy">Consentimento específico</h2>
+            <p className="text-[11px] text-kmuted">Art. 11, I, da LGPD · versão {CONSENT_VERSION}</p>
+            <div className="max-h-[42vh] space-y-2 overflow-y-auto border-y border-line py-3 pr-1 text-sm leading-6 text-ink/85">
+              <p>Ao conversar com o Kazuio, você pode compartilhar informações sobre sua <strong>saúde emocional e mental</strong>, que são dados pessoais sensíveis.</p>
+              <p>Autorizo o Kazuio a tratar o conteúdo das minhas conversas e um resumo de memória delas para:</p>
+              <ol className="list-decimal space-y-1 pl-5">
+                <li>responder a mim e personalizar o atendimento;</li>
+                <li>identificar sinais de risco por meio de sistema automatizado e exibir canais de ajuda;</li>
+                <li>registrar, sem o texto da conversa, o resultado dessa identificação, para auditar a segurança do serviço.</li>
+              </ol>
+              <p>O conteúdo é processado por provedores de tecnologia (Anthropic, Supabase e Voyage AI, esta apenas com palavras-chave de temas) e não é usado para publicidade.</p>
+              <p>
+                <strong>Este consentimento é necessário para usar o Kazuio:</strong> sem ele o serviço não pode ser prestado e a conta poderá ser encerrada.
+                Você pode revogá-lo a qualquer momento escrevendo para{' '}
+                <a href="mailto:kazuio@kazuio.com" className="font-medium text-navy underline underline-offset-2">kazuio@kazuio.com</a>.
+                Seus direitos estão descritos na{' '}
+                <a href="/politica-de-privacidade" target="_blank" className="font-medium text-navy underline underline-offset-2">Política de Privacidade</a>.
+              </p>
+            </div>
+            <label className="flex items-start gap-2.5 text-xs leading-5 text-kmuted">
+              <input
+                type="checkbox"
+                checked={feNoPopup}
+                onChange={(e) => setFeNoPopup(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-gold"
+              />
+              <span>
+                <strong className="text-navy">Opcional:</strong> se eu compartilhar minha religião ou tradição de fé (ex.: Catolicismo, Evangelismo, Espiritismo),
+                autorizo o Kazuio a usar esse dado exclusivamente para personalizar as reflexões e citações que recebo, nunca para publicidade ou
+                compartilhamento com terceiros. Posso recusar sem perder acesso ao restante do app.
+              </span>
+            </label>
+            <button
+              type="button"
+              onClick={() => {
+                setConsentimento({ aceitoEm: new Date().toISOString(), fe: feNoPopup })
+                setMostrarConsentimento(false)
+                setErro('')
+              }}
+              className="inline-flex w-full items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-semibold text-deep"
+            >
+              Li e concordo
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setConsentimento(null)
+                setMostrarConsentimento(false)
+              }}
+              className="inline-flex w-full items-center justify-center rounded-full border border-line bg-white px-6 py-3 text-sm font-semibold text-navy"
+            >
+              Não concordo
+            </button>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
