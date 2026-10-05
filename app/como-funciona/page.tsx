@@ -37,7 +37,7 @@ const ETAPAS = [
 ]
 
 const PRINCIPIOS = [
-  { icon: ShieldCheck, title: 'Privado e seguro', body: 'Suas conversas são protegidas.' },
+  { icon: ShieldCheck, title: 'Seus dados, às claras', body: 'Veja na Política de Privacidade quem processa suas conversas.' },
   { icon: HeartHandshake, title: 'Sem julgamentos', body: 'Um espaço seguro, para ser real.' },
   { icon: BookMarked, title: 'Fontes reais', body: 'Nunca uma citação inventada.' },
   { icon: Sparkles, title: 'No seu ritmo', body: 'Você guia a conversa.' },

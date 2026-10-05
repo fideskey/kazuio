@@ -60,7 +60,12 @@ export function Hero() {
 
               <div className="mt-8 flex max-w-[430px] items-start gap-3 border-t border-line/80 pt-5 text-[12px] leading-5 text-kmuted">
                 <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-green" />
-                <span>Suas conversas são privadas, seguras e nunca compartilhadas.</span>
+                <span>
+                  Não vendemos suas conversas nem as usamos para publicidade.{' '}
+                  <a href="/politica-de-privacidade" className="underline underline-offset-2 hover:text-navy">
+                    Veja como tratamos seus dados.
+                  </a>
+                </span>
               </div>
 
               <div className="mt-10 hidden items-center gap-3 text-[11px] text-kmuted md:flex">

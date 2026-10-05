@@ -22,7 +22,7 @@ const PLANOS = [
       'Acesso aos três pilares: Psicologia, Fé e Filosofia',
       'Citações reais de uma biblioteca curada e verificada',
       'Histórico salvo entre conversas',
-      'Privacidade total — suas conversas nunca são compartilhadas',
+      'Suas conversas não são vendidas nem usadas para publicidade (veja a Política de Privacidade)',
     ],
   },
   {
@@ -30,13 +30,13 @@ const PLANOS = [
     nome: 'Essencial',
     preco: 'R$ 39,99',
     periodo: '/mês',
-    resumo: 'Para quem quer voltar sempre que precisar, sem contar as mensagens.',
+    resumo: 'Para quem quer voltar com mais frequência, com quatro vezes mais mensagens que o plano Experiência.',
     mensagens: '320 mensagens / mês',
     destaque: true,
     itens: [
       'Tudo do plano Experiência',
-      'Espaço para conversas mais longas e recorrentes',
-      'Ideal para quem está passando por um momento que precisa de acompanhamento contínuo',
+      '320 mensagens por mês para conversas mais longas e recorrentes',
+      'O Kazuio não substitui acompanhamento profissional de saúde',
     ],
   },
   {
@@ -49,15 +49,17 @@ const PLANOS = [
     destaque: false,
     itens: [
       'Tudo do plano Essencial',
-      'Sem se preocupar com limite no dia a dia',
+      '640 mensagens por mês, o dobro do plano Essencial',
       'Feito para quem quer fazer do Kazuio um hábito de cuidado consigo mesmo',
     ],
   },
 ]
 
 const DUVIDAS = [
-  ['O que conta como mensagem?', 'Cada mensagem que você envia ao Kazuio conta para o limite do seu plano. O saldo disponível aparece dentro da experiência de assinatura.'],
-  ['Todos os planos têm os três pilares?', 'Sim. Psicologia, Fé e Filosofia fazem parte da proposta do Kazuio em todos os planos — o que muda é só a quantidade de mensagens disponíveis por mês.'],
+  ['O que conta como mensagem?', 'Cada mensagem que você envia ao Kazuio conta como uma. As respostas do Kazuio não são contadas. Você acompanha quantas já usou no chat, em “X de Y mensagens usadas”.'],
+  ['Qual é o limite e o que acontece quando ele acaba?', 'O limite é de 80 (Experiência), 320 (Essencial) ou 640 (Completo) mensagens por ciclo de 30 dias. Ao atingir o limite, você não consegue enviar novas mensagens até o ciclo seguinte começar, e as mensagens não usadas não se acumulam. Esse ciclo de uso não coincide necessariamente com a data da cobrança mensal.'],
+  ['A assinatura renova sozinha?', 'Sim. A assinatura é mensal e renova automaticamente pelo Mercado Pago até ser cancelada. Os valores e as condições de cancelamento e reembolso estão nos Termos e Condições (seções 5 e 5.1).'],
+  ['Todos os planos têm os três pilares?', 'Sim. Psicologia, Fé e Filosofia fazem parte da proposta do Kazuio em todos os planos — o que muda é só a quantidade de mensagens disponíveis por ciclo de 30 dias.'],
   ['Posso trocar de plano depois?', 'Sim. Não existe plano errado para começar — a maioria das pessoas começa pelo Experiência e muda depois, conforme sente que quer voltar com mais frequência.'],
   ['O pagamento é seguro?', 'Sim. O pagamento é processado diretamente pelo Mercado Pago — o Kazuio não armazena os dados do seu cartão.'],
 ]
@@ -90,7 +92,7 @@ export default function Page() {
               >
                 {plano.destaque && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-deep">
-                    Mais escolhido
+                    Intermediário
                   </span>
                 )}
                 <p className={`text-[10px] font-semibold uppercase tracking-[0.24em] ${plano.destaque ? 'text-gold2' : 'text-gold'}`}>{plano.nome}</p>

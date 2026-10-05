@@ -57,7 +57,8 @@ export default function Page() {
           heading: '5. Planos e assinatura',
           paragraphs: [
             '— O Kazuio é oferecido exclusivamente por meio de planos pagos, sem versão gratuita.',
-            '— Os valores e limites de cada plano são exibidos na tela de assinatura antes da confirmação do pagamento, processado via Mercado Pago, podendo ser cancelado a qualquer momento.',
+            '— Os valores e limites de cada plano são exibidos na página de Preços e na tela de assinatura antes da confirmação do pagamento, processado via Mercado Pago. A assinatura é mensal e renova automaticamente até ser cancelada.',
+            '— Limites de mensagens: Experiência, 80; Essencial, 320; Completo, 640 mensagens por ciclo de 30 dias. Cada mensagem que você envia conta como uma; as respostas do Kazuio não contam. Ao atingir o limite, não é possível enviar novas mensagens até o início do ciclo seguinte; as mensagens não usadas não se acumulam. O ciclo de uso de 30 dias não coincide necessariamente com a data da cobrança.',
             '— Alterações de preço serão comunicadas com antecedência.',
           ],
         },

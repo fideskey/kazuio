@@ -66,8 +66,13 @@ export default function Page() {
         <div className="mt-10 flex items-start gap-3 rounded-2xl border border-line bg-paper px-6 py-6 md:px-8">
           <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-green" />
           <p className="text-sm leading-6 text-kmuted">
-            Toda conversa que você tem com o Kazuio é privada. Não vendemos, não compartilhamos e não usamos o que você
-            conta para anúncios. É um espaço seu — construído para ser seguro antes de qualquer outra coisa.
+            Suas conversas são tratadas como dados sensíveis. Não as vendemos e não as usamos para publicidade. Para
+            gerar as respostas, o conteúdo das mensagens é processado por fornecedores de tecnologia, como a Anthropic,
+            que opera o modelo de inteligência artificial. Veja todos os fornecedores e os seus direitos na{' '}
+            <a href="/politica-de-privacidade" className="underline underline-offset-2 hover:text-navy">
+              Política de Privacidade
+            </a>
+            .
           </p>
         </div>
       </section>
