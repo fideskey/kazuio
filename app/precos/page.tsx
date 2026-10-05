@@ -60,7 +60,7 @@ const DUVIDAS = [
   ['Qual é o limite e o que acontece quando ele acaba?', 'O limite é de 80 (Experiência), 320 (Essencial) ou 640 (Completo) mensagens por ciclo de 30 dias. Ao atingir o limite, você não consegue enviar novas mensagens até o ciclo seguinte começar, e as mensagens não usadas não se acumulam. Esse ciclo de uso não coincide necessariamente com a data da cobrança mensal.'],
   ['A assinatura renova sozinha?', 'Sim. A assinatura é mensal e renova automaticamente pelo Mercado Pago até ser cancelada. Os valores e as condições de cancelamento e reembolso estão nos Termos e Condições (seções 5 e 5.1).'],
   ['Todos os planos têm os três pilares?', 'Sim. Psicologia, Fé e Filosofia fazem parte da proposta do Kazuio em todos os planos — o que muda é só a quantidade de mensagens disponíveis por ciclo de 30 dias.'],
-  ['Posso trocar de plano depois?', 'Sim. Não existe plano errado para começar — a maioria das pessoas começa pelo Experiência e muda depois, conforme sente que quer voltar com mais frequência.'],
+  ['Posso trocar de plano depois?', 'Sim, em Faturação, no chat. A renovação do plano atual é cancelada (você mantém o acesso dele até o fim do período pago, sem reembolso do restante) e o novo plano só começa quando o Mercado Pago confirmar o pagamento. Você nunca é cobrado por dois planos ao mesmo tempo.'],
   ['O pagamento é seguro?', 'Sim. O pagamento é processado diretamente pelo Mercado Pago — o Kazuio não armazena os dados do seu cartão.'],
 ]
 
@@ -129,8 +129,8 @@ export default function Page() {
             <p className="font-semibold text-navy">Antes de assinar</p>
             <ul className="mt-2 list-disc space-y-1 pl-4">
               <li>A assinatura é mensal e renova automaticamente, no valor do plano escolhido, até ser cancelada. A primeira cobrança ocorre logo após a confirmação e as seguintes a cada mês, por cobrança recorrente no Mercado Pago.</li>
-              <li>Para cancelar a renovação, escreva para kazuio@kazuio.com.</li>
-              <li>Você pode se arrepender em até 7 dias corridos após a contratação e receber o valor pago de volta, integralmente e de imediato, escrevendo para o mesmo e-mail. Detalhes nos <a href="/termos-e-condicoes" className="underline underline-offset-2">Termos e Condições</a> (seções 5 e 5.1).</li>
+              <li>Você cancela a renovação quando quiser, no chat, em Faturação. Não há nova cobrança e o acesso continua até o fim do período já pago.</li>
+              <li>Você pode se arrepender em até 7 dias corridos após a contratação e receber o valor pago de volta, integralmente e de imediato, pelo chat (Faturação → Exercer arrependimento) ou escrevendo para kazuio@kazuio.com. O acesso é encerrado ao exercer o direito. Detalhes nos <a href="/termos-e-condicoes" className="underline underline-offset-2">Termos e Condições</a> (seções 5 e 5.1).</li>
             </ul>
           </div>
         </section>
