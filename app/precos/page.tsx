@@ -124,6 +124,15 @@ export default function Page() {
             <Lock className="mt-0.5 h-4 w-4 shrink-0 text-navy/55" />
             Pagamento processado com segurança pelo Mercado Pago. O Kazuio não armazena os dados do seu cartão.
           </div>
+
+          <div className="mx-auto mt-4 max-w-[700px] rounded-2xl border border-line bg-paper px-5 py-4 text-xs leading-5 text-kmuted">
+            <p className="font-semibold text-navy">Antes de assinar</p>
+            <ul className="mt-2 list-disc space-y-1 pl-4">
+              <li>A assinatura é mensal e renova automaticamente, no valor do plano escolhido, até ser cancelada. A primeira cobrança ocorre logo após a confirmação e as seguintes a cada mês, por cobrança recorrente no Mercado Pago.</li>
+              <li>Para cancelar a renovação, escreva para kazuio@kazuio.com.</li>
+              <li>Você pode se arrepender em até 7 dias corridos após a contratação e receber o valor pago de volta, integralmente e de imediato, escrevendo para o mesmo e-mail. Detalhes nos <a href="/termos-e-condicoes" className="underline underline-offset-2">Termos e Condições</a> (seções 5 e 5.1).</li>
+            </ul>
+          </div>
         </section>
 
         <section className="mx-auto max-w-[900px] px-5 py-10 md:px-8 md:py-16">
