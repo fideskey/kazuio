@@ -7,8 +7,15 @@ import { ArrowRight, UserPlus, Eye, EyeOff } from 'lucide-react'
 import { Header } from '@/components/kazuio/header'
 import { Footer } from '@/components/kazuio/footer'
 import { supabase } from '@/lib/supabaseClient'
+import { validarSenhaNova, mensagemErroCadastro } from '@/lib/senha'
 
 type Aba = 'entrar' | 'cadastrar'
+
+// Destino do link de confirmação do cadastro (D-A1): escolher um plano. Não leva ?plano=: /precos não lê
+// esse parâmetro, então a pessoa escolhe o plano ali. Precisa estar coberto por Redirect URLs.
+function destinoConfirmacaoCadastro(origin: string): string {
+  return `${origin}/precos`
+}
 
 function LoginPageContent() {
   const searchParams = useSearchParams()
@@ -95,7 +102,9 @@ function LoginPageContent() {
       setErroEntrar('Digite seu e-mail acima primeiro, depois clique em "Esqueceu sua senha?".')
       return
     }
-    const { error } = await supabase.auth.resetPasswordForEmail(emailEntrar)
+    const { error } = await supabase.auth.resetPasswordForEmail(emailEntrar, {
+      redirectTo: `${window.location.origin}/chat`,
+    })
     if (error) {
       setErroEntrar('Não foi possível enviar o e-mail de recuperação agora. Tente novamente.')
     } else {
@@ -121,8 +130,6 @@ function LoginPageContent() {
   const [carregandoCadastro, setCarregandoCadastro] = useState(false)
   const [cadastroConcluido, setCadastroConcluido] = useState(false)
 
-  const SENHA_FORTE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{6,}$/
-
   async function handleCadastrar(e: FormEvent) {
     e.preventDefault()
     setErro('')
@@ -131,8 +138,9 @@ function LoginPageContent() {
       setErro('Preencha e-mail e senha (e a confirmação) para continuar.')
       return
     }
-    if (!SENHA_FORTE.test(senha)) {
-      setErro('A senha precisa ter letra maiúscula, minúscula, número e um símbolo (ex: !@#$%), com pelo menos 6 caracteres.')
+    const erroSenha = validarSenhaNova(senha)
+    if (erroSenha) {
+      setErro(erroSenha)
       return
     }
     if (senha !== confirmarSenha) {
@@ -153,6 +161,7 @@ function LoginPageContent() {
       email,
       password: senha,
       options: {
+        emailRedirectTo: destinoConfirmacaoCadastro(window.location.origin),
         data: {
           consent_saude: { versao: CONSENT_VERSION, aceito_em: consentimento.aceitoEm },
           consent_fe: consentimento.fe,
@@ -162,13 +171,7 @@ function LoginPageContent() {
     setCarregandoCadastro(false)
 
     if (signUpError) {
-      setErro(
-        signUpError.message.toLowerCase().includes('already registered')
-          ? 'Já existe uma conta com esse e-mail.'
-          : /^password should contain/i.test(signUpError.message)
-          ? 'A senha precisa ter letra maiúscula, minúscula, número e um símbolo (ex: !@#$%).'
-          : 'Não foi possível criar a conta agora. Tente novamente.'
-      )
+      setErro(mensagemErroCadastro(signUpError))
       return
     }
 
@@ -331,7 +334,7 @@ function LoginPageContent() {
                 </button>
               </div>
               <p className="mt-1.5 text-[11px] leading-4 text-kmuted">
-                Precisa ter letra maiúscula, minúscula, número e símbolo (ex: !@#$%). Mínimo 6 caracteres.
+                Precisa ter letra maiúscula, minúscula, número e um símbolo como ! @ # $ % &amp; * ? - _ . Mínimo 8 caracteres. Espaço, acentos (ç, é…) e emojis não contam como símbolo.
               </p>
             </div>
             <div>
