@@ -2,110 +2,113 @@ import type { Metadata } from 'next'
 import { LegalPage } from '@/components/kazuio/legal-page'
 
 export const metadata: Metadata = {
-  title: 'Termos e Condições — Kazuio',
-  description: 'Termos e condições de uso do Kazuio.',
+  title: "Termos de Uso — Kazuio",
+  description: "Termos de uso do Kazuio.",
 }
 
 export default function Page() {
   return (
     <LegalPage
-      title="Termos e Condições"
-      updated="outubro de 2026"
-      intro="Estes Termos e Condições regulam o uso do Kazuio, um espaço de reflexão com inteligência artificial. Ao usar o Kazuio, você concorda com os termos abaixo."
+      title="Termos de Uso"
+      updated="[data da publicação]"
+      intro="Estes Termos regulam o uso do Kazuio (kazuio.com e app.kazuio.com). Ao criar uma conta ou usar o Kazuio, você concorda com eles."
       summary={[
-        'O Kazuio é uma IA de reflexão — não substitui psicólogo, psiquiatra, autoridade religiosa nem atendimento de emergência.',
-        'É destinado exclusivamente a maiores de 18 anos.',
-        'Você tem 7 dias após assinar um plano para se arrepender e pedir reembolso total, sem precisar justificar (art. 49 do Código de Defesa do Consumidor) — veja a seção 5.1.',
-        'Você pode cancelar ou excluir sua conta quando quiser.',
+        "O Kazuio é uma inteligência artificial de reflexão. Não substitui psicólogo, psiquiatra, autoridade religiosa nem atendimento de emergência.",
+        "É exclusivo para maiores de 18 anos.",
+        "Há três planos mensais pagos, com limite de mensagens por mês. A assinatura renova automaticamente até você cancelar.",
+        "Você pode desistir em até 7 dias corridos após o pagamento e receber o valor de volta (art. 49 do CDC).",
       ]}
       sections={[
         {
-          heading: '1. Natureza do serviço',
+          heading: "1. Quem presta o serviço",
           paragraphs: [
-            'O Kazuio é uma inteligência artificial de acompanhamento emocional. Ela combina reflexões baseadas em Psicologia, Fé e Filosofia — sempre por meio de perguntas ou citações verificadas de autores e tradições reconhecidas, nunca de conselhos diretos ou afirmações fechadas.',
-            'O Kazuio NÃO é, e não substitui:',
-            '— Um serviço de psicologia, psicoterapia ou aconselhamento psicológico profissional;',
-            '— Um serviço de psiquiatria ou medicina — não diagnostica, não prescreve tratamento nem medicação;',
-            '— Um serviço de orientação religiosa oficial de qualquer tradição;',
-            '— Atendimento de emergência ou crise.',
-            'O Kazuio nunca finge ser humano. Ao usar o serviço, você reconhece estar conversando com uma inteligência artificial.',
+            "O Kazuio é operado por Gustavo Merladett Mecol, pessoa física, inscrito no CPF sob o nº [CPF A COMPLETAR], com endereço em SP. Atendimento: kazuio@kazuio.com.",
           ],
         },
         {
-          heading: '2. Situações de emergência',
+          heading: "2. Natureza do serviço",
           paragraphs: [
-            'Se você está em risco imediato ou pensando em se machucar, o Kazuio não é suficiente. Procure ajuda imediatamente:',
-            '— CVV — Centro de Valorização da Vida: ligue 188 (gratuito, 24h) ou acesse cvv.org.br para chat online.',
-            '— SAMU: 192',
-            '— Polícia: 190 · Bombeiros: 193',
-            '— CAPS (Centro de Atenção Psicossocial) ou UPA 24h da sua cidade, ou o pronto-socorro mais próximo.',
+            "O Kazuio é um espaço de reflexão com inteligência artificial [VERIFICAR CON ABOGADO: el texto actual dice «acompanhamento emocional»; evaluar art. 282 del Código Penal y Resoluciones CFP 11/2018 y 04/2020]. Ele oferece perguntas e citações verificadas de autores e tradições da Psicologia, da Fé e da Filosofia, nunca conselhos profissionais.",
+            "O Kazuio NÃO é e não substitui:",
+            "— um serviço de psicologia, psicoterapia ou aconselhamento psicológico;",
+            "— um serviço de psiquiatria ou medicina: não diagnostica, não prescreve tratamento nem medicação;",
+            "— orientação religiosa oficial de qualquer tradição;",
+            "— atendimento de emergência ou crise.",
+            "O Kazuio nunca finge ser humano. Ao usar o serviço, você reconhece que está conversando com uma inteligência artificial, que pode cometer erros.",
           ],
         },
         {
-          heading: '3. Idade mínima',
+          heading: "3. Situações de emergência",
           paragraphs: [
-            'Este serviço é destinado exclusivamente a maiores de 18 anos. No cadastro, você confirma ativamente ter 18 anos ou mais. Se, ao longo do uso, identificarmos ou suspeitarmos que um usuário é menor de idade, a conversa será encerrada com orientação para buscar um adulto de confiança, e a conta poderá ser suspensa.',
+            "Se você está em risco imediato ou pensando em se machucar, o Kazuio não é suficiente. Procure ajuda agora:",
+            "— CVV — Centro de Valorização da Vida: ligue 188 (gratuito, 24 horas) ou acesse cvv.org.br;",
+            "— SAMU: 192;",
+            "— Polícia: 190 · Bombeiros: 193;",
+            "— CAPS, UPA 24h ou o pronto-socorro mais próximo.",
           ],
         },
         {
-          heading: '4. Cadastro e conta',
+          heading: "4. Idade mínima",
           paragraphs: [
-            'Para usar o Kazuio, você precisa criar uma conta com email e senha, ou entrar com sua conta Google. Você é responsável por manter a confidencialidade da sua senha e por todas as atividades realizadas na sua conta.',
+            "O Kazuio é destinado exclusivamente a pessoas com 18 anos ou mais. No cadastro, você confirma ativamente ter 18 anos ou mais. Se identificarmos ou suspeitarmos que um usuário é menor de idade, a conversa será encerrada com a orientação de procurar um adulto de confiança, e a conta poderá ser encerrada e seus dados excluídos. [VERIFICAR CON ABOGADO: ECA Digital.] [NOTA INTERNA, no publicar: hoy la confirmación de 18 años solo existe en el registro por correo; añadirla al acceso con Google antes de publicar esta frase.]",
           ],
         },
         {
-          heading: '5. Planos e assinatura',
+          heading: "5. Conta",
           paragraphs: [
-            '— O Kazuio é oferecido exclusivamente por meio de planos pagos, sem versão gratuita.',
-            '— Os valores e limites de cada plano são exibidos na página de Preços e na tela de assinatura antes da confirmação do pagamento, processado via Mercado Pago. A assinatura é mensal e renova automaticamente até ser cancelada: a primeira cobrança ocorre logo após a confirmação da contratação, e as seguintes a cada mês, no valor do plano escolhido, por meio de cobrança recorrente no Mercado Pago. Se uma cobrança for recusada, o Mercado Pago pode tentar cobrar novamente. Você cancela a renovação a qualquer momento no próprio chat, em Faturação: não há nova cobrança e o acesso continua até o fim do período já pago. Para trocar de plano, a renovação do plano atual é cancelada (o acesso dele vale até o fim do período pago, sem reembolso do restante) e o novo plano só começa quando o Mercado Pago confirmar o pagamento; nunca há duas assinaturas cobrando ao mesmo tempo. Se preferir, também pode escrever para kazuio@kazuio.com.',
-            '— Limites de mensagens: Experiência, 80; Essencial, 320; Completo, 640 mensagens por ciclo de 30 dias. Cada mensagem que você envia conta como uma; as respostas do Kazuio não contam. Ao atingir o limite, não é possível enviar novas mensagens até o início do ciclo seguinte; as mensagens não usadas não se acumulam. O ciclo de uso de 30 dias não coincide necessariamente com a data da cobrança.',
-            '— Alterações de preço serão comunicadas com antecedência.',
+            "Você pode criar uma conta com e-mail e senha ou entrar com sua conta Google. Você é responsável por manter sua senha em sigilo e pelas atividades realizadas na sua conta. Para usar o chat, é preciso aceitar o consentimento específico sobre dados de saúde emocional descrito na Política de Privacidade.",
           ],
         },
         {
-          heading: '5.1 Direito de arrependimento (Código de Defesa do Consumidor)',
+          heading: "6. Planos, preços e limites",
           paragraphs: [
-            'Como a contratação do Kazuio é feita fora de um estabelecimento físico (compra digital), você tem direito de se arrepender da assinatura em até 7 (sete) dias corridos a partir da confirmação do pagamento, conforme o art. 49 da Lei nº 8.078/1990 (Código de Defesa do Consumidor) — sem precisar apresentar nenhuma justificativa.',
-            'Para exercer esse direito, use a opção “Exercer arrependimento” no chat, em Faturação, ou escreva para kazuio@kazuio.com, dentro desse prazo. Ao receber o seu pedido, o Kazuio confirma o recebimento na própria tela, com um número de protocolo e o andamento de cada etapa, cancela a assinatura e comunica imediatamente o exercício do direito ao Mercado Pago, administrador do pagamento, para que a cobrança não seja lançada na sua fatura ou, se já lançada, seja estornada (Decreto nº 7.962/2013, art. 5º).',
-            'Os valores pagos durante esse prazo são devolvidos de imediato e de forma integral, pelo mesmo meio de pagamento utilizado (CDC, art. 49, parágrafo único). O momento em que o valor aparece na sua fatura ou conta depende do meio de pagamento e da instituição financeira.',
-            'Após o prazo de 7 dias, o cancelamento continua disponível a qualquer momento, mas passa a valer somente a partir do fim do ciclo já pago, sem reembolso proporcional do período em curso.',
+            "O Kazuio é oferecido apenas por meio de planos pagos, sem versão gratuita do chat. Todos os planos dão acesso aos mesmos recursos; muda apenas a quantidade de mensagens:",
+            "— Experiência: R$ 19,99 por mês, até 80 mensagens por mês;",
+            "— Essencial: R$ 39,99 por mês, até 320 mensagens por mês;",
+            "— Completo: R$ 79,99 por mês, até 640 mensagens por mês.",
+            "Conta como mensagem cada mensagem que você envia; as respostas do Kazuio não contam. O ciclo de uso é mensal e começa na data de início da sua assinatura (por exemplo, de 15 de um mês a 14 do mês seguinte). Ao atingir o limite, não é possível enviar novas mensagens até o início do ciclo seguinte. Mensagens não usadas não se acumulam. Os preços e limites vigentes também aparecem na página de Preços e na tela de assinatura antes do pagamento. Mudanças de preço serão comunicadas com pelo menos 30 dias de antecedência.",
           ],
         },
         {
-          heading: '6. Uso adequado',
+          heading: "7. Pagamento, renovação, cancelamento e reembolso",
           paragraphs: [
-            'Você concorda em não usar o Kazuio para: contornar o protocolo de segurança em situações de risco; enviar conteúdo ilegal, ofensivo ou que viole direitos de terceiros; tentar extrair, copiar ou redistribuir a base de citações verificadas do Kazuio; ou usar o serviço para fins diferentes do acompanhamento pessoal e reflexivo a que se destina.',
+            "O pagamento é processado pelo Mercado Pago. A assinatura é mensal e renova automaticamente, no valor do plano escolhido, até ser cancelada. Você pode cancelar a renovação a qualquer momento, sem multa, no app, em Faturação → «Cancelar renovação», ou pelo e-mail kazuio@kazuio.com. O acesso continua até o fim do período já pago. Em até 7 dias corridos após a confirmação do primeiro pagamento, você pode exercer o direito de arrependimento e receber o valor pago de volta integralmente. As regras completas estão na Política de Cancelamento, Renovação e Reembolso (kazuio.com/cancelamento-e-reembolso), que faz parte destes Termos.",
           ],
         },
         {
-          heading: '7. Conteúdo e citações',
+          heading: "8. Uso adequado",
           paragraphs: [
-            'O Kazuio cita exclusivamente de uma base de dados curada e verificada de autores, filósofos e textos religiosos — nunca de memória livre nem de buscas na internet. Ainda assim, como toda inteligência artificial, o Kazuio pode eventualmente cometer erros na formulação das respostas; verifique qualquer informação importante de forma independente.',
-            'Se uma resposta parecer incorreta, ofensiva ou insegura, você pode nos avisar — veja a seção 11 da nossa Política de Privacidade.',
+            "Você concorda em não usar o Kazuio para: contornar os mecanismos de segurança em situações de risco; enviar conteúdo ilegal, ofensivo ou que viole direitos de terceiros; tentar extrair, copiar ou redistribuir a biblioteca de citações; tentar acessar dados de outras pessoas ou atacar o serviço; ou usar o serviço para fins diferentes da reflexão pessoal.",
           ],
         },
         {
-          heading: '8. Privacidade',
+          heading: "9. Conteúdo, citações e propriedade intelectual",
           paragraphs: [
-            'O tratamento dos seus dados pessoais está detalhado na nossa Política de Privacidade, que faz parte integrante destes Termos.',
+            "O Kazuio cita exclusivamente de uma biblioteca curada e verificada, nunca de memória livre nem de buscas na internet. Ainda assim, a inteligência artificial pode errar na formulação das respostas. Verifique de forma independente qualquer informação importante. A plataforma, a interface, a organização da biblioteca e a marca Kazuio pertencem ao operador. As citações pertencem aos seus autores e são usadas para fins de reflexão.",
           ],
         },
         {
-          heading: '9. Rescisão',
+          heading: "10. Privacidade",
           paragraphs: [
-            'Você pode encerrar sua conta a qualquer momento pelas Configurações. Reservamo-nos o direito de suspender ou encerrar contas que violem estes Termos, com aviso prévio quando possível.',
+            "O tratamento dos seus dados está descrito na Política de Privacidade, que faz parte destes Termos.",
           ],
         },
         {
-          heading: '10. Alterações destes Termos',
+          heading: "11. Encerramento",
           paragraphs: [
-            'Podemos atualizar estes Termos periodicamente. A data no topo desta página reflete a versão vigente. Alterações relevantes serão comunicadas dentro do serviço e por email com antecedência mínima de 30 (trinta) dias antes de entrarem em vigor. Se você não concordar, poderá cancelar sua assinatura antes dessa data.',
+            "Você pode excluir sua conta a qualquer momento em Configurações → «Excluir minha conta». Podemos suspender ou encerrar contas que violem estes Termos, com aviso prévio quando possível.",
           ],
         },
         {
-          heading: '11. Foro e legislação aplicável',
+          heading: "12. Alterações destes Termos",
           paragraphs: [
-            'Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro do domicílio do consumidor para dirimir quaisquer controvérsias, nos termos do art. 101, I, do Código de Defesa do Consumidor.',
+            "Alterações relevantes serão comunicadas no app e por e-mail com pelo menos 30 dias de antecedência. Se você não concordar, poderá cancelar a assinatura sem ônus antes da entrada em vigor. Se a alteração afetar o tratamento de dados sensíveis ou as condições de pagamento, pediremos um novo aceite.",
+          ],
+        },
+        {
+          heading: "13. Lei aplicável e foro",
+          paragraphs: [
+            "Estes Termos são regidos pelas leis do Brasil. Fica eleito o foro do domicílio do consumidor (art. 101, I, do Código de Defesa do Consumidor).",
           ],
         },
       ]}

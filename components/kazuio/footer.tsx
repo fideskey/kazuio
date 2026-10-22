@@ -9,6 +9,7 @@ const NAVEGUE = [
 const LEGAL = [
   ['Termos e Condições', '/termos-e-condicoes'],
   ['Política de Privacidade', '/politica-de-privacidade'],
+  ['Cancelamento e Reembolso', '/cancelamento-e-reembolso'],
   ['Política de Cookies', '/politica-de-cookies'],
 ]
 
