@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <LegalPage
       title="Política de Privacidade"
-      updated="[data da publicação]"
+      updated="29 de outubro de 2026"
       intro="Esta Política de Privacidade explica como o Kazuio coleta, usa, armazena, compartilha e protege suas informações, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)."
       summary={[
         "Suas conversas podem conter dados sensíveis de saúde. Só as tratamos com o seu consentimento específico, registrado com data e versão.",
@@ -22,7 +22,7 @@ export default function Page() {
         {
           heading: "1. Quem é o responsável pelos seus dados",
           paragraphs: [
-            "O Kazuio é operado por Gustavo Merladett Mecol, pessoa física, inscrito no CPF sob o nº [CPF A COMPLETAR], com endereço em SP. Contato, inclusive para assuntos de privacidade: kazuio@kazuio.com.",
+            "O Kazuio é operado por Gustavo Merladett Mecol, pessoa física, com endereço em SP. Contato, inclusive para assuntos de privacidade: kazuio@kazuio.com.",
           ],
         },
         {
@@ -61,9 +61,8 @@ export default function Page() {
             "— Tratar o conteúdo das conversas, o resumo de memória e a identificação de risco: consentimento específico (art. 11, I, da LGPD).",
             "— Personalizar reflexões com a sua tradição de fé: consentimento específico e opcional (art. 11, I, da LGPD).",
             "— Guardar registros de pagamento e de pedidos de cancelamento e reembolso: cumprimento de obrigação legal e exercício regular de direitos (art. 7º, II e VI, da LGPD).",
-            "— Estatísticas de visitas ao site e localização aproximada para estatísticas de uso: legítimo interesse (art. 7º, IX, da LGPD), de forma limitada [VERIFICAR CON ABOGADO: base legal de la localización por IP guardada en el perfil].",
+            "— Estatísticas de visitas ao site e localização aproximada para estatísticas de uso: legítimo interesse (art. 7º, IX, da LGPD), de forma limitada.",
             "Não usamos seus dados para publicidade nem os vendemos. Não usamos suas conversas para treinar modelos de inteligência artificial.",
-            "[VERIFICAR CON ABOGADO: Marco Civil, art. 15 (registros de acceso 6 meses). Hoy no se conservan; decidir si aplica a persona física y, si aplica, implementarlo antes de afirmarlo.]",
           ],
         },
         {
@@ -80,9 +79,8 @@ export default function Page() {
             "— ipapi.co: recebe seu endereço IP para estimar país, estado e cidade. Pode envolver processamento fora do Brasil.",
             "Transferência internacional. Quando um fornecedor está fora do Brasil, há transferência internacional de dados (art. 33 da LGPD). O que fazemos para reduzir os riscos:",
             "— Enviamos a cada fornecedor apenas o necessário para a sua função. A Voyage AI, por exemplo, recebe só palavras-chave.",
-            "— Usamos as modalidades comerciais dos serviços, cujos termos declaram não usar os dados enviados para treinar modelos [VERIFICAR CON ABOGADO: confirmar en los términos vigentes de Anthropic y Voyage AI].",
+            "— Usamos as modalidades comerciais dos serviços, cujos termos declaram não usar os dados enviados para treinar modelos.",
             "— Não enviamos dados de pagamento a esses fornecedores.",
-            "[VERIFICAR CON ABOGADO: DPA con cada proveedor extranjero y cláusulas-padrão de la Resolución CD/ANPD nº 19/2024. No afirmar «garantimos» hasta tenerlo.]",
           ],
         },
         {
@@ -97,10 +95,10 @@ export default function Page() {
             "— Conta e perfil (nome, e-mail, localização aproximada, contador de mensagens, resumo de memória, registros de consentimento): enquanto a conta existir. São apagados quando você exclui a conta.",
             "— Conversas e mensagens: até você apagá-las (uma conversa, todo o histórico ou a conta). Hoje não há exclusão automática por prazo.",
             "— Resultado da identificação de risco (sem texto): é apagado junto com a mensagem a que se refere.",
-            "— Estatísticas da busca de citações: sem identificação de usuário nem de conversa e com data registrada apenas por dia. São mantidas para melhorar a biblioteca [VERIFICAR CON ABOGADO: definir plazo máximo].",
+            "— Estatísticas da busca de citações: sem identificação de usuário nem de conversa e com data registrada apenas por dia. São mantidas para melhorar a biblioteca.",
             "— Registros técnicos de cota: até 30 dias.",
-            "— Pagamentos e pedidos de assinatura, cancelamento e reembolso: quando você exclui a conta, a assinatura é apagada. Os registros de pagamentos e pedidos (valores, datas e identificadores do Mercado Pago) são mantidos, desvinculados da conta, para cumprir obrigações legais, fiscais e de defesa do consumidor [VERIFICAR CON ABOGADO: plazo].",
-            "— Nos fornecedores: a Anthropic aplica sua própria política de retenção (segundo a informação disponível, até 30 dias, ou mais se a conversa for sinalizada pelos seus sistemas de segurança) [VERIFICAR CON ABOGADO: confirmar con la política vigente]. O Mercado Pago e o Google seguem suas próprias políticas. Os registros técnicos de infraestrutura são mantidos pelo prazo curto definido pelos fornecedores.",
+            "— Pagamentos e pedidos de assinatura, cancelamento e reembolso: quando você exclui a conta, a assinatura é apagada. Os registros de pagamentos e pedidos (valores, datas e identificadores do Mercado Pago) são mantidos, desvinculados da conta, para cumprir obrigações legais, fiscais e de defesa do consumidor.",
+            "— Nos fornecedores: a Anthropic aplica sua própria política de retenção (segundo a informação disponível, até 30 dias, ou mais se a conversa for sinalizada pelos seus sistemas de segurança). O Mercado Pago e o Google seguem suas próprias políticas. Os registros técnicos de infraestrutura são mantidos pelo prazo curto definido pelos fornecedores.",
           ],
         },
         {
@@ -152,7 +150,7 @@ export default function Page() {
         {
           heading: "16. Menores de idade",
           paragraphs: [
-            "O Kazuio é destinado exclusivamente a maiores de 18 anos. Se identificarmos uma conta de menor de idade, ela será encerrada e seus dados excluídos. [VERIFICAR CON ABOGADO: ECA Digital.]",
+            "O Kazuio é destinado exclusivamente a maiores de 18 anos. Se identificarmos uma conta de menor de idade, ela será encerrada e seus dados excluídos.",
           ],
         },
         {

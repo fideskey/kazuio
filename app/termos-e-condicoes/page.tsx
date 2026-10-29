@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <LegalPage
       title="Termos de Uso"
-      updated="[data da publicação]"
+      updated="29 de outubro de 2026"
       intro="Estes Termos regulam o uso do Kazuio (kazuio.com e app.kazuio.com). Ao criar uma conta ou usar o Kazuio, você concorda com eles."
       summary={[
         "O Kazuio é uma inteligência artificial de reflexão. Não substitui psicólogo, psiquiatra, autoridade religiosa nem atendimento de emergência.",
@@ -22,13 +22,13 @@ export default function Page() {
         {
           heading: "1. Quem presta o serviço",
           paragraphs: [
-            "O Kazuio é operado por Gustavo Merladett Mecol, pessoa física, inscrito no CPF sob o nº [CPF A COMPLETAR], com endereço em SP. Atendimento: kazuio@kazuio.com.",
+            "O Kazuio é operado por Gustavo Merladett Mecol, pessoa física, com endereço em SP. Atendimento: kazuio@kazuio.com.",
           ],
         },
         {
           heading: "2. Natureza do serviço",
           paragraphs: [
-            "O Kazuio é um espaço de reflexão com inteligência artificial [VERIFICAR CON ABOGADO: el texto actual dice «acompanhamento emocional»; evaluar art. 282 del Código Penal y Resoluciones CFP 11/2018 y 04/2020]. Ele oferece perguntas e citações verificadas de autores e tradições da Psicologia, da Fé e da Filosofia, nunca conselhos profissionais.",
+            "O Kazuio é um espaço de reflexão com inteligência artificial. Ele oferece perguntas e citações verificadas de autores e tradições da Psicologia, da Fé e da Filosofia, nunca conselhos profissionais.",
             "O Kazuio NÃO é e não substitui:",
             "— um serviço de psicologia, psicoterapia ou aconselhamento psicológico;",
             "— um serviço de psiquiatria ou medicina: não diagnostica, não prescreve tratamento nem medicação;",
@@ -50,7 +50,7 @@ export default function Page() {
         {
           heading: "4. Idade mínima",
           paragraphs: [
-            "O Kazuio é destinado exclusivamente a pessoas com 18 anos ou mais. No cadastro, você confirma ativamente ter 18 anos ou mais. Se identificarmos ou suspeitarmos que um usuário é menor de idade, a conversa será encerrada com a orientação de procurar um adulto de confiança, e a conta poderá ser encerrada e seus dados excluídos. [VERIFICAR CON ABOGADO: ECA Digital.] [NOTA INTERNA, no publicar: hoy la confirmación de 18 años solo existe en el registro por correo; añadirla al acceso con Google antes de publicar esta frase.]",
+            "O Kazuio é destinado exclusivamente a pessoas com 18 anos ou mais. Ao usar o Kazuio, você declara ter 18 anos ou mais; no cadastro por e-mail, você confirma isso ativamente. Se identificarmos ou suspeitarmos que um usuário é menor de idade, a conversa será encerrada com a orientação de procurar um adulto de confiança, e a conta poderá ser encerrada e seus dados excluídos.",
           ],
         },
         {

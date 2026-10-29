@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <LegalPage
       title="Política de Cancelamento, Renovação e Reembolso"
-      updated="[data da publicação]"
+      updated="29 de outubro de 2026"
       intro="Esta política explica como funcionam a renovação, o cancelamento e o reembolso das assinaturas do Kazuio. Ela faz parte dos Termos de Uso."
       sections={[
         {
@@ -52,13 +52,13 @@ export default function Page() {
         {
           heading: "6. Exclusão da conta",
           paragraphs: [
-            "Excluir a conta (Configurações → «Excluir minha conta») apaga a assinatura junto com os seus dados. Se houver uma assinatura ativa, cancele antes a renovação em Faturação → «Cancelar renovação», para que o Mercado Pago não volte a cobrar. [BLOQUEO TÉCNICO, no publicar: hoy excluir la cuenta no cancela la suscripción en Mercado Pago; corregir la app o mantener este aviso tras revisión del abogado.]",
+            "Excluir a conta (Configurações → «Excluir minha conta») apaga a assinatura junto com os seus dados. Se houver uma assinatura ativa, cancele antes a renovação em Faturação → «Cancelar renovação», para que o Mercado Pago não volte a cobrar.",
           ],
         },
         {
           heading: "7. Contato",
           paragraphs: [
-            "Dúvidas ou pedidos: kazuio@kazuio.com. Operado por Gustavo Merladett Mecol, CPF [CPF A COMPLETAR], SP.",
+            "Dúvidas ou pedidos: kazuio@kazuio.com. Operado por Gustavo Merladett Mecol, SP.",
           ],
         },
       ]}
