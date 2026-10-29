@@ -73,7 +73,7 @@ export default function Page() {
             "— Anthropic (Estados Unidos): gera as respostas do Kazuio e recebe o conteúdo das mensagens necessárias para isso.",
             "— Voyage AI (Estados Unidos): recebe apenas até 6 palavras-chave curtas de temas (por exemplo, «luto», «ansiedade»), sem seu nome, e-mail ou o texto das mensagens, para buscar reflexões na nossa biblioteca.",
             "— Vercel: hospeda o site e mede as visitas de forma agregada. Pode envolver processamento fora do Brasil.",
-            "— SendGrid (Twilio) (Estados Unidos): envia os e-mails da conta, como confirmação de cadastro e recuperação de senha.",
+            "— Resend (Estados Unidos): envia os e-mails da conta, como confirmação de cadastro e recuperação de senha.",
             "— Mercado Pago (Brasil): processa os pagamentos e as assinaturas, como controlador independente dos dados de pagamento.",
             "— Google (Estados Unidos): autentica seu acesso se você escolher entrar com a conta Google.",
             "— ipapi.co: recebe seu endereço IP para estimar país, estado e cidade. Pode envolver processamento fora do Brasil.",
