@@ -438,7 +438,7 @@ function LoginPageContent() {
                 <li>identificar sinais de risco por meio de sistema automatizado e exibir canais de ajuda;</li>
                 <li>registrar, sem o texto da conversa, o resultado dessa identificação, para auditar a segurança do serviço.</li>
               </ol>
-              <p>O conteúdo é processado por provedores de tecnologia (Anthropic, Supabase e Voyage AI, esta apenas com palavras-chave de temas) e não é usado para publicidade.</p>
+              <p>O conteúdo é processado por provedores de tecnologia (inteligência artificial, banco de dados e busca semântica, esta apenas com palavras-chave de temas) e não é usado para publicidade.</p>
               <p>
                 Você pode revogar este consentimento a qualquer momento escrevendo para{' '}
                 <a href="mailto:kazuio@kazuio.com" className="font-medium text-navy underline underline-offset-2">kazuio@kazuio.com</a>.

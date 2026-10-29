@@ -33,13 +33,13 @@ export default function Page() {
         {
           heading: '3. Dados de localização aproximada',
           paragraphs: [
-            'No momento do login, consultamos um serviço externo (ipapi.co) para estimar seu estado e cidade a partir do seu endereço IP (nunca sua localização GPS exata). Isso é usado apenas para estatísticas agregadas de uso, não para rastreamento individual entre sites.',
+            'No momento do login, consultamos um serviço externo para estimar seu estado e cidade a partir do seu endereço IP (nunca sua localização GPS exata). Isso é usado apenas para estatísticas agregadas de uso, não para rastreamento individual entre sites.',
           ],
         },
         {
           heading: '4. Medição de acessos ao site',
           paragraphs: [
-            'Usamos o Vercel Web Analytics para entender, de forma agregada, como o site é acessado: páginas visitadas, origem do acesso, tipo de dispositivo e país. Essa ferramenta não usa cookies de rastreamento entre sites e não é usada para publicidade.',
+            'Usamos uma ferramenta de estatísticas de acesso para entender, de forma agregada, como o site é acessado: páginas visitadas, origem do acesso, tipo de dispositivo e país. Essa ferramenta não usa cookies de rastreamento entre sites e não é usada para publicidade.',
           ],
         },
         {
