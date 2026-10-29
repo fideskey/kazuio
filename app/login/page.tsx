@@ -7,6 +7,7 @@ import { ArrowRight, UserPlus, Eye, EyeOff } from 'lucide-react'
 import { Header } from '@/components/kazuio/header'
 import { Footer } from '@/components/kazuio/footer'
 import { supabase } from '@/lib/supabaseClient'
+import { urlRecuperacao, urlConfirmacaoCadastro } from '@/lib/recuperacaoSenha'
 
 type Aba = 'entrar' | 'cadastrar'
 
@@ -95,7 +96,11 @@ function LoginPageContent() {
       setErroEntrar('Digite seu e-mail acima primeiro, depois clique em "Esqueceu sua senha?".')
       return
     }
-    const { error } = await supabase.auth.resetPasswordForEmail(emailEntrar)
+    // Sem redirectTo, o Supabase usa o Site URL (a raiz do site), que não tem o formulário de
+    // senha nova. O formulário está no app (/chat), que detecta PASSWORD_RECOVERY.
+    const { error } = await supabase.auth.resetPasswordForEmail(emailEntrar, {
+      redirectTo: urlRecuperacao(window.location.origin),
+    })
     if (error) {
       setErroEntrar('Não foi possível enviar o e-mail de recuperação agora. Tente novamente.')
     } else {
@@ -121,7 +126,8 @@ function LoginPageContent() {
   const [carregandoCadastro, setCarregandoCadastro] = useState(false)
   const [cadastroConcluido, setCadastroConcluido] = useState(false)
 
-  const SENHA_FORTE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{6,}$/
+  // Mínimo de 8, igual ao do servidor (Supabase Auth) e ao do app (/chat, js/auth.js).
+  const SENHA_FORTE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{8,}$/
 
   async function handleCadastrar(e: FormEvent) {
     e.preventDefault()
@@ -132,7 +138,7 @@ function LoginPageContent() {
       return
     }
     if (!SENHA_FORTE.test(senha)) {
-      setErro('A senha precisa ter letra maiúscula, minúscula, número e um símbolo (ex: !@#$%), com pelo menos 6 caracteres.')
+      setErro('A senha precisa ter letra maiúscula, minúscula, número e um símbolo (ex: !@#$%), com pelo menos 8 caracteres.')
       return
     }
     if (senha !== confirmarSenha) {
@@ -157,6 +163,9 @@ function LoginPageContent() {
           consent_saude: { versao: CONSENT_VERSION, aceito_em: consentimento.aceitoEm },
           consent_fe: consentimento.fe,
         },
+        // Sem isto, o link de confirmação volta ao Site URL (a raiz). Conta nova ainda não tem
+        // assinatura: vai escolher um plano, como no app (DESTINO_CONFIRMACAO_CADASTRO).
+        emailRedirectTo: urlConfirmacaoCadastro(window.location.origin),
       },
     })
     setCarregandoCadastro(false)
@@ -165,8 +174,8 @@ function LoginPageContent() {
       setErro(
         signUpError.message.toLowerCase().includes('already registered')
           ? 'Já existe uma conta com esse e-mail.'
-          : /^password should contain/i.test(signUpError.message)
-          ? 'A senha precisa ter letra maiúscula, minúscula, número e um símbolo (ex: !@#$%).'
+          : /^password should (be at least|contain)/i.test(signUpError.message)
+          ? 'A senha precisa ter pelo menos 8 caracteres, com letra maiúscula, minúscula, número e um símbolo (ex: !@#$%).'
           : 'Não foi possível criar a conta agora. Tente novamente.'
       )
       return
@@ -331,7 +340,7 @@ function LoginPageContent() {
                 </button>
               </div>
               <p className="mt-1.5 text-[11px] leading-4 text-kmuted">
-                Precisa ter letra maiúscula, minúscula, número e símbolo (ex: !@#$%). Mínimo 6 caracteres.
+                Precisa ter letra maiúscula, minúscula, número e símbolo (ex: !@#$%). Mínimo 8 caracteres.
               </p>
             </div>
             <div>

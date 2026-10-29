@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Fraunces, Inter } from 'next/font/google'
 import './globals.css'
+import { SCRIPT_ENCAMINHAR_RECUPERACAO } from '@/lib/recuperacaoSenha'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -79,6 +80,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`bg-cream ${inter.variable} ${fraunces.variable}`}>
       <head>
+        {/* Primeiro do <head>: leva links de recuperação de senha para /chat antes de qualquer módulo. */}
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: SCRIPT_ENCAMINHAR_RECUPERACAO }}
+        />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
