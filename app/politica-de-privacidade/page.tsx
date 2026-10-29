@@ -2,117 +2,161 @@ import type { Metadata } from 'next'
 import { LegalPage } from '@/components/kazuio/legal-page'
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidade — Kazuio',
-  description: 'Como o Kazuio trata os dados e a privacidade das conversas.',
+  title: "Política de Privacidade — Kazuio",
+  description: "Como o Kazuio trata os dados e a privacidade das conversas.",
 }
 
 export default function Page() {
   return (
     <LegalPage
       title="Política de Privacidade"
-      updated="outubro de 2026"
-      intro="Esta Política de Privacidade explica como o Kazuio coleta, usa, armazena e protege suas informações, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)."
+      updated="29 de outubro de 2026"
+      intro="Esta Política de Privacidade explica como o Kazuio coleta, usa, armazena, compartilha e protege suas informações, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)."
       summary={[
-        'Suas conversas são tratadas como dado sensível de saúde — só as usamos com seu consentimento explícito, nunca por padrão.',
-        'Não vendemos, nem compartilhamos suas conversas com terceiros para publicidade.',
-        'Você pode apagar seu histórico ou excluir sua conta inteira a qualquer momento, pelas Configurações.',
-        'Se uma resposta do Kazuio parecer errada, ofensiva ou insegura, você pode nos avisar — veja a seção 11.',
+        "Suas conversas podem conter dados sensíveis de saúde. Só as tratamos com o seu consentimento específico, registrado com data e versão.",
+        "Não vendemos seus dados e não os usamos para publicidade.",
+        "Você pode apagar uma conversa, todo o histórico ou a conta inteira a qualquer momento, pelo próprio app.",
+        "Algumas empresas que nos prestam serviços ficam fora do Brasil. Abaixo explicamos quais são, o que recebem e por quê.",
       ]}
       sections={[
         {
-          heading: '1. Quem somos',
+          heading: "1. Quem é o responsável pelos seus dados",
           paragraphs: [
-            'Kazuio é um espaço de acompanhamento emocional que combina Psicologia, Fé e Filosofia. Somos uma inteligência artificial — nunca fingimos ser humanos. Não somos um serviço de psicologia, psiquiatria ou medicina licenciado, não diagnosticamos, não prescrevemos tratamento, e não substituímos o acompanhamento de um profissional de saúde mental.',
+            "O Kazuio é operado por Gustavo Merladett Mecol, pessoa física, com endereço em SP. Contato, inclusive para assuntos de privacidade: kazuio@kazuio.com.",
           ],
         },
         {
-          heading: '2. Dados sensíveis: um aviso especial',
+          heading: "2. O que é o Kazuio",
           paragraphs: [
-            'O conteúdo das suas conversas com o Kazuio — incluindo referências ao seu estado emocional, saúde mental ou situação de vida — é tratado como dado pessoal sensível nos termos do art. 5º, II da LGPD (dado referente à saúde). Por isso, o tratamento desses dados é feito com base no consentimento específico e destacado, conforme exige o art. 11, I da LGPD para dados sensíveis — não com base em interesse legítimo nem em qualquer outra hipótese menos restritiva. Pedimos esse consentimento em um aviso próprio e destacado, ao criar a conta (no cadastro ou, se você entrar com o Google, no primeiro acesso ao chat), e não por meio de um aceite genérico. Esse consentimento é necessário para usar o Kazuio e fica registrado com a data e a versão do texto que você aceitou. Você pode revogá-lo a qualquer momento (veja a seção 6).',
+            "O Kazuio é um espaço de reflexão com inteligência artificial que combina Psicologia, Fé e Filosofia. Somos uma inteligência artificial e nunca fingimos ser humanos. Não somos um serviço de psicologia, psiquiatria ou medicina; não diagnosticamos, não prescrevemos tratamento e não substituímos o acompanhamento de um profissional de saúde mental. O serviço é destinado exclusivamente a maiores de 18 anos.",
           ],
         },
         {
-          heading: '3. Quais informações coletamos',
+          heading: "3. Dados sensíveis: consentimento específico",
           paragraphs: [
-            '— Dados de cadastro: nome e email.',
-            '— Conteúdo das conversas: as mensagens que você troca com o Kazuio, para dar continuidade ao acompanhamento entre uma conversa e outra.',
-            '— Resumo de memória entre conversas: quando você inicia uma conversa nova, geramos um resumo curto e cumulativo da sua situação (não a transcrição completa das conversas anteriores), para que o Kazuio não precise repetir perguntas já respondidas. Esse resumo fica associado ao seu perfil e é apagado junto com sua conta.',
-            '— Uso do serviço: quantidade de mensagens utilizadas, e se cada citação oferecida foi marcada como útil ou não (para melhorar a curadoria — de forma agregada, não vinculada a você especificamente).',
-            '— Localização aproximada: estado e cidade dentro do Brasil, deduzidos do seu endereço IP no momento do login — nunca sua localização GPS exata. Usado apenas para estatísticas agregadas de uso.',
-            '— Dados de pagamento: caso você assine um plano pago, os dados de pagamento são processados diretamente pelo Mercado Pago; o Kazuio não armazena números de cartão nem dados financeiros completos.',
+            "O conteúdo das suas conversas pode revelar informações sobre sua saúde emocional e mental, que são dados pessoais sensíveis (art. 5º, II, da LGPD). Por isso, tratamos esse conteúdo com base no seu consentimento específico e destacado (art. 11, I, da LGPD), pedido em um aviso próprio, separado do aceite dos Termos: no cadastro por e-mail ou, se você entrar com o Google, no primeiro acesso ao chat. Esse consentimento é necessário para usar o Kazuio. Sem ele, o chat não funciona; o próprio servidor confere o aceite antes de processar qualquer mensagem. O aceite fica registrado com a data e a versão do texto aceito.",
+            "Se você mencionar sua religião ou tradição de fé, esse dado também é sensível. Para usá-lo na personalização das reflexões e citações, pedimos um consentimento separado e opcional. Você pode recusá-lo sem perder acesso ao restante do app.",
+            "Você pode revogar esses consentimentos a qualquer momento (veja a seção 10).",
           ],
         },
         {
-          heading: '4. Como usamos essas informações',
+          heading: "4. Quais dados coletamos",
           paragraphs: [
-            'Usamos seus dados exclusivamente para: (a) manter a continuidade do acompanhamento entre conversas; (b) gerar um resumo interno breve da sua situação, para que o Kazuio não "esqueça" o que você já contou; (c) avaliar, de forma agregada e anônima, se as citações oferecidas realmente ajudam as pessoas; (d) identificar sinais de risco por meio de sistema automatizado e exibir canais de ajuda (veja a seção 12); (e) registrar, sem o texto da conversa, o resultado dessa identificação, para auditar a segurança do serviço; e (f) cumprir obrigações legais quando aplicável.',
-            'Não usamos seus dados para treinar modelos de inteligência artificial de terceiros, nem para fins de publicidade.',
+            "— Dados de cadastro: nome e e-mail. Se você entrar com o Google, o Google nos informa também seu nome completo e o endereço da sua foto de perfil, que ficam registrados na sua conta.",
+            "— Conteúdo das conversas: as mensagens que você troca com o Kazuio.",
+            "— Resumo de memória: um resumo curto e cumulativo das suas conversas anteriores, para que o Kazuio não precise repetir perguntas já respondidas.",
+            "— Estado da conversa: marcações técnicas sobre a etapa da conversa. Não incluem hipóteses psicológicas nem dados de fé.",
+            "— Uso do serviço: quantas mensagens você usou no ciclo e, se você marcar, se uma citação foi útil.",
+            "— Registros de consentimento: versão e data do aceite; se você autorizou ou não o uso do dado de fé.",
+            "— Localização aproximada: país, estado e cidade, estimados a partir do seu endereço IP por um serviço externo (ipapi.co), no máximo uma vez por sessão do navegador. Nunca usamos GPS. Esse dado fica registrado no seu perfil, pode ser visto pelo administrador e é usado para estatísticas de uso.",
+            "— Resultado da identificação automática de risco: apenas o tipo e o resultado (sim/não), vinculados à mensagem, sem cópia do texto.",
+            "— Dados de assinatura e pagamento: plano, situação e datas da assinatura, valores e identificadores das transações no Mercado Pago. Não armazenamos números de cartão nem dados bancários completos.",
+            "— Estatísticas de visitas ao site: por meio do Vercel Web Analytics, coletamos de forma agregada as páginas visitadas, o país, a origem do acesso (site de referência), os parâmetros de campanha (UTM) e o tipo de dispositivo, sem cookies de rastreamento entre sites.",
           ],
         },
         {
-          heading: '5. Compartilhamento com terceiros',
+          heading: "5. Para que usamos e com que base legal",
           paragraphs: [
-            'Não vendemos, alugamos nem compartilhamos o conteúdo das suas conversas com terceiros para fins comerciais. Utilizamos os seguintes fornecedores, que atuam como operadores de dados sob nossas instruções, não como destinatários finais dos seus dados:',
-            '— Anthropic (empresa responsável pelo modelo de IA Claude, que gera as respostas do Kazuio): processa o conteúdo das suas mensagens em infraestrutura localizada principalmente nos Estados Unidos. Isso caracteriza transferência internacional de dados, amparada por Cláusulas-Padrão Contratuais (SCCs) previstas em Acordo de Processamento de Dados (DPA) com a Anthropic. Seus dados não são utilizados para treinar modelos de terceiros, e são excluídos automaticamente dos sistemas da Anthropic em até 30 (trinta) dias após o recebimento ou a geração, conforme a política de retenção comercial da Anthropic vigente em julho de 2026. Se a conversa for sinalizada pelos sistemas automáticos de segurança da Anthropic por possível violação da sua política de uso, o conteúdo pode ser retido por até 2 (dois) anos.',
-            '— Voyage AI: recebe apenas palavras-chave de temas extraídas da conversa (por exemplo, "luto" ou "ansiedade"), sem seu nome, e-mail ou o texto das suas mensagens, para viabilizar a busca de reflexões relevantes na nossa biblioteca curada (busca semântica). Também envolve processamento fora do Brasil.',
-            '— Supabase (nossa infraestrutura de banco de dados): armazena seus dados de forma segura, hospedados em servidores localizados no Brasil (São Paulo).',
-            '— Mercado Pago: processa os dados relacionados ao pagamento da sua assinatura (como CPF e status da transação), operando como controlador independente dos dados de pagamento propriamente ditos (os dados do seu cartão nunca chegam até o Kazuio).',
-            '— Google: se você escolher entrar com sua conta Google, o Google autentica o seu acesso e informa ao Kazuio o seu nome e email. Nesse caso, o Google trata os seus dados de acordo com a própria política de privacidade dele.',
-            '— Vercel: hospeda o site do Kazuio e realiza a medição de acessos (Vercel Web Analytics), que registra dados técnicos e agregados de navegação, como páginas visitadas, origem do acesso, tipo de dispositivo e país, sem uso de cookies de rastreamento entre sites. Pode envolver processamento fora do Brasil.',
-            '— ipapi.co: serviço externo de geolocalização consultado no momento do login para estimar seu estado e cidade a partir do endereço IP. Esse serviço recebe o seu endereço IP para responder a essa consulta. Pode envolver processamento fora do Brasil.',
+            "— Prestar o serviço contratado (conta, chat, cota de mensagens, assinatura): execução de contrato (art. 7º, V, da LGPD).",
+            "— Tratar o conteúdo das conversas, o resumo de memória e a identificação de risco: consentimento específico (art. 11, I, da LGPD).",
+            "— Personalizar reflexões com a sua tradição de fé: consentimento específico e opcional (art. 11, I, da LGPD).",
+            "— Guardar registros de pagamento e de pedidos de cancelamento e reembolso: cumprimento de obrigação legal e exercício regular de direitos (art. 7º, II e VI, da LGPD).",
+            "— Estatísticas de visitas ao site e localização aproximada para estatísticas de uso: legítimo interesse (art. 7º, IX, da LGPD), de forma limitada.",
+            "Não usamos seus dados para publicidade nem os vendemos. Não usamos suas conversas para treinar modelos de inteligência artificial.",
           ],
         },
         {
-          heading: '6. Seus direitos (art. 18 da LGPD)',
+          heading: "6. Com quem compartilhamos e onde os dados são processados",
           paragraphs: [
-            'Você tem direito a, a qualquer momento:',
-            '— Acessar os dados que temos sobre você;',
-            '— Corrigir dados incompletos, inexatos ou desatualizados (ex: editar seu nome em Configurações);',
-            '— Apagar seu histórico de conversas, a qualquer momento, pelo botão "Apagar todo o histórico" em Configurações;',
-            '— Eliminar totalmente sua conta e todos os dados associados, pelo botão "Excluir minha conta" em Configurações;',
-            '— Revogar seu consentimento ao tratamento de dados sensíveis a qualquer momento, o que pode implicar o encerramento da conta, já que o serviço depende desse tratamento para funcionar;',
-            '— Portabilidade: solicitar que enviemos seus dados a você (ou a outro fornecedor, quando tecnicamente viável) em formato estruturado;',
-            '— Oposição: se opor a um tratamento específico de dados que considere inadequado, sem necessariamente excluir toda a sua conta;',
-            '— Solicitar informações sobre com quem compartilhamos seus dados, entrando em contato pelo canal abaixo.',
-            'Atendemos as solicitações dos seus direitos de forma facilitada e gratuita. Quando possível, respondemos de imediato, em formato simplificado; quando for necessária uma declaração completa (origem dos dados, critérios e finalidade do tratamento), ela será fornecida em até 15 (quinze) dias a partir do seu pedido. Para solicitar, escreva para kazuio@kazuio.com.',
+            "Não vendemos nem cedemos seus dados para fins comerciais. Os fornecedores abaixo tratam dados em nosso nome, apenas para prestar o serviço:",
+            "— Supabase: banco de dados e autenticação. Servidores em São Paulo, Brasil.",
+            "— Anthropic (Estados Unidos): gera as respostas do Kazuio e recebe o conteúdo das mensagens necessárias para isso.",
+            "— Voyage AI (Estados Unidos): recebe apenas até 6 palavras-chave curtas de temas (por exemplo, «luto», «ansiedade»), sem seu nome, e-mail ou o texto das mensagens, para buscar reflexões na nossa biblioteca.",
+            "— Vercel: hospeda o site e mede as visitas de forma agregada. Pode envolver processamento fora do Brasil.",
+            "— SendGrid (Twilio) (Estados Unidos): envia os e-mails da conta, como confirmação de cadastro e recuperação de senha.",
+            "— Mercado Pago (Brasil): processa os pagamentos e as assinaturas, como controlador independente dos dados de pagamento.",
+            "— Google (Estados Unidos): autentica seu acesso se você escolher entrar com a conta Google.",
+            "— ipapi.co: recebe seu endereço IP para estimar país, estado e cidade. Pode envolver processamento fora do Brasil.",
+            "Transferência internacional. Quando um fornecedor está fora do Brasil, há transferência internacional de dados (art. 33 da LGPD). O que fazemos para reduzir os riscos:",
+            "— Enviamos a cada fornecedor apenas o necessário para a sua função. A Voyage AI, por exemplo, recebe só palavras-chave.",
+            "— Usamos as modalidades comerciais dos serviços, cujos termos declaram não usar os dados enviados para treinar modelos.",
+            "— Não enviamos dados de pagamento a esses fornecedores.",
           ],
         },
         {
-          heading: '7. Segurança',
+          heading: "7. Dados recebidos do Google",
           paragraphs: [
-            'Adotamos medidas técnicas e organizacionais para proteger seus dados, incluindo criptografia em trânsito (conexões HTTPS) e em repouso, controle de acesso restrito, e políticas de segurança em nível de linha de banco de dados que impedem que um usuário acesse os dados de outro.',
+            "Se você entrar com sua conta Google, recebemos apenas seu e-mail e as informações básicas do perfil público (nome e foto de perfil). Usamos esses dados exclusivamente para autenticar sua identidade, criar e dar acesso à sua conta. O uso de informações recebidas das APIs do Google segue a Política de Dados do Usuário dos Serviços de API do Google (Google API Services User Data Policy), incluindo os requisitos de Uso Limitado. Não usamos, não compartilhamos e não transferimos esses dados para publicidade nem os vendemos.",
           ],
         },
         {
-          heading: '8. Retenção de dados',
+          heading: "8. Por quanto tempo guardamos",
           paragraphs: [
-            'Mantemos seus dados enquanto sua conta estiver ativa. Ao excluir sua conta, seus dados pessoais e o conteúdo das conversas são apagados permanentemente dos nossos sistemas de produção.',
+            "— Conta e perfil (nome, e-mail, localização aproximada, contador de mensagens, resumo de memória, registros de consentimento): enquanto a conta existir. São apagados quando você exclui a conta.",
+            "— Conversas e mensagens: até você apagá-las (uma conversa, todo o histórico ou a conta). Hoje não há exclusão automática por prazo.",
+            "— Resultado da identificação de risco (sem texto): é apagado junto com a mensagem a que se refere.",
+            "— Estatísticas da busca de citações: sem identificação de usuário nem de conversa e com data registrada apenas por dia. São mantidas para melhorar a biblioteca.",
+            "— Registros técnicos de cota: até 30 dias.",
+            "— Pagamentos e pedidos de assinatura, cancelamento e reembolso: quando você exclui a conta, a assinatura é apagada. Os registros de pagamentos e pedidos (valores, datas e identificadores do Mercado Pago) são mantidos, desvinculados da conta, para cumprir obrigações legais, fiscais e de defesa do consumidor.",
+            "— Nos fornecedores: a Anthropic aplica sua própria política de retenção (segundo a informação disponível, até 30 dias, ou mais se a conversa for sinalizada pelos seus sistemas de segurança). O Mercado Pago e o Google seguem suas próprias políticas. Os registros técnicos de infraestrutura são mantidos pelo prazo curto definido pelos fornecedores.",
           ],
         },
         {
-          heading: '9. Incidentes de segurança',
+          heading: "9. Como apagar seus dados e sua conta",
           paragraphs: [
-            'Em caso de incidente de segurança que possa acarretar risco ou dano relevante aos titulares, comunicaremos a ANPD e os titulares afetados em até 3 (três) dias úteis contados do momento em que tivermos conhecimento de que o incidente afetou dados pessoais, conforme a Resolução CD/ANPD nº 15/2024. Manteremos o registro do incidente pelo prazo mínimo de 5 (cinco) anos.',
+            "— Uma conversa: na lista de conversas, escolha a conversa e exclua. Apagamos a conversa, suas mensagens e os registros técnicos ligados a ela.",
+            "— Todo o histórico: em Configurações → «Apagar todo o histórico». Apaga todas as conversas, mensagens, o resumo de memória e os dados derivados delas.",
+            "— A conta inteira: em Configurações → «Excluir minha conta». Apaga seu perfil, conversas, mensagens, resumo de memória, assinatura e seu login (e-mail e senha ou vínculo com o Google). Por segurança, podemos pedir que você entre novamente antes de confirmar. A exclusão não pode ser desfeita. Os registros de pagamento seguem a regra da seção 8.",
+            "— Também pode pedir por e-mail: kazuio@kazuio.com.",
           ],
         },
         {
-          heading: '10. Contato e encarregado',
+          heading: "10. Seus direitos (art. 18 da LGPD)",
           paragraphs: [
-            'Para exercer qualquer um dos direitos acima, ou tirar dúvidas sobre esta política, entre em contato pelo email: kazuio@kazuio.com',
-            'Encarregado pelo tratamento de dados pessoais (art. 41 da LGPD): Gustavo Merladett Mecol. Contato: kazuio@kazuio.com.',
+            "Você pode, a qualquer momento: confirmar se tratamos seus dados e acessá-los; corrigir dados incompletos ou desatualizados (por exemplo, seu nome, em Configurações); pedir anonimização, bloqueio ou eliminação de dados desnecessários; pedir a portabilidade em formato estruturado; saber com quem compartilhamos seus dados; revogar seus consentimentos; e se opor a um tratamento específico. A revogação do consentimento de saúde impede o uso do chat, porque o serviço depende desse tratamento; a do consentimento de fé não afeta o restante do app.",
+            "Atendemos gratuitamente. Quando possível, respondemos de imediato em formato simplificado. A declaração completa é fornecida em até 15 dias. Para exercer seus direitos: kazuio@kazuio.com.",
           ],
         },
         {
-          heading: '11. Relato de conteúdo problemático da IA',
+          heading: "11. Segurança",
           paragraphs: [
-            'O Kazuio cita exclusivamente de uma biblioteca verificada, mas nenhuma inteligência artificial está livre de erros. Se uma resposta do Kazuio parecer incorreta, ofensiva, insegura, ou fora do que você esperava, escreva para kazuio@kazuio.com descrevendo o que aconteceu (pode incluir um recorte da conversa). Usamos esses relatos para corrigir e melhorar o sistema.',
-            'Este canal não é para emergências. Se você estiver em risco imediato, procure ajuda conforme a seção 2 dos Termos e Condições (CVV: 188, SAMU: 192).',
+            "Usamos conexões criptografadas (HTTPS), criptografia dos dados armazenados pela infraestrutura, acesso restrito e regras no banco de dados que impedem que um usuário veja os dados de outro.",
           ],
         },
         {
-          heading: '12. Identificação automatizada de risco (art. 20 da LGPD)',
+          heading: "12. Incidentes de segurança",
           paragraphs: [
-            'O Kazuio utiliza um sistema automatizado para identificar sinais de risco (por exemplo, menção a autolesão) e adaptar a resposta, priorizando canais de ajuda. Essa identificação não encerra seu contrato nem lhe nega acesso a direitos. Você pode solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado que afetem seus interesses, e pedir informações claras sobre os critérios utilizados, escrevendo para kazuio@kazuio.com.',
+            "Se ocorrer um incidente que possa acarretar risco ou dano relevante, comunicaremos a ANPD e as pessoas afetadas em até 3 dias úteis a partir do momento em que soubermos que ele afetou dados pessoais, conforme a Resolução CD/ANPD nº 15/2024, e manteremos o registro do incidente por pelo menos 5 anos.",
+          ],
+        },
+        {
+          heading: "13. Encarregado e contato",
+          paragraphs: [
+            "Encarregado pelo tratamento de dados pessoais (art. 41 da LGPD): Gustavo Merladett Mecol. Contato: kazuio@kazuio.com.",
+          ],
+        },
+        {
+          heading: "14. Conteúdo problemático da IA",
+          paragraphs: [
+            "O Kazuio cita apenas de uma biblioteca verificada, mas nenhuma inteligência artificial está livre de erros. Se uma resposta parecer incorreta, ofensiva ou insegura, escreva para kazuio@kazuio.com contando o que aconteceu. Este canal não é para emergências: em risco imediato, ligue para o CVV (188) ou para o SAMU (192).",
+          ],
+        },
+        {
+          heading: "15. Identificação automatizada de risco (art. 20 da LGPD)",
+          paragraphs: [
+            "Um sistema automatizado identifica sinais de risco (por exemplo, menção a autolesão) para adaptar a resposta e priorizar canais de ajuda. Essa identificação não encerra seu contrato nem lhe nega direitos. Você pode pedir a revisão de decisões tomadas unicamente com base em tratamento automatizado e informações sobre os critérios usados, pelo e-mail kazuio@kazuio.com.",
+          ],
+        },
+        {
+          heading: "16. Menores de idade",
+          paragraphs: [
+            "O Kazuio é destinado exclusivamente a maiores de 18 anos. Se identificarmos uma conta de menor de idade, ela será encerrada e seus dados excluídos.",
+          ],
+        },
+        {
+          heading: "17. Alterações desta Política",
+          paragraphs: [
+            "Alterações relevantes serão comunicadas no app e por e-mail com pelo menos 30 dias de antecedência. Se a alteração mudar o tratamento de dados sensíveis, pediremos um novo aceite antes de você continuar usando o chat.",
           ],
         },
       ]}
