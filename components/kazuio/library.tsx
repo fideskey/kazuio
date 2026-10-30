@@ -9,9 +9,9 @@ const ITEMS = [
 ]
 
 const STATS = [
-  { number: '+1000', label: 'citações curadas' },
-  { number: '76', label: 'autores reais' },
-  { number: '641', label: 'temas classificados' },
+  { number: '+900', label: 'citações curadas' },
+  { number: '73', label: 'autores reais' },
+  { number: '+600', label: 'temas classificados' },
 ]
 
 export function Library() {
