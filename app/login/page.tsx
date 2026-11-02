@@ -127,7 +127,7 @@ function LoginPageContent() {
   const [cadastroConcluido, setCadastroConcluido] = useState(false)
 
   // Mínimo de 8, igual ao do servidor (Supabase Auth) e ao do app (/chat, js/auth.js).
-  const SENHA_FORTE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{8,}$/
+  const SENHA_FORTE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|<>?,./`~]).{8,}$/
 
   async function handleCadastrar(e: FormEvent) {
     e.preventDefault()
@@ -138,7 +138,7 @@ function LoginPageContent() {
       return
     }
     if (!SENHA_FORTE.test(senha)) {
-      setErro('A senha precisa ter letra maiúscula, minúscula, número e um símbolo (ex: !@#$%), com pelo menos 8 caracteres.')
+      setErro('A senha precisa ter letra maiúscula, minúscula, número e um símbolo como ! @ # $ % & * ? - _ . Espaço, acentos (ç, é…) e emojis não contam como símbolo. Mínimo 8 caracteres.')
       return
     }
     if (senha !== confirmarSenha) {
@@ -340,7 +340,7 @@ function LoginPageContent() {
                 </button>
               </div>
               <p className="mt-1.5 text-[11px] leading-4 text-kmuted">
-                Precisa ter letra maiúscula, minúscula, número e símbolo (ex: !@#$%). Mínimo 8 caracteres.
+                Precisa ter letra maiúscula, minúscula, número e um símbolo como ! @ # $ % &amp; * ? - _ . Mínimo 8 caracteres. Espaço, acentos (ç, é…) e emojis não contam como símbolo.
               </p>
             </div>
             <div>
