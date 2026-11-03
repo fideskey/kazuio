@@ -22,7 +22,7 @@ export default function Page() {
         {
           heading: "1. Quem é o responsável pelos seus dados",
           paragraphs: [
-            "O Kazuio é operado por Gustavo Merladett Mecol, pessoa física, com endereço em SP. Contato, inclusive para assuntos de privacidade: kazuio@kazuio.com.",
+            "Contato do Kazuio, inclusive para assuntos de privacidade: kazuio@kazuio.com.",
           ],
         },
         {
@@ -98,7 +98,7 @@ export default function Page() {
             "— Estatísticas da busca de citações: sem identificação de usuário nem de conversa e com data registrada apenas por dia. São mantidas para melhorar a biblioteca.",
             "— Registros técnicos de cota: até 30 dias.",
             "— Pagamentos e pedidos de assinatura, cancelamento e reembolso: quando você exclui a conta, a assinatura é apagada. Os registros de pagamentos e pedidos (valores, datas e identificadores do Mercado Pago) são mantidos, desvinculados da conta, para cumprir obrigações legais, fiscais e de defesa do consumidor.",
-            "— Nos fornecedores: o provedor de inteligência artificial aplica sua própria política de retenção (segundo a informação disponível, até 30 dias, ou mais se a conversa for sinalizada pelos seus sistemas de segurança). O Mercado Pago e o Google seguem suas próprias políticas. Os registros técnicos de infraestrutura são mantidos pelo prazo curto definido pelos fornecedores.",
+            "— Nos fornecedores: o provedor de inteligência artificial aplica sua própria política de retenção (em regra, exclusão automática em até 30 dias; conteúdo sinalizado por violação de política de uso pode ser mantido por até 2 anos). O Mercado Pago e o Google seguem suas próprias políticas. Os registros técnicos e as cópias de segurança da infraestrutura são mantidos pelo prazo curto definido pelos fornecedores, e dados apagados podem permanecer nelas até esse prazo vencer.",
           ],
         },
         {
@@ -132,7 +132,7 @@ export default function Page() {
         {
           heading: "13. Encarregado e contato",
           paragraphs: [
-            "Encarregado pelo tratamento de dados pessoais (art. 41 da LGPD): Gustavo Merladett Mecol. Contato: kazuio@kazuio.com.",
+            "Canal de contato para titulares e para a ANPD (art. 41 da LGPD): kazuio@kazuio.com.",
           ],
         },
         {

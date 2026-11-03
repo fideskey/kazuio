@@ -58,7 +58,7 @@ export default function Page() {
         {
           heading: "7. Contato",
           paragraphs: [
-            "Dúvidas ou pedidos: kazuio@kazuio.com. Operado por Gustavo Merladett Mecol, SP.",
+            "Dúvidas ou pedidos: kazuio@kazuio.com.",
           ],
         },
       ]}

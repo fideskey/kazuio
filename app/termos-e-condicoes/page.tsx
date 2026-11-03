@@ -22,7 +22,7 @@ export default function Page() {
         {
           heading: "1. Quem presta o serviço",
           paragraphs: [
-            "O Kazuio é operado por Gustavo Merladett Mecol, pessoa física, com endereço em SP. Atendimento: kazuio@kazuio.com.",
+            "Atendimento: kazuio@kazuio.com.",
           ],
         },
         {
