@@ -114,7 +114,7 @@ export default function Page() {
           heading: "10. Seus direitos (art. 18 da LGPD)",
           paragraphs: [
             "Você pode, a qualquer momento: confirmar se tratamos seus dados e acessá-los; corrigir dados incompletos ou desatualizados (por exemplo, seu nome, em Configurações); pedir anonimização, bloqueio ou eliminação de dados desnecessários; pedir a portabilidade em formato estruturado; saber com quem compartilhamos seus dados; revogar seus consentimentos; e se opor a um tratamento específico. A revogação do consentimento de saúde impede o uso do chat, porque o serviço depende desse tratamento; a do consentimento de fé não afeta o restante do app.",
-            "Atendemos gratuitamente. Quando possível, respondemos de imediato em formato simplificado. A declaração completa é fornecida em até 15 dias. Para exercer seus direitos: kazuio@kazuio.com.",
+            "Atendemos gratuitamente. Quando possível, respondemos de imediato em formato simplificado. A declaração completa é fornecida em até 15 dias. Para exercer seus direitos: kazuio@kazuio.com. A portabilidade é atendida por e-mail, em arquivo estruturado (por exemplo, JSON ou CSV), no mesmo prazo de até 15 dias.",
           ],
         },
         {
